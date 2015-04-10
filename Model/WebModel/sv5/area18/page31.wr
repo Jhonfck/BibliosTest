@@ -1,0 +1,110 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv5#area18#page31" name="Search " gr:x="0" gr:y="0">
+  <ContentUnits>
+    <EntryUnit id="sv5#area18#page31#enu19" name="User Search" linkOrder="sv5#area18#page31#enu19#ln183 sv5#area18#page31#enu19#ln185" gr:x="25" gr:y="5" entity="User">
+      <Field id="sv5#area18#page31#enu19#fld31" name="User Code" type="string" modifiable="true"/>
+      <Link id="sv5#area18#page31#enu19#ln183" name="Reset" to="sv5#opu4" type="normal" validate="true"/>
+      <Link id="sv5#area18#page31#enu19#ln185" name="User Search" to="sv5#area18#page31#pwu25" type="normal" validate="true">
+        <LinkParameter id="sv5#area18#page31#enu19#ln185#par372" name="User Code_userCode" source="sv5#area18#page31#enu19#fld31" target="sv5#area18#page31#pwu25#su60#acond12"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit id="sv5#area18#page31#pwu24" name="Bibliography Material List" gr:x="190" gr:y="150" sortable="true" checkable="false" useCountQuery="false" entity="ent3" displayAttributes="ent3#att7 ent3#att8 ent3#att15 ent3#att19">
+      <Selector id="sv5#area18#page31#pwu24#su59" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv5#area18#page31#pwu24#su59#acond10" name="BiblioMaterialName" predicate="eq" booleanOperator="or" implied="true" attributes="ent3#att8"/>
+      </Selector>
+    </PowerIndexUnit>
+    <PowerIndexUnit id="sv5#area18#page31#pwu25" name="Users List" gr:x="205" gr:y="0" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="User#att9 User#att10 User#att37 User#att38">
+      <Selector id="sv5#area18#page31#pwu25#su60" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv5#area18#page31#pwu25#su60#acond12" name="userCode" predicate="eq" booleanOperator="or" implied="false" attributes="User#att37"/>
+      </Selector>
+    </PowerIndexUnit>
+    <EntryUnit gr:x="0" gr:y="145" id="sv5#area18#page31#enu20" name="BiblioMaterial Search" entity="ent3" linkOrder="sv5#area18#page31#enu20#ln187">
+      <Field id="sv5#area18#page31#enu20#fld34" name="BiblioMaterial Name" type="string" modifiable="true"/>
+      <Link id="sv5#area18#page31#enu20#ln187" name="Load Search" to="sv5#area18#page31#pwu24" type="normal" validate="true">
+        <LinkParameter id="sv5#area18#page31#enu20#ln187#par373" name="CopiesID_CodeID" source="sv5#area18#page31#enu20#fld34" target="sv5#area18#page31#pwu24#su59#acond10"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv5#area18#page31#enu19">
+          <layout:Link link="sv5#area18#page31#enu19#ln183"/>
+          <layout:Link link="sv5#area18#page31#enu19#ln185"/>
+          <layout:Field field="sv5#area18#page31#enu19#fld31"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv5#area18#page31#enu20">
+          <layout:Field field="sv5#area18#page31#enu20#fld34"/>
+          <layout:Link link="sv5#area18#page31#enu20#ln187"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv5#area18#page31#pwu25">
+          <layout:Attribute attribute="User#att9"/>
+          <layout:Attribute attribute="User#att10"/>
+          <layout:Attribute attribute="User#att37"/>
+          <layout:Attribute attribute="User#att38"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv5#area18#page31#pwu24">
+          <layout:Attribute attribute="ent3#att7"/>
+          <layout:Attribute attribute="ent3#att8"/>
+          <layout:Attribute attribute="ent3#att15"/>
+          <layout:Attribute attribute="ent3#att19"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

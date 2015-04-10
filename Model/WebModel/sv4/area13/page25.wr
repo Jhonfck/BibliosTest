@@ -1,0 +1,92 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv4#area13#page25" name="Search Loan and Penalty">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv4#area13#page25#enu14" name="Search" entity="ent7" linkOrder="sv4#area13#page25#enu14#ln129 sv4#area13#page25#enu14#ln156 sv4#area13#page25#enu14#ln177">
+      <Field id="sv4#area13#page25#enu14#fld22" name="User Code" type="string" modifiable="true" attribute="ent7#att47"/>
+      <Field id="sv4#area13#page25#enu14#fld29" name="CopiesID" type="string" modifiable="true" attribute="ent7#att36"/>
+      <Link id="sv4#area13#page25#enu14#ln129" name="Load Search" to="sv4#area13#page25#pwu18" type="normal" validate="true">
+        <LinkParameter id="sv4#area13#page25#enu14#ln129#par269" name="CopiesID_CodeID" source="sv4#area13#page25#enu14#fld29" target="sv4#area13#page25#pwu18#su35#acond5"/>
+        <LinkParameter id="sv4#area13#page25#enu14#ln129#par273" name="User Code_UserCode" source="sv4#area13#page25#enu14#fld22" target="sv4#area13#page25#pwu18#su35#acond6"/>
+      </Link>
+      <Link id="sv4#area13#page25#enu14#ln156" name="Reset" to="sv4#opu3" type="normal" validate="true"/>
+      <Link id="sv4#area13#page25#enu14#ln177" name="Penalty search" to="sv4#area13#page25#pwu21" type="normal" validate="true">
+        <LinkParameter id="sv4#area13#page25#enu14#ln177#par263" name="User Code_userCode" source="sv4#area13#page25#enu14#fld22" target="sv4#area13#page25#pwu21#su55#acond9"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="120" gr:y="5" id="sv4#area13#page25#pwu18" name="Loan List" sortable="true" checkable="false" useCountQuery="false" entity="ent7" displayAttributes="ent7#att47 ent7#att36 ent7#att44 ent7#att46">
+      <Selector id="sv4#area13#page25#pwu18#su35" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#area13#page25#pwu18#su35#acond5" name="CodeID" predicate="eq" booleanOperator="or" implied="true" attributes="ent7#att36"/>
+        <AttributesCondition id="sv4#area13#page25#pwu18#su35#acond6" name="UserCode" predicate="eq" booleanOperator="or" implied="true" attributes="ent7#att47"/>
+      </Selector>
+    </PowerIndexUnit>
+    <PowerIndexUnit gr:x="0" gr:y="110" id="sv4#area13#page25#pwu21" name="Penalty List" sortable="true" checkable="false" useCountQuery="false" entity="ent9" displayAttributes="ent9#att49 ent9#att50 ent9#att51">
+      <Selector id="sv4#area13#page25#pwu21#su55" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv4#area13#page25#pwu21#su55#acond9" name="userCode" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att49"/>
+      </Selector>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area13#page25#enu14">
+          <layout:Field field="sv4#area13#page25#enu14#fld22"/>
+          <layout:Field field="sv4#area13#page25#enu14#fld29"/>
+          <layout:Link link="sv4#area13#page25#enu14#ln129"/>
+          <layout:Link link="sv4#area13#page25#enu14#ln156"/>
+          <layout:Link link="sv4#area13#page25#enu14#ln177"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv4#area13#page25#pwu18">
+          <layout:Attribute attribute="ent7#att47"/>
+          <layout:Attribute attribute="ent7#att36"/>
+          <layout:Attribute attribute="ent7#att44"/>
+          <layout:Attribute attribute="ent7#att46"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv4#area13#page25#pwu21">
+          <layout:Attribute attribute="ent9#att49"/>
+          <layout:Attribute attribute="ent9#att50"/>
+          <layout:Attribute attribute="ent9#att51"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

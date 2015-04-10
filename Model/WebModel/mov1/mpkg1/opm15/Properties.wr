@@ -1,0 +1,49 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="200" gr:y="375" id="mov1#mpkg1#opm15" name="Manage CollectionsBiblioMaterial">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm15#icu15" gr:x="-115" gr:y="125" linkOrder="mov1#mpkg1#opm15#icu15#ln61 mov1#mpkg1#opm15#icu15#ln62 mov1#mpkg1#opm15#icu15#ln63 mov1#mpkg1#opm15#icu15#ln64">
+      <OKLink id="mov1#mpkg1#opm15#icu15#oln54" name="OKFlow54" to="mov1#mpkg1#opm15#inn7">
+        <LinkParameter id="mov1#mpkg1#opm15#icu15#oln54#par87" name="ColecctionBiblioMaterialOid_Input" source="mov1#mpkg1#opm15#icu15#icp30" target="mov1#mpkg1#opm15#inn7.isnotnull"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#mpkg1#opm15#icu15#icp28" name="ColletionBiblioMaterial Objetc"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm15#icu15#icp29" name="CollectionBiblioMaterialName"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm15#icu15#icp30" name="ColecctionBiblioMaterialOid"/>
+      <Link id="mov1#mpkg1#opm15#icu15#ln61" name="Flow61" to="mov1#mpkg1#opm15#cru7" type="transport" validate="true" gr:bendpoints="204,-80,-231,15">
+        <LinkParameter id="mov1#mpkg1#opm15#icu15#ln61#par88" name="ColletionBiblioMaterial Objetc_CollectionBiblioMaterial Object" source="mov1#mpkg1#opm15#icu15#icp28" target="mov1#mpkg1#opm15#cru7.entityBeans"/>
+        <LinkParameter id="mov1#mpkg1#opm15#icu15#ln61#par101" name="ColecctionBiblioMaterialOid_oid" source="mov1#mpkg1#opm15#icu15#icp30" target="mov1#mpkg1#opm15#cru7.ent4#att17"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm15#icu15#ln62" name="Flow62" to="mov1#mpkg1#opm15#mfu7" type="transport" validate="true" gr:bendpoints="214,106,-201,16">
+        <LinkParameter id="mov1#mpkg1#opm15#icu15#ln62#par102" name="ColletionBiblioMaterial Objetc_CollectionBiblioMaterial Object" source="mov1#mpkg1#opm15#icu15#icp28" target="mov1#mpkg1#opm15#mfu7.entityBeans"/>
+        <LinkParameter id="mov1#mpkg1#opm15#icu15#ln62#par103" name="ColecctionBiblioMaterialOid_KeyCondition8 [oid]" source="mov1#mpkg1#opm15#icu15#icp30" target="mov1#mpkg1#opm15#mfu7#su11#kcond8.ent4#att17"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm15#icu15#ln63" name="Flow63" to="mov1#mpkg1#opm15#okcu14" type="transport" validate="true" gr:bendpoints="404,-175,-321,-95">
+        <LinkParameter id="mov1#mpkg1#opm15#icu15#ln63#par104" name="CollectionBiblioMaterialName_CollectionBiblioMaterialName" source="mov1#mpkg1#opm15#icu15#icp29" target="mov1#mpkg1#opm15#okcu14#ocp17"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm15#icu15#ln64" name="Flow64" to="mov1#mpkg1#opm15#kocu15" type="transport" validate="true" gr:bendpoints="421,202,-304,102">
+        <LinkParameter id="mov1#mpkg1#opm15#icu15#ln64#par105" name="CollectionBiblioMaterialName_CollectionMaterialBiblioName" source="mov1#mpkg1#opm15#icu15#icp29" target="mov1#mpkg1#opm15#kocu15#ocp19"/>
+      </Link>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="365" gr:y="45" id="mov1#mpkg1#opm15#cru7" name="CollectionBiblioMaterial Create" entity="ent4">
+      <OKLink id="mov1#mpkg1#opm15#cru7#oln56" name="OKFlow56" to="mov1#mpkg1#opm15#okcu14" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm15#cru7#kln43" name="KOFlow43" to="mov1#mpkg1#opm15#kocu15" automaticCoupling="true"/>
+    </CreateUnit>
+    <ModifyUnit gr:x="345" gr:y="225" id="mov1#mpkg1#opm15#mfu7" name="CollectionBiblioMaterial Update" entity="ent4">
+      <Selector id="mov1#mpkg1#opm15#mfu7#su11" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm15#mfu7#su11#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm15#mfu7#oln57" name="OKFlow57" to="mov1#mpkg1#opm15#okcu14" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm15#mfu7#kln44" name="KOFlow44" to="mov1#mpkg1#opm15#kocu15" automaticCoupling="true"/>
+    </ModifyUnit>
+    <IsNotNullUnit gr:x="285" gr:y="145" id="mov1#mpkg1#opm15#inn7" name="Is Not Null">
+      <OKLink id="mov1#mpkg1#opm15#inn7#oln55" name="OKFlow55" to="mov1#mpkg1#opm15#mfu7" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm15#inn7#kln42" name="KOFlow42" to="mov1#mpkg1#opm15#cru7" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <OKCollectorUnit gr:x="655" gr:y="60" id="mov1#mpkg1#opm15#okcu14" name="Success">
+      <OutputCollectorParameter id="mov1#mpkg1#opm15#okcu14#ocp17" name="CollectionBiblioMaterialName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm15#okcu14#ocp18" name="Message" value="Colletion BiblioMaterial $$CollectionBiblioMaterialName$$ Saved"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="655" gr:y="240" id="mov1#mpkg1#opm15#kocu15" name="Failure">
+      <OutputCollectorParameter id="mov1#mpkg1#opm15#kocu15#ocp19" name="CollectionMaterialBiblioName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm15#kocu15#ocp20" name="Message" value="Colletion BiblioMaterial $$CollectionBiblioMaterialName$$ Not Saved"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

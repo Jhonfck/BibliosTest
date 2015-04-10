@@ -1,0 +1,49 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="215" gr:y="120" id="mov1#mpkg1#opm11" name="Manage TypeBiblioMaterial">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm11#icu11" gr:x="-65" gr:y="150" linkOrder="mov1#mpkg1#opm11#icu11#ln106 mov1#mpkg1#opm11#icu11#ln107">
+      <OKLink id="mov1#mpkg1#opm11#icu11#oln43" name="OKFlow43" to="mov1#mpkg1#opm11#inn5">
+        <LinkParameter id="mov1#mpkg1#opm11#icu11#oln43#par54" name="oidTypeBiblioMaterial_Input" source="mov1#mpkg1#opm11#icu11#icp21" target="mov1#mpkg1#opm11#inn5.isnotnull"/>
+      </OKLink>
+      <Link id="mov1#mpkg1#opm11#icu11#ln42" name="Flow42" to="mov1#mpkg1#opm11#cru5" type="transport" validate="true" gr:bendpoints="150,-100,-195,0">
+        <LinkParameter id="mov1#mpkg1#opm11#icu11#ln42#par55" name="oidTypeBiblioMaterial_oid" source="mov1#mpkg1#opm11#icu11#icp21" target="mov1#mpkg1#opm11#cru5.ent2#att4"/>
+        <LinkParameter id="mov1#mpkg1#opm11#icu11#ln42#par56" name="TypeBiblioMaterial Object_TypeBiblioMaterial Object" source="mov1#mpkg1#opm11#icu11#icp22" target="mov1#mpkg1#opm11#cru5.entityBeans"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm11#icu11#ln43" name="Flow43" to="mov1#mpkg1#opm11#mfu5" type="transport" validate="true" gr:bendpoints="140,93,-215,-2">
+        <LinkParameter id="mov1#mpkg1#opm11#icu11#ln43#par59" name="oidTypeBiblioMaterial_KeyCondition15 [oid]" source="mov1#mpkg1#opm11#icu11#icp21" target="mov1#mpkg1#opm11#mfu5#su16#kcond15.ent2#att4"/>
+        <LinkParameter id="mov1#mpkg1#opm11#icu11#ln43#par72" name="TypeBiblioMaterial Object_TypeBiblioMaterial Object" source="mov1#mpkg1#opm11#icu11#icp22" target="mov1#mpkg1#opm11#mfu5.entityBeans"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg1#opm11#icu11#icp21" name="oidTypeBiblioMaterial"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm11#icu11#icp22" name="TypeBiblioMaterial Object"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm11#icu11#icp47" name="biblioMaterialTypeName"/>
+      <Link id="mov1#mpkg1#opm11#icu11#ln106" name="Flow106" to="mov1#mpkg1#opm11#okcu10" type="transport" validate="true" gr:bendpoints="379,-199,-306,-84">
+        <LinkParameter id="mov1#mpkg1#opm11#icu11#ln106#par211" name="biblioMaterialTypeName_biblioMaterialTypeName" source="mov1#mpkg1#opm11#icu11#icp47" target="mov1#mpkg1#opm11#okcu10#ocp65"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm11#icu11#ln107" name="Flow107" to="mov1#mpkg1#opm11#kocu11" type="transport" validate="true" gr:bendpoints="384,164,-301,124">
+        <LinkParameter id="mov1#mpkg1#opm11#icu11#ln107#par210" name="biblioMaterialTypeName_biblioMaterialTypeName" source="mov1#mpkg1#opm11#icu11#icp47" target="mov1#mpkg1#opm11#kocu11#ocp67"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="625" gr:y="50" id="mov1#mpkg1#opm11#okcu10" name="Successful">
+      <OutputCollectorParameter id="mov1#mpkg1#opm11#okcu10#ocp65" name="biblioMaterialTypeName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm11#okcu10#ocp66" name="Message" value="Type $$biblioMaterialTypeName$$ Saved"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="625" gr:y="205" id="mov1#mpkg1#opm11#kocu11" name="Failure">
+      <OutputCollectorParameter id="mov1#mpkg1#opm11#kocu11#ocp67" name="biblioMaterialTypeName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm11#kocu11#ocp68" name="Message" value="Type $$biblioMaterialTypeName$$ Not Saved"/>
+    </KOCollectorUnit>
+    <CreateUnit gr:x="375" gr:y="50" id="mov1#mpkg1#opm11#cru5" name="Create TypeBiblioMaterial" entity="ent2">
+      <OKLink id="mov1#mpkg1#opm11#cru5#oln44" name="OKFlow44" to="mov1#mpkg1#opm11#okcu10" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm11#cru5#kln33" name="KOFlow33" to="mov1#mpkg1#opm11#kocu11" automaticCoupling="true"/>
+    </CreateUnit>
+    <ModifyUnit gr:x="380" gr:y="240" id="mov1#mpkg1#opm11#mfu5" name="Update TypeBiblioMaterial" entity="ent2">
+      <Selector id="mov1#mpkg1#opm11#mfu5#su16" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm11#mfu5#su16#kcond15" name="KeyCondition15" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm11#mfu5#oln45" name="OKFlow45" to="mov1#mpkg1#opm11#okcu10" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm11#mfu5#kln32" name="KOFlow32" to="mov1#mpkg1#opm11#kocu11" automaticCoupling="true"/>
+    </ModifyUnit>
+    <IsNotNullUnit gr:x="270" gr:y="155" id="mov1#mpkg1#opm11#inn5" name="Is Not Null">
+      <KOLink id="mov1#mpkg1#opm11#inn5#kln31" name="KOFlow31" to="mov1#mpkg1#opm11#cru5" automaticCoupling="true"/>
+      <OKLink id="mov1#mpkg1#opm11#inn5#oln42" name="OKFlow42" to="mov1#mpkg1#opm11#mfu5" automaticCoupling="true"/>
+    </IsNotNullUnit>
+  </OperationUnits>
+</OperationModule>

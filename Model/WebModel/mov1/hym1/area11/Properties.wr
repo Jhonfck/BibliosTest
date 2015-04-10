@@ -1,0 +1,21 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="80" gr:y="-310" id="mov1#hym1#area11" name="Loaned" landmark="true">
+  <OperationUnits>
+    <ScriptUnit id="mov1#hym1#area11#scu6" name="Validaci&#243;n prestamos" gr:x="530" gr:y="100">
+      <ScriptUnitText xml:space="preserve">#input numberLend, numLoans, oidGroup, oidUser, UserCode
+#output resultcode, oidGroup oidUser, UserCode
+
+if (numLoans &lt; numberLend){
+
+return["resultcode":"success"]
+
+} else {
+
+return["resultcode":"error"]
+
+}</ScriptUnitText>
+      <OKLink id="mov1#hym1#area11#scu6#oln112" name="OKFlow112" to="mov1#hym1#switch2">
+        <LinkParameter id="mov1#hym1#area11#scu6#oln112#par285" name="resultcode_Switch" source="result(resultcode)" target="mov1#hym1#switch2.switch"/>
+      </OKLink>
+    </ScriptUnit>
+  </OperationUnits>
+</Area>

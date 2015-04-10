@@ -1,0 +1,105 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area8#page18" name="Rules Management">
+  <ContentUnits>
+    <EntryUnit gr:x="5" gr:y="125" id="sv1#area8#page18#enu9" name="Regulation Info" linkOrder="sv1#area8#page18#enu9#ln68 sv1#area8#page18#enu9#ln69" entity="ent5">
+      <Link id="sv1#area8#page18#enu9#ln68" name="Save" to="sv1#area8#miu19" type="normal" validate="true">
+        <LinkParameter id="sv1#area8#page18#enu9#ln68#par122" name="Rules Object_RulesObject" source="entityBean" target="sv1#area8#miu19.mov1#mpkg1#opm17#icu17#icp33"/>
+        <LinkParameter id="sv1#area8#page18#enu9#ln68#par123" name="Key [oid]_Rulesoid" source="key.ent5#att20" target="sv1#area8#miu19.mov1#mpkg1#opm17#icu17#icp34"/>
+        <LinkParameter id="sv1#area8#page18#enu9#ln68#par125" name="RulesName_RulesName" source="sv1#area8#page18#enu9#fld23" target="sv1#area8#miu19.mov1#mpkg1#opm17#icu17#icp35"/>
+      </Link>
+      <Link id="sv1#area8#page18#enu9#ln69" name="Cancel" to="sv1#area8#page18" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-168,-225,-253,-215;-109,-215,-194,-205"/>
+      <Field id="sv1#area8#page18#enu9#fld23" name="RulesName" type="string" modifiable="true" attribute="ent5#att27"/>
+      <SelectionField id="sv1#area8#page18#enu9#sfld9" name="UserGroup" type="string" role="rel4#role7"/>
+      <SelectionField id="sv1#area8#page18#enu9#sfld10" name="ColletionBiblioMaterial" type="string" role="rel7#role13"/>
+      <Field id="sv1#area8#page18#enu9#fld24" name="ReturnDays" type="integer" modifiable="true" attribute="ent5#att21"/>
+      <Field id="sv1#area8#page18#enu9#fld25" name="PenaltyDays" type="integer" modifiable="true" attribute="ent5#att22"/>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="10" gr:y="235" id="sv1#area8#page18#pwu8" name="Regulation List" sortable="true" checkable="false" useCountQuery="false" linkOrder="sv1#area8#page18#pwu8#ln67 sv1#area8#page18#pwu8#ln70" displayAttributes="ent5#att21 ent5#att22 ent5#att25 ent5#att26 ent5#att27" entity="ent5">
+      <Link id="sv1#area8#page18#pwu8#ln67" name="Delete" to="sv1#area8#miu18" type="normal" validate="true">
+        <LinkParameter id="sv1#area8#page18#pwu8#ln67#par124" name="oid_RulesOid" source="data[].ent5#att20" target="sv1#area8#miu18.mov1#mpkg1#opm18#icu18#icp37"/>
+        <LinkParameter id="sv1#area8#page18#pwu8#ln67#par126" name="RulesName_RulesName" source="data[].ent5#att27" target="sv1#area8#miu18.mov1#mpkg1#opm18#icu18#icp36"/>
+      </Link>
+      <Link id="sv1#area8#page18#pwu8#ln70" name="Edit" to="sv1#area8#page18#enu9" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+    <SelectorUnit gr:x="165" gr:y="0" id="sv1#area8#page18#seu6" name="Selection Group" entity="Group">
+      <Link id="sv1#area8#page18#seu6#ln77" name="Flow77" to="sv1#area8#page18#enu9" type="transport" validate="true">
+        <LinkParameter id="sv1#area8#page18#seu6#ln77#par133" name="groupName_UserGroup [label]" source="groupNameArray" target="sv1#area8#page18#enu9#sfld9_label"/>
+        <LinkParameter id="sv1#area8#page18#seu6#ln77#par134" name="oid_UserGroup [output]" source="groupOIDArray" target="sv1#area8#page18#enu9#sfld9_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="0" gr:y="0" id="sv1#area8#page18#seu7" name="Selection Collection" entity="ent4">
+      <Link id="sv1#area8#page18#seu7#ln78" name="Flow78" to="sv1#area8#page18#enu9" type="transport" validate="true">
+        <LinkParameter id="sv1#area8#page18#seu7#ln78#par131" name="CollectionName_ColletionBiblioMaterial [label]" source="ent4#att18Array" target="sv1#area8#page18#enu9#sfld10_label"/>
+        <LinkParameter id="sv1#area8#page18#seu7#ln78#par132" name="oid_ColletionBiblioMaterial [output]" source="ent4#att17Array" target="sv1#area8#page18#enu9#sfld10_output"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit id="sv1#area8#page18#mssu16" name="Notification" gr:x="165" gr:y="230">
+      <Placeholder id="sv1#area8#page18#mssu16#ph5" name="RulesName"/>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area8#page18#enu9">
+          <layout:Link link="sv1#area8#page18#enu9#ln68"/>
+          <layout:Link link="sv1#area8#page18#enu9#ln69"/>
+          <layout:Field field="sv1#area8#page18#enu9#fld23"/>
+          <layout:Field field="sv1#area8#page18#enu9#fld24"/>
+          <layout:Field field="sv1#area8#page18#enu9#fld25"/>
+          <layout:Field field="sv1#area8#page18#enu9#sfld9"/>
+          <layout:Field field="sv1#area8#page18#enu9#sfld10"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area8#page18#pwu8">
+          <layout:Link link="sv1#area8#page18#pwu8#ln67"/>
+          <layout:Link link="sv1#area8#page18#pwu8#ln70"/>
+          <layout:Attribute attribute="ent5#att21"/>
+          <layout:Attribute attribute="ent5#att22"/>
+          <layout:Attribute attribute="ent5#att25"/>
+          <layout:Attribute attribute="ent5#att26"/>
+          <layout:Attribute attribute="ent5#att27"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area8#page18#mssu16"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

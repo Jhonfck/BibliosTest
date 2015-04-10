@@ -1,0 +1,39 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="5" gr:y="55" id="mov1#mpkg3#opm23" name="manage Loans">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg3#opm23#icu25" gr:x="0" gr:y="65" linkOrder="mov1#mpkg3#opm23#icu25#ln181">
+      <InputCollectorParameter id="mov1#mpkg3#opm23#icu25#icp59" name="UserCode"/>
+      <InputCollectorParameter id="mov1#mpkg3#opm23#icu25#icp60" name="oidCopies"/>
+      <OKLink id="mov1#mpkg3#opm23#icu25#oln115" name="OKFlow115" to="mov1#mpkg3#opm23#opg2#seu17">
+        <LinkParameter id="mov1#mpkg3#opm23#icu25#oln115#par397" name="oidUser_KeyCondition51 [oid]" source="mov1#mpkg3#opm23#icu25#icp61" target="mov1#mpkg3#opm23#opg2#seu17#su63#kcond51.groupOID"/>
+      </OKLink>
+      <Link id="mov1#mpkg3#opm23#icu25#ln184" name="Flow184" to="mov1#mpkg3#opm23#opg2#cru13" type="transport" validate="true" gr:bendpoints="424,-117,-271,-127">
+        <LinkParameter id="mov1#mpkg3#opm23#icu25#ln184#par365" name="oidCopies_CopiesID" source="mov1#mpkg3#opm23#icu25#icp62" target="mov1#mpkg3#opm23#opg2#cru13.ent7#att36"/>
+        <LinkParameter id="mov1#mpkg3#opm23#icu25#ln184#par243" name="UserCode_userCode" source="mov1#mpkg3#opm23#icu25#icp59" target="mov1#mpkg3#opm23#opg2#cru13.ent7#att47"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg3#opm23#icu25#icp62" name="copiesID"/>
+      <Link id="mov1#mpkg3#opm23#icu25#ln191" name="Flow191" to="mov1#mpkg3#opm23#opg2#cru13" type="transport" validate="true" gr:bendpoints="366,157,-284,147"/>
+      <InputCollectorParameter id="mov1#mpkg3#opm23#icu25#icp66" name="oidLibro"/>
+      <InputCollectorParameter id="mov1#mpkg3#opm23#icu25#icp68" name="oidGroup"/>
+      <InputCollectorParameter id="mov1#mpkg3#opm23#icu25#icp61" name="oidUser"/>
+      <Link id="mov1#mpkg3#opm23#icu25#ln132" name="Flow132" to="mov1#mpkg3#opm23#opg2#seu11" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg3#opm23#icu25#ln132#par256" name="oidCopies_Collection [oid]" source="mov1#mpkg3#opm23#icu25#icp66" target="mov1#mpkg3#opm23#opg2#seu11#su36#rcond2.ent4#att17"/>
+        <LinkParameter id="mov1#mpkg3#opm23#icu25#ln132#par261" name="oidUser_group [oid]" source="mov1#mpkg3#opm23#icu25#icp68" target="mov1#mpkg3#opm23#opg2#seu11#su36#rcond4.groupOID"/>
+      </Link>
+      <Link id="mov1#mpkg3#opm23#icu25#ln158" name="Flow158" to="mov1#mpkg3#opm23#opg2#mfu12" type="transport" validate="true" gr:bendpoints="730,290,-345,295">
+        <LinkParameter id="mov1#mpkg3#opm23#icu25#ln158#par275" name="oidCopies_KeyCondition32 [oid]" source="mov1#mpkg3#opm23#icu25#icp60" target="mov1#mpkg3#opm23#opg2#mfu12#su38#kcond32.ent6#att24"/>
+        <LinkParameter id="mov1#mpkg3#opm23#icu25#ln158#par277" name="1_StatusBiblioMaterial.oid(CopiesToStatusBiblioMaterial)" sourceValue="1" target="mov1#mpkg3#opm23#opg2#mfu12.rel6#role11.ent1#att2"/>
+      </Link>
+      <Link id="mov1#mpkg3#opm23#icu25#ln193" name="Flow193" to="mov1#mpkg3#opm23#opg2#rcnu2" type="transport" validate="true" gr:bendpoints="728,-134,-562,-134">
+        <LinkParameter id="mov1#mpkg3#opm23#icu25#ln193#par396" name="oidUser_KeyCondition50 [oid] [User] [ConnectTarget]" source="mov1#mpkg3#opm23#icu25#icp61" target="mov1#mpkg3#opm23#opg2#rcnu2#su62#kcond50.userOID"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg3#opm23#icu25#icp70" name="numLoans"/>
+      <Link id="mov1#mpkg3#opm23#icu25#ln181" name="Flow181" to="mov1#mpkg3#opm23#okcu25" type="transport" validate="true" gr:bendpoints="1040,253,-595,283">
+        <LinkParameter id="mov1#mpkg3#opm23#icu25#ln181#par289" name="copiesID_copiesID" source="mov1#mpkg3#opm23#icu25#icp62" target="mov1#mpkg3#opm23#okcu25#ocp81"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov1#mpkg3#opm23#okcu25" name="Success" gr:x="1635" gr:y="85">
+      <OutputCollectorParameter id="mov1#mpkg3#opm23#okcu25#ocp81" name="copiesID"/>
+      <OutputCollectorParameter id="mov1#mpkg3#opm23#okcu25#ocp82" name="message" value="the copy with copiesID $$copiesID$$ was Loan successfully"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

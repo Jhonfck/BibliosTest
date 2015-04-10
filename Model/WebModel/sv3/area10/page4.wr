@@ -1,0 +1,77 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="465" gr:y="10" id="sv3#area10#page4" name="Reserve UserCode">
+  <ContentUnits>
+    <DataUnit id="sv3#area10#page4#dau8" name="BiblioMaterial Details" gr:x="0" gr:y="105" entity="ent3" displayAttributes="ent3#att7 ent3#att8 ent3#att14 ent3#att15 ent3#att16 ent3#att19 ent3#att32">
+      <Selector id="sv3#area10#page4#dau8#su25" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#area10#page4#dau8#su25#kcond24" name="KeyCondition32" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv3#area10#page4#dau8#ln114" name="Flow162" to="sv3#miu32" type="transport" validate="true">
+        <LinkParameter id="sv3#area10#page4#dau8#ln114#par244" name="BiblioMaterialName_BiblioMaterial" source="data.ent3#att8" target="sv3#miu32.mov1#mpkg3#opm4#icu4#icp50"/>
+      </Link>
+    </DataUnit>
+    <EntryUnit id="sv3#area10#page4#enu12" name="UserCode" linkOrder="sv3#area10#page4#enu12#ln117" gr:x="25" gr:y="0" entity="User">
+      <Field id="sv3#area10#page4#enu12#fld26" name="Code" type="integer" modifiable="true" attribute="User#att37"/>
+      <Link id="sv3#area10#page4#enu12#ln117" name="Add" to="sv3#miu32" type="normal" validate="true">
+        <LinkParameter id="sv3#area10#page4#enu12#ln117#par247" name="Code_UserCode" source="sv3#area10#page4#enu12#fld26" target="sv3#miu32.mov1#mpkg3#opm4#icu4#icp51"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area10#page4#dau8">
+          <layout:Attribute attribute="ent3#att7"/>
+          <layout:Attribute attribute="ent3#att8"/>
+          <layout:Attribute attribute="ent3#att14"/>
+          <layout:Attribute attribute="ent3#att15"/>
+          <layout:Attribute attribute="ent3#att16"/>
+          <layout:Attribute attribute="ent3#att19"/>
+          <layout:Attribute attribute="ent3#att32"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area10#page4#enu12">
+          <layout:Field field="sv3#area10#page4#enu12#fld26"/>
+          <layout:Link link="sv3#area10#page4#enu12#ln117"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

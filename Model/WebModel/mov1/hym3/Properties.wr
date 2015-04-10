@@ -1,0 +1,14 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="820" gr:y="490" id="mov1#hym3" name="User Details">
+  <OperationUnits>
+    <OKCollectorUnit id="mov1#hym3#okcu24" name="success" gr:x="760" gr:y="269"/>
+    <InputCollectorUnit id="mov1#hym3#icu24" gr:x="180" gr:y="169">
+      <InputCollectorParameter id="mov1#hym3#icu24#icp63" name="oid User"/>
+      <OKLink id="mov1#hym3#icu24#oln110" name="OKFlow99" to="mov1#hym3#page12#dau15">
+        <LinkParameter id="mov1#hym3#icu24#oln110#par282" name="oid User_KeyCondition39 [oid]" source="mov1#hym3#icu24#icp63" target="mov1#hym3#page12#dau15#su44#kcond33.userOID"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov1#hym3#okcu26" name="Loan List" gr:x="725" gr:y="159">
+      <OutputCollectorParameter id="mov1#hym3#okcu26#ocp78" name="oid User"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</HybridModule>

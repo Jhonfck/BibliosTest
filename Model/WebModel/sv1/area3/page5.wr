@@ -1,0 +1,83 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area3#page5" name="Modules Management">
+  <ContentUnits>
+    <EntryUnit gr:x="170" gr:y="0" id="sv1#area3#page5#enu4" name="Module Info" entity="Module" linkOrder="sv1#area3#page5#enu4#ln28 sv1#area3#page5#enu4#ln31">
+      <Field id="sv1#area3#page5#enu4#fld2" name="moduleName" type="string" modifiable="true" attribute="moduleName"/>
+      <Link id="sv1#area3#page5#enu4#ln28" name="Save" to="sv1#area3#miu8" type="normal" validate="true">
+        <LinkParameter id="sv1#area3#page5#enu4#ln28#par66" name="Module Object_ModuleObject" source="entityBean" target="sv1#area3#miu8.mov1#mpkg1#opm7#icu7#icp17"/>
+        <LinkParameter id="sv1#area3#page5#enu4#ln28#par67" name="Key [oid]_oidModule" source="key.moduleOID" target="sv1#area3#miu8.mov1#mpkg1#opm7#icu7#icp14"/>
+        <LinkParameter id="sv1#area3#page5#enu4#ln28#par209" name="moduleName_moduleName" source="sv1#area3#page5#enu4#fld2" target="sv1#area3#miu8.mov1#mpkg1#opm7#icu7#icp16"/>
+      </Link>
+      <Link id="sv1#area3#page5#enu4#ln31" name="Cancel" to="sv1#area3#page5" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-12,-134,73,-164"/>
+      <Field id="sv1#area3#page5#enu4#fld3" name="moduleID" type="string" modifiable="true" attribute="moduleID"/>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="0" gr:y="70" id="sv1#area3#page5#pwu4" name="List Module" sortable="true" checkable="false" useCountQuery="false" entity="Module" linkOrder="sv1#area3#page5#pwu4#ln26 sv1#area3#page5#pwu4#ln27" displayAttributes="moduleID moduleName">
+      <Link id="sv1#area3#page5#pwu4#ln26" name="Edit" to="sv1#area3#page5#enu4" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv1#area3#page5#pwu4#ln27" name="Delete" to="sv1#area3#miu9" type="normal" validate="true">
+        <LinkParameter id="sv1#area3#page5#pwu4#ln27#par68" name="oid_oidModule" source="data[].moduleOID" target="sv1#area3#miu9.mov1#mpkg1#opm8#icu8#icp13"/>
+      </Link>
+    </PowerIndexUnit>
+    <MultiMessageUnit id="sv1#area3#page5#mssu17" name="Notification" gr:x="185" gr:y="110">
+      <Placeholder id="sv1#area3#page5#mssu17#ph6" name="moduleName"/>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area3#page5#enu4">
+          <layout:Link link="sv1#area3#page5#enu4#ln28"/>
+          <layout:Link link="sv1#area3#page5#enu4#ln31"/>
+          <layout:Field field="sv1#area3#page5#enu4#fld2"/>
+          <layout:Field field="sv1#area3#page5#enu4#fld3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area3#page5#pwu4">
+          <layout:Link link="sv1#area3#page5#pwu4#ln26"/>
+          <layout:Link link="sv1#area3#page5#pwu4#ln27"/>
+          <layout:Attribute attribute="moduleID"/>
+          <layout:Attribute attribute="moduleName"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area3#page5#mssu17"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

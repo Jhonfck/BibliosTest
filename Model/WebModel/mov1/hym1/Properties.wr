@@ -1,0 +1,27 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="820" gr:y="430" id="mov1#hym1" name="Copies List" landmarks="mov1#hym1#area11">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="-200" gr:y="20" id="mov1#hym1#icu22">
+      <InputCollectorParameter id="mov1#hym1#icu22#icp56" name="oidBiblioMaterial"/>
+      <OKLink id="mov1#hym1#icu22#oln93" name="OKFlow93" to="mov1#hym1#area11#page32#pwu22">
+        <LinkParameter id="mov1#hym1#icu22#oln93#par281" name="oidBiblioMaterial_BiblioMaterial [oid]" source="mov1#hym1#icu22#icp56" target="mov1#hym1#area11#page32#pwu22#su52#rcond5.ent3#att6"/>
+        <LinkParameter id="mov1#hym1#icu22#oln93#par395" name="4_Status [oid]" sourceValue="4" target="mov1#hym1#area11#page32#pwu22#su52#rcond9.ent1#att2"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <ModuleInstanceUnit gr:x="850" gr:y="10" id="mov1#hym1#miu36" action="true" moduleId="mov1#mpkg3#opm23">
+      <OKLink id="mov1#hym1#miu36#oln119" name="OKFlow102" to="mov1#hym1#page29" automaticCoupling="true" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowResizable="true" ajaxWindowAutoResizing="true" ajaxWindowClosable="true" ajaxWindowModal="true"/>
+      <OKLink id="mov1#hym1#miu36#oln108" name="OKFlow98" to="mov1#hym1#area11#page30#mssu21" gr:bendpoints="-2,204,448,-6">
+        <LinkParameter id="mov1#hym1#miu36#oln108#par359" name="copiesID_copiesID" source="mov1#mpkg3#opm23#okcu25#ocp81" target="mov1#hym1#area11#page30#mssu21.mov1#hym1#area11#page30#mssu21#ph12"/>
+        <LinkParameter id="mov1#hym1#miu36#oln108#par364" name="message_Shown Messages" source="mov1#mpkg3#opm23#okcu25#ocp82" target="mov1#hym1#area11#page30#mssu21.shownMessages"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="1115" gr:y="-130" id="mov1#hym1#miu22" action="true" moduleId="mov1#opm22">
+      <OKLink id="mov1#hym1#miu22#oln122" name="OKFlow122" to="mov1#hym1#page29" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <SwitchUnit id="mov1#hym1#switch2" name="Switch" gr:x="825" gr:y="-220">
+      <OKLink id="mov1#hym1#switch2#oln107" name="OKFlow112" to="mov1#hym1#miu36" automaticCoupling="true" code="success"/>
+      <Case value="success"/>
+      <Case value="error"/>
+      <OKLink id="mov1#hym1#switch2#oln117" name="OKFlow116" to="mov1#hym1#area11#page27#mssu3" code="error" automaticCoupling="true"/>
+    </SwitchUnit>
+  </OperationUnits>
+</HybridModule>

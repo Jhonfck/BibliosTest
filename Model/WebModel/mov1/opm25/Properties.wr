@@ -1,0 +1,32 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="875" gr:y="720" id="mov1#opm25" name="Penalty Delete">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm25#icu29" gr:x="30" gr:y="60" linkOrder="mov1#opm25#icu29#ln123 mov1#opm25#icu29#ln125">
+      <OKLink id="mov1#opm25#icu29#oln94" name="OKFlow94" to="mov1#opm25#dlu13">
+        <LinkParameter id="mov1#opm25#icu29#oln94#par245" name="oidPenalty_KeyCondition26 [oid]" source="mov1#opm25#icu29#icp76" target="mov1#opm25#dlu13#su50#kcond37.ent9#att45"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#opm25#icu29#icp76" name="oidPenalty"/>
+      <InputCollectorParameter id="mov1#opm25#icu29#icp77" name="userCode"/>
+      <Link id="mov1#opm25#icu29#ln123" name="Flow123" to="mov1#opm25#okcu29" type="transport" validate="true" gr:bendpoints="197,-156,-273,-106">
+        <LinkParameter id="mov1#opm25#icu29#ln123#par252" name="userCode_userCode" source="mov1#opm25#icu29#icp77" target="mov1#opm25#okcu29#ocp76"/>
+      </Link>
+      <Link id="mov1#opm25#icu29#ln125" name="Flow125" to="mov1#opm25#kocu4" type="transport" validate="true" gr:bendpoints="217,153,-253,93">
+        <LinkParameter id="mov1#opm25#icu29#ln125#par253" name="userCode_UserCode" source="mov1#opm25#icu29#icp77" target="mov1#opm25#kocu4#ocp73"/>
+      </Link>
+    </InputCollectorUnit>
+    <KOCollectorUnit id="mov1#opm25#kocu4" name="Failure" gr:x="500" gr:y="120">
+      <OutputCollectorParameter id="mov1#opm25#kocu4#ocp73" name="userCode"/>
+      <OutputCollectorParameter id="mov1#opm25#kocu4#ocp74" name="Message" value="the penalty with code $$userCode$$ Not Deleted"/>
+    </KOCollectorUnit>
+    <DeleteUnit id="mov1#opm25#dlu13" name="Penalty Delete" gr:x="305" gr:y="55" entity="ent9">
+      <Selector id="mov1#opm25#dlu13#su50" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm25#dlu13#su50#kcond37" name="KeyCondition26" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov1#opm25#dlu13#kln14" name="KOFlow57" to="mov1#opm25#kocu4" automaticCoupling="true"/>
+      <OKLink id="mov1#opm25#dlu13#oln81" name="OKFlow76" to="mov1#opm25#okcu29" automaticCoupling="true"/>
+    </DeleteUnit>
+    <OKCollectorUnit id="mov1#opm25#okcu29" name="success" gr:x="500" gr:y="10">
+      <OutputCollectorParameter id="mov1#opm25#okcu29#ocp75" name="Message" value="the penalty with code $$userCode$$ Successfully Deleted"/>
+      <OutputCollectorParameter id="mov1#opm25#okcu29#ocp76" name="userCode"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,14 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv4" name="CirculationStaffSiteView" protected="true" homePage="sv4#page7" layout:style="WebRatio" landmarks="sv4#area17 sv4#area12 sv4#area13">
+  <OperationUnits>
+    <LogoutUnit gr:x="315" gr:y="50" id="sv4#lou2" name="Logout" siteView="sv2"/>
+    <NoOpOperationUnit id="sv4#opu2" name="Reset Search" gr:x="215" gr:y="180">
+      <OKLink id="sv4#opu2#oln88" name="OKLink13" to="sv4#area17#page21" automaticCoupling="true" gr:bendpoints="-103,0,-68,-210"/>
+    </NoOpOperationUnit>
+    <NoOpOperationUnit id="sv4#opu5" name="Reset Search" gr:x="640" gr:y="185">
+      <OKLink id="sv4#opu5#oln106" name="OKFlow89" to="sv4#area12#page6" automaticCoupling="true" gr:bendpoints="112,27,-68,-138"/>
+    </NoOpOperationUnit>
+    <NoOpOperationUnit gr:x="1215" gr:y="170" id="sv4#opu3" name="Reset Search">
+      <OKLink id="sv4#opu3#oln89" name="OKFlow89" to="sv4#area13#page25" automaticCoupling="true"/>
+    </NoOpOperationUnit>
+  </OperationUnits>
+</SiteView>

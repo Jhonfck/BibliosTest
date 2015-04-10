@@ -1,0 +1,80 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym4#page22" name="Loan List" gr:x="405" gr:y="-70">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="0" gr:y="120" id="mov1#hym4#page22#pwu23" name="Loan List" sortable="true" checkable="false" useCountQuery="false" entity="ent7" displayAttributes="ent7#att36 ent7#att44 ent7#att46 ent7#att34 ent7#att48" linkOrder="mov1#hym4#page22#pwu23#ln112">
+      <Selector id="mov1#hym4#page22#pwu23#su30" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym4#page22#pwu23#su30#rcond10" name="User" predicate="in" implied="false" role="rel9#role17"/>
+      </Selector>
+      <Link id="mov1#hym4#page22#pwu23#ln112" name="Return" to="mov1#hym4#miu23" type="normal" validate="true">
+        <LinkParameter id="mov1#hym4#page22#pwu23#ln112#par428" name="oid_oidLoan" source="data[].ent7#att33" target="mov1#hym4#miu23.mov1#mpkg3#opm19#icu19#icp54"/>
+        <LinkParameter id="mov1#hym4#page22#pwu23#ln112#par429" name="returnDate_returnDate" source="data[].ent7#att46" target="mov1#hym4#miu23.mov1#mpkg3#opm19#icu19#icp55"/>
+        <LinkParameter id="mov1#hym4#page22#pwu23#ln112#par430" name="Code_userCode" source="data[].ent7#att48" target="mov1#hym4#miu23.mov1#mpkg3#opm19#icu19#icp58"/>
+      </Link>
+      <Link id="mov1#hym4#page22#pwu23#ln121" name="Flow121" to="mov1#hym4#page22#seu12" type="transport" validate="true">
+        <LinkParameter id="mov1#hym4#page22#pwu23#ln121#par255" name="oid_RoleCondition6 [oid]" source="data[].ent7#att33" target="mov1#hym4#page22#seu12#su42#rcond6.ent7#att33"/>
+      </Link>
+      <Link id="mov1#hym4#page22#pwu23#ln124" name="Flow124" to="mov1#hym4#page22#seu29" type="transport" validate="true">
+        <LinkParameter id="mov1#hym4#page22#pwu23#ln124#par260" name="oid_RoleCondition14 [oid]" source="data[].ent7#att33" target="mov1#hym4#page22#seu29#su47#rcond14.ent7#att33"/>
+      </Link>
+    </PowerIndexUnit>
+    <SelectorUnit gr:x="50" gr:y="10" id="mov1#hym4#page22#seu12" name="copies" entity="ent6">
+      <Selector id="mov1#hym4#page22#seu12#su42" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym4#page22#seu12#su42#rcond6" name="RoleCondition6" predicate="in" implied="false" role="rel8#role16"/>
+      </Selector>
+      <Link id="mov1#hym4#page22#seu12#ln127" name="Flow127" to="mov1#hym4#miu23" type="transport" validate="true">
+        <LinkParameter id="mov1#hym4#page22#seu12#ln127#par427" name="BiblioMaterialToBiblioMaterial2.oid_oidLibro" source="rel5#role10_ent3#att6Array" target="mov1#hym4#miu23.mov1#mpkg3#opm19#icu19#icp74"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="105" gr:y="230" id="mov1#hym4#page22#seu29" name="user" entity="User">
+      <Selector id="mov1#hym4#page22#seu29#su47" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym4#page22#seu29#su47#rcond14" name="RoleCondition14" predicate="in" implied="false" role="rel9#role18"/>
+      </Selector>
+      <Link id="mov1#hym4#page22#seu29#ln126" name="Flow126" to="mov1#hym4#miu23" type="transport" validate="true">
+        <LinkParameter id="mov1#hym4#page22#seu29#ln126#par426" name="defaultGroup.oid_oidUser" source="User2DefaultGroup_groupOIDArray" target="mov1#hym4#miu23.mov1#mpkg3#opm19#icu19#icp75"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit gr:x="170" gr:y="0" id="mov1#hym4#page22#mssu4" name="Message">
+      <Placeholder id="mov1#hym4#page22#mssu4#ph10" name="userCode"/>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym4#page22#pwu23">
+          <layout:Link link="mov1#hym4#page22#pwu23#ln112"/>
+          <layout:Attribute attribute="ent7#att36"/>
+          <layout:Attribute attribute="ent7#att44"/>
+          <layout:Attribute attribute="ent7#att46"/>
+          <layout:Attribute attribute="ent7#att34"/>
+          <layout:Attribute attribute="ent7#att48"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym4#page22#mssu4"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

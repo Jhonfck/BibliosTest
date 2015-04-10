@@ -1,0 +1,1 @@
+INSERT INTO "APP"."MODULE" ("OID", "MODULE_ID", "MODULE_NAME") VALUES (6, 'sv6', 'Administrator');

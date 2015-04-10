@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Descriptor service="com.webratio.units.utility.rtx.db.SelectorUnitService" name="Associated Modules">
+  <MaxResults/>
+  <Query entity="Module">
+    <Output id="moduleOID" name="oid" index="0"/>
+    <Output id="moduleName" name="moduleName" index="1"/>
+    <HQL>select a_module.oid, a_module.moduleName from Module a_module</HQL>
+  </Query>
+</Descriptor>
+ 

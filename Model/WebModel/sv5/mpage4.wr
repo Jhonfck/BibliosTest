@@ -1,0 +1,27 @@
+<MasterPage xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv5#mpage4" name="User Profile" localized="false" layout:style="WebRatio" layout:attributeLayout="WRDefault/Default" layout:fieldLayout="WRDefault/EntryUnit" layout:linkLayout="WRDefault/Default" gr:x="150" gr:y="-20">
+  <ContentUnits>
+    <GetUnit id="sv5#mpage4#gtu4" name="Get User" gr:x="0" gr:y="5" contextParameters="UserCtxParam">
+      <Link id="sv5#mpage4#gtu4#ln80" name="Flow7" to="sv5#mpage4#dau5" type="transport" automaticCoupling="true" validate="true"/>
+    </GetUnit>
+    <DataUnit id="sv5#mpage4#dau5" name="User Profile" linkOrder="sv5#mpage4#dau5#ln81" gr:x="145" gr:y="0" entity="User" displayAttributes="userName">
+      <Selector id="sv5#mpage4#dau5#su23" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv5#mpage4#dau5#su23#kcond22" name="User" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv5#mpage4#dau5#ln81" name="Logout" to="sv5#lou5" type="normal" validate="true"/>
+    </DataUnit>
+  </ContentUnits>
+  <layout:CustomLocation name="User">
+    <layout:Grid containerType="cell">
+      <layout:Row>
+        <layout:Cell>
+          <layout:Unit unitId="sv5#mpage4#dau5" layout:style="WebRatio" layout:frameLayout="None" layout:unitLayout="WRDefault/User" layout:attributeLayout="WRDefault/Default" layout:linkLayout="WRDefault/Default">
+            <layout:Link link="sv5#mpage4#dau5#ln81"/>
+            <layout:LayoutParameter name="prefix-text" value="Welcome" type="unit"/>
+            <layout:Attribute attribute="userName"/>
+            <layout:LayoutParameter name="link-style" value="normal" type="link"/>
+          </layout:Unit>
+        </layout:Cell>
+      </layout:Row>
+    </layout:Grid>
+  </layout:CustomLocation>
+</MasterPage>

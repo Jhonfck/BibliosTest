@@ -1,0 +1,41 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="350" gr:y="130" id="mov1#hym2#page26" name="BiblioMaterial Details">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="0" id="mov1#hym2#page26#dau14" name="Bibliography Material" entity="ent3" displayAttributes="ent3#att7 ent3#att8 ent3#att14 ent3#att15 ent3#att16 ent3#att19 ent3#att32" linkOrder="mov1#hym2#page26#dau14#ln131">
+      <Selector id="mov1#hym2#page26#dau14#su46" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym2#page26#dau14#su46#kcond39" name="KeyCondition39" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#hym2#page26#dau14#ln131" name="Copies List" to="mov1#hym2#okcu22" type="normal" validate="true">
+        <LinkParameter id="mov1#hym2#page26#dau14#ln131#par267" name="oid_oid BiblioMaterial" source="data.ent3#att6" target="mov1#hym2#okcu22#ocp77"/>
+      </Link>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym2#page26#dau14">
+          <layout:Attribute attribute="ent3#att7"/>
+          <layout:Attribute attribute="ent3#att8"/>
+          <layout:Attribute attribute="ent3#att14"/>
+          <layout:Attribute attribute="ent3#att15"/>
+          <layout:Attribute attribute="ent3#att16"/>
+          <layout:Attribute attribute="ent3#att19"/>
+          <layout:Attribute attribute="ent3#att32"/>
+          <layout:Link link="mov1#hym2#page26#dau14#ln131">
+            <layout:LayoutParameter name="link-style" value="button" type="link"/>
+          </layout:Link>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

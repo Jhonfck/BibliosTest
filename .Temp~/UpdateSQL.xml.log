@@ -1,0 +1,27 @@
+[05 abr 2015 21:25:01] DEBUG Executing SQL script
+[05 abr 2015 21:25:01] INFO ================================================================================
+[05 abr 2015 21:25:01] INFO outputPath= '/Users/JRios/Documents/Desarrollo/CRM/BibliosTest/.Temp~/UpdateSQL.xml'
+[05 abr 2015 21:25:01] INFO onError= 'stop'
+[05 abr 2015 21:25:01] INFO statementSeparator= ';'
+[05 abr 2015 21:25:01] INFO derby.system.home= '/Users/JRios/Documents/Desarrollo/CRM/.metadata/.plugins/com.webratio.commons.db/derby'
+[05 abr 2015 21:25:01] INFO password= 'varose'
+[05 abr 2015 21:25:01] INFO url= 'jdbc:derby://localhost:1527/DataBase;create=true'
+[05 abr 2015 21:25:01] INFO username= 'admin'
+[05 abr 2015 21:25:01] INFO autoCommit= 'false'
+[05 abr 2015 21:25:01] INFO outputLogPath= '/Users/JRios/Documents/Desarrollo/CRM/BibliosTest/.Temp~/UpdateSQL.xml.log'
+[05 abr 2015 21:25:01] INFO driverClass= 'org.apache.derby.jdbc.ClientDriver'
+[05 abr 2015 21:25:01] INFO encoding= ''
+[05 abr 2015 21:25:01] INFO eventSocketPort= '49950'
+[05 abr 2015 21:25:01] INFO sqlScript= '/Users/JRios/Documents/Desarrollo/CRM/BibliosTest/.Temp~/UpdateSQL.sql'
+[05 abr 2015 21:25:01] INFO ================================================================================
+[05 abr 2015 21:25:01] INFO Connecting to the Database...
+[05 abr 2015 21:25:02] INFO Database connection estabilished
+[05 abr 2015 21:25:02] INFO transaction isolation: 2
+[05 abr 2015 21:25:02] DEBUG ================================================================================
+[05 abr 2015 21:25:02] DEBUG Executing SQL script file: /Users/JRios/Documents/Desarrollo/CRM/BibliosTest/.Temp~/UpdateSQL.sql
+[05 abr 2015 21:25:02] DEBUG Executing statement:  create table "APP"."PENALTY" ( "OID"  integer  not null, "CODEUSER"  integer, "PENALTYDATE"  date, "AMOUNT"  integer, primary key ("OID") )
+[05 abr 2015 21:25:02] DEBUG Executing statement:    alter table "APP"."LOAN"  add column  "PENALTY_OID"  integer
+[05 abr 2015 21:25:02] DEBUG ================================================================================
+[05 abr 2015 21:25:02] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[05 abr 2015 21:25:02] INFO Database connection closed
+[05 abr 2015 21:25:02] DEBUG Total time: 1342 milliseconds

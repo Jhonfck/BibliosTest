@@ -1,0 +1,73 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym4#page28" name="Penalty Info" gr:x="1020" gr:y="85">
+  <ContentUnits>
+    <PowerIndexUnit id="mov1#hym4#page28#pwu13" name="Penalty List" linkOrder="mov1#hym4#page28#pwu13#ln113" gr:x="140" gr:y="0" sortable="true" checkable="false" useCountQuery="false" entity="ent9" displayAttributes="ent9#att49 ent9#att50 ent9#att51">
+      <Link id="mov1#hym4#page28#pwu13#ln113" name="Delete" to="mov1#hym4#miu33" type="normal" validate="true">
+        <LinkParameter id="mov1#hym4#page28#pwu13#ln113#par254" name="oid_oidPenalty" source="data[].ent9#att45" target="mov1#hym4#miu33.mov1#opm25#icu29#icp76"/>
+        <LinkParameter id="mov1#hym4#page28#pwu13#ln113#par258" name="codeUser_userCode" source="data[].ent9#att49" target="mov1#hym4#miu33.mov1#opm25#icu29#icp77"/>
+      </Link>
+    </PowerIndexUnit>
+    <DataUnit id="mov1#hym4#page28#dau10" name="Penalty Details" gr:x="0" gr:y="0" entity="ent9" displayAttributes="ent9#att49 ent9#att50 ent9#att51">
+      <Selector id="mov1#hym4#page28#dau10#su43" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym4#page28#dau10#su43#kcond28" name="KeyCondition41" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#hym4#page28#dau10#ln122" name="Flow166" to="mov1#hym4#page28#pwu13" type="transport" automaticCoupling="true" validate="true"/>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym4#page28#pwu13">
+          <layout:Link link="mov1#hym4#page28#pwu13#ln113"/>
+          <layout:Attribute attribute="ent9#att49"/>
+          <layout:Attribute attribute="ent9#att50"/>
+          <layout:Attribute attribute="ent9#att51"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym4#page28#dau10">
+          <layout:Attribute attribute="ent9#att49"/>
+          <layout:Attribute attribute="ent9#att50"/>
+          <layout:Attribute attribute="ent9#att51"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

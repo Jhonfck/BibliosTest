@@ -1,0 +1,61 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="515" gr:y="0" id="mov1#mpkg1#opm17" name="Manage Rules">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm17#icu17" gr:x="15" gr:y="115" linkOrder="mov1#mpkg1#opm17#icu17#ln73 mov1#mpkg1#opm17#icu17#ln74">
+      <OKLink id="mov1#mpkg1#opm17#icu17#oln62" name="OKFlow62" to="mov1#mpkg1#opm17#inn8">
+        <LinkParameter id="mov1#mpkg1#opm17#icu17#oln62#par118" name="Rulesoid_Input" source="mov1#mpkg1#opm17#icu17#icp34" target="mov1#mpkg1#opm17#inn8.isnotnull"/>
+      </OKLink>
+      <Link id="mov1#mpkg1#opm17#icu17#ln71" name="Flow71" to="mov1#mpkg1#opm17#cru8" type="transport" validate="true" gr:bendpoints="180,-107,-175,-12">
+        <LinkParameter id="mov1#mpkg1#opm17#icu17#ln71#par114" name="Rulesoid_oid" source="mov1#mpkg1#opm17#icu17#icp34" target="mov1#mpkg1#opm17#cru8.ent5#att20"/>
+        <LinkParameter id="mov1#mpkg1#opm17#icu17#ln71#par115" name="RulesObject_Rules Object" source="mov1#mpkg1#opm17#icu17#icp33" target="mov1#mpkg1#opm17#cru8.entityBeans"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm17#icu17#ln72" name="Flow72" to="mov1#mpkg1#opm17#mfu8" type="transport" validate="true" gr:bendpoints="180,115,-175,25">
+        <LinkParameter id="mov1#mpkg1#opm17#icu17#ln72#par116" name="Rulesoid_KeyCondition20 [oid]" source="mov1#mpkg1#opm17#icu17#icp34" target="mov1#mpkg1#opm17#mfu8#su21#kcond20.ent5#att20"/>
+        <LinkParameter id="mov1#mpkg1#opm17#icu17#ln72#par117" name="RulesObject_Rules Object" source="mov1#mpkg1#opm17#icu17#icp33" target="mov1#mpkg1#opm17#mfu8.entityBeans"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg1#opm17#icu17#icp33" name="RulesObject"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm17#icu17#icp34" name="Rulesoid"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm17#icu17#icp35" name="RulesName"/>
+      <Link id="mov1#mpkg1#opm17#icu17#ln73" name="Flow73" to="mov1#mpkg1#opm17#okcu16" type="transport" validate="true" gr:bendpoints="345,-169,-270,-94">
+        <LinkParameter id="mov1#mpkg1#opm17#icu17#ln73#par113" name="RulesName_RulesName" source="mov1#mpkg1#opm17#icu17#icp35" target="mov1#mpkg1#opm17#okcu16#ocp25"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm17#icu17#ln74" name="Flow74" to="mov1#mpkg1#opm17#kocu17" type="transport" validate="true" gr:bendpoints="345,190,-270,95">
+        <LinkParameter id="mov1#mpkg1#opm17#icu17#ln74#par112" name="RulesName_RulesName" source="mov1#mpkg1#opm17#icu17#icp35" target="mov1#mpkg1#opm17#kocu17#ocp27"/>
+      </Link>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="440" gr:y="40" id="mov1#mpkg1#opm17#cru8" name="Rules Create" entity="ent5">
+      <KOLink id="mov1#mpkg1#opm17#cru8#kln50" name="KOFlow50" to="mov1#mpkg1#opm17#kocu17" automaticCoupling="true"/>
+      <OKLink id="mov1#mpkg1#opm17#cru8#oln66" name="OKFlow66" to="mov1#mpkg1#opm17#okcu16"/>
+    </CreateUnit>
+    <ModifyUnit gr:x="440" gr:y="220" id="mov1#mpkg1#opm17#mfu8" name="Rules Update" entity="ent5">
+      <Selector id="mov1#mpkg1#opm17#mfu8#su21" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm17#mfu8#su21#kcond20" name="KeyCondition20" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov1#mpkg1#opm17#mfu8#kln49" name="KOFlow49" to="mov1#mpkg1#opm17#kocu17" automaticCoupling="true"/>
+      <OKLink id="mov1#mpkg1#opm17#mfu8#oln64" name="OKFlow64" to="mov1#mpkg1#opm17#okcu16" automaticCoupling="true"/>
+    </ModifyUnit>
+    <IsNotNullUnit gr:x="285" gr:y="145" id="mov1#mpkg1#opm17#inn8" name="Is Not Null">
+      <OKLink id="mov1#mpkg1#opm17#inn8#oln63" name="OKFlow63" to="mov1#mpkg1#opm17#mfu8" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm17#inn8#kln48" name="KOFlow48" to="mov1#mpkg1#opm17#cru8" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <OKCollectorUnit gr:x="715" gr:y="35" id="mov1#mpkg1#opm17#okcu16" name="Successful">
+      <OutputCollectorParameter id="mov1#mpkg1#opm17#okcu16#ocp25" name="RulesName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm17#okcu16#ocp26" name="Message" value="Rules $$RulesName$$ Saved"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="715" gr:y="225" id="mov1#mpkg1#opm17#kocu17" name="failure">
+      <OutputCollectorParameter id="mov1#mpkg1#opm17#kocu17#ocp27" name="RulesName" value="Rules $$RulesName$$ Not Saved"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm17#kocu17#ocp28" name="Message" value="Rules $$RulesName$$  Not Saved"/>
+    </KOCollectorUnit>
+    <ScriptUnit gr:x="650" gr:y="95" id="mov1#mpkg1#opm17#scu1" name="calcula fecha devolucion">
+      <ScriptUnitText xml:space="preserve">#input returnday, date
+#output fechadevolucion
+
+Calendar calendar = Calendar.getInstance();
+	
+      calendar.setTime(date); // Configuramos la fecha que se recibe
+	
+      calendar.add(Calendar.DAY_OF_YEAR, returnday);  // numero de d&#237;as a a&#241;adir, o restar en caso de d&#237;as&lt;0
+
+return ["fechadevolucion":calendar.getTime()] // Devuelve el objeto Date con los nuevos d&#237;as a&#241;adidos</ScriptUnitText>
+    </ScriptUnit>
+  </OperationUnits>
+</OperationModule>

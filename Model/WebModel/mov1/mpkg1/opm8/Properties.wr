@@ -1,0 +1,32 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="5" gr:y="275" id="mov1#mpkg1#opm8" name="Delete Modules">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm8#icu8" gr:x="30" gr:y="60" linkOrder="mov1#mpkg1#opm8#icu8#ln100 mov1#mpkg1#opm8#icu8#ln101">
+      <OKLink id="mov1#mpkg1#opm8#icu8#oln22" name="OKFlow22" to="mov1#mpkg1#opm8#dlu3">
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#oln22#par60" name="oidModule_KeyCondition9 [oid]" source="mov1#mpkg1#opm8#icu8#icp13" target="mov1#mpkg1#opm8#dlu3#su9#kcond9.moduleOID"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#mpkg1#opm8#icu8#icp13" name="oidModule"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm8#icu8#icp39" name="moduleName"/>
+      <Link id="mov1#mpkg1#opm8#icu8#ln100" name="Flow100" to="mov1#mpkg1#opm8#okcu5" type="transport" validate="true" gr:bendpoints="231,-99,-194,-69">
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln100#par186" name="moduleName_moduleName" source="mov1#mpkg1#opm8#icu8#icp39" target="mov1#mpkg1#opm8#okcu5#ocp53"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm8#icu8#ln101" name="Flow101" to="mov1#mpkg1#opm8#kocu7" type="transport" validate="true" gr:bendpoints="231,99,-194,49">
+        <LinkParameter id="mov1#mpkg1#opm8#icu8#ln101#par187" name="moduleName_moduleName" source="mov1#mpkg1#opm8#icu8#icp39" target="mov1#mpkg1#opm8#kocu7#ocp55"/>
+      </Link>
+    </InputCollectorUnit>
+    <DeleteUnit gr:x="315" gr:y="55" id="mov1#mpkg1#opm8#dlu3" name="Delete Module" entity="Module">
+      <Selector id="mov1#mpkg1#opm8#dlu3#su9" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm8#dlu3#su9#kcond9" name="KeyCondition9" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm8#dlu3#oln21" name="OKFlow21" to="mov1#mpkg1#opm8#okcu5" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm8#dlu3#kln18" name="KOFlow18" to="mov1#mpkg1#opm8#kocu7" automaticCoupling="true"/>
+    </DeleteUnit>
+    <OKCollectorUnit gr:x="455" gr:y="30" id="mov1#mpkg1#opm8#okcu5" name="Successful">
+      <OutputCollectorParameter id="mov1#mpkg1#opm8#okcu5#ocp53" name="moduleName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm8#okcu5#ocp54" name="Message" value="Module $$moduleName$$ Deleted"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="455" gr:y="110" id="mov1#mpkg1#opm8#kocu7" name="Failure">
+      <OutputCollectorParameter id="mov1#mpkg1#opm8#kocu7#ocp55" name="moduleName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm8#kocu7#ocp56" name="Message" value="Module $$moduleName$$ Not Deleted"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

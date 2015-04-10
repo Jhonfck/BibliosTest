@@ -1,0 +1,34 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#mpkg3#opm19" name="Manage Return" gr:x="5" gr:y="120">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg3#opm19#icu19" gr:x="-75" gr:y="15" linkOrder="mov1#mpkg3#opm19#icu19#ln180">
+      <InputCollectorParameter id="mov1#mpkg3#opm19#icu19#icp54" name="oidLoan"/>
+      <InputCollectorParameter id="mov1#mpkg3#opm19#icu19#icp55" name="returnDate"/>
+      <InputCollectorParameter id="mov1#mpkg3#opm19#icu19#icp58" name="userCode"/>
+      <Link id="mov1#mpkg3#opm19#icu19#ln128" name="Flow176" to="mov1#mpkg3#opm19#opg4#dlu15" type="transport" validate="true" gr:bendpoints="547,166,-343,206">
+        <LinkParameter id="mov1#mpkg3#opm19#icu19#ln128#par276" name="oidLoan_KeyCondition41 [oid]" source="mov1#mpkg3#opm19#icu19#icp54" target="mov1#mpkg3#opm19#opg4#dlu15#su76#kcond48.ent7#att33"/>
+      </Link>
+      <Link id="mov1#mpkg3#opm19#icu19#ln160" name="Flow177" to="mov1#mpkg3#opm19#opg4#seu37" type="transport" validate="true" gr:bendpoints="437,151,-323,156">
+        <LinkParameter id="mov1#mpkg3#opm19#icu19#ln160#par287" name="oidLoan_Loan [oid]" source="mov1#mpkg3#opm19#icu19#icp54" target="mov1#mpkg3#opm19#opg4#seu37#su73#rcond23.ent7#att33"/>
+      </Link>
+      <OKLink id="mov1#mpkg3#opm19#icu19#oln72" name="OKFlow123" to="mov1#mpkg3#opm19#opg4#seu38">
+        <LinkParameter id="mov1#mpkg3#opm19#icu19#oln72#par290" name="oidLibro_colletion [oid]" source="mov1#mpkg3#opm19#icu19#icp74" target="mov1#mpkg3#opm19#opg4#seu38#su75#rcond25.ent4#att17"/>
+        <LinkParameter id="mov1#mpkg3#opm19#icu19#oln72#par360" name="oidUser_group [oid]" source="mov1#mpkg3#opm19#icu19#icp75" target="mov1#mpkg3#opm19#opg4#seu38#su75#rcond24.groupOID"/>
+      </OKLink>
+      <Link id="mov1#mpkg3#opm19#icu19#ln166" name="Flow181" to="mov1#mpkg3#opm19#opg4#scu7" type="transport" validate="true" gr:bendpoints="232,123,-203,118">
+        <LinkParameter id="mov1#mpkg3#opm19#icu19#ln166#par361" name="returnDate_returnDate" source="mov1#mpkg3#opm19#icu19#icp55" target="mov1#mpkg3#opm19#opg4#scu7.returnDate"/>
+      </Link>
+      <Link id="mov1#mpkg3#opm19#icu19#ln168" name="Flow185" to="mov1#mpkg3#opm19#opg4#cru14" type="transport" validate="true" gr:bendpoints="140,-181,-480,-51">
+        <LinkParameter id="mov1#mpkg3#opm19#icu19#ln168#par363" name="userCode_codeUser" source="mov1#mpkg3#opm19#icu19#icp58" target="mov1#mpkg3#opm19#opg4#cru14.ent9#att49"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg3#opm19#icu19#icp74" name="oidLibro"/>
+      <InputCollectorParameter id="mov1#mpkg3#opm19#icu19#icp75" name="oidUser"/>
+      <Link id="mov1#mpkg3#opm19#icu19#ln180" name="Flow180" to="mov1#mpkg3#opm19#okcu19" type="transport" validate="true" gr:bendpoints="567,242,-753,252">
+        <LinkParameter id="mov1#mpkg3#opm19#icu19#ln180#par264" name="userCode_userCode" source="mov1#mpkg3#opm19#icu19#icp58" target="mov1#mpkg3#opm19#okcu19#ocp79"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov1#mpkg3#opm19#okcu19" name="success" gr:x="1245" gr:y="40">
+      <OutputCollectorParameter id="mov1#mpkg3#opm19#okcu19#ocp79" name="userCode"/>
+      <OutputCollectorParameter id="mov1#mpkg3#opm19#okcu19#ocp80" name="message" value="The Loan with userCode $$userCode$$ was return successfully "/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,32 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="520" gr:y="60" id="mov1#mpkg1#opm18" name="Delete Rules">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm18#icu18" gr:x="30" gr:y="125" linkOrder="mov1#mpkg1#opm18#icu18#ln75 mov1#mpkg1#opm18#icu18#ln76">
+      <OKLink id="mov1#mpkg1#opm18#icu18#oln68" name="OKFlow68" to="mov1#mpkg1#opm18#dlu8">
+        <LinkParameter id="mov1#mpkg1#opm18#icu18#oln68#par119" name="RulesOid_KeyCondition21 [oid]" source="mov1#mpkg1#opm18#icu18#icp37" target="mov1#mpkg1#opm18#dlu8#su22#kcond21.ent5#att20"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#mpkg1#opm18#icu18#icp36" name="RulesName"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm18#icu18#icp37" name="RulesOid"/>
+      <Link id="mov1#mpkg1#opm18#icu18#ln75" name="Flow75" to="mov1#mpkg1#opm18#okcu17" type="transport" validate="true" gr:bendpoints="216,-133,-244,-98">
+        <LinkParameter id="mov1#mpkg1#opm18#icu18#ln75#par121" name="RulesName_RulesName" source="mov1#mpkg1#opm18#icu18#icp36" target="mov1#mpkg1#opm18#okcu17#ocp29"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm18#icu18#ln76" name="Flow76" to="mov1#mpkg1#opm18#kocu18" type="transport" validate="true" gr:bendpoints="215,140,-245,85">
+        <LinkParameter id="mov1#mpkg1#opm18#icu18#ln76#par120" name="RulesName_RulesName" source="mov1#mpkg1#opm18#icu18#icp36" target="mov1#mpkg1#opm18#kocu18#ocp31"/>
+      </Link>
+    </InputCollectorUnit>
+    <DeleteUnit gr:x="305" gr:y="125" id="mov1#mpkg1#opm18#dlu8" name="Rules Delete" entity="ent5">
+      <Selector id="mov1#mpkg1#opm18#dlu8#su22" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm18#dlu8#su22#kcond21" name="KeyCondition21" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm18#dlu8#oln67" name="OKFlow67" to="mov1#mpkg1#opm18#okcu17" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm18#dlu8#kln51" name="KOFlow51" to="mov1#mpkg1#opm18#kocu18" automaticCoupling="true"/>
+    </DeleteUnit>
+    <OKCollectorUnit gr:x="490" gr:y="90" id="mov1#mpkg1#opm18#okcu17" name="Successful">
+      <OutputCollectorParameter id="mov1#mpkg1#opm18#okcu17#ocp29" name="RulesName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm18#okcu17#ocp30" name="Message" value="Rules $$RulesName$$ Deleted"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="490" gr:y="180" id="mov1#mpkg1#opm18#kocu18" name="Failure">
+      <OutputCollectorParameter id="mov1#mpkg1#opm18#kocu18#ocp31" name="RulesName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm18#kocu18#ocp32" name="Message" value="Rules $$RulesName$$ Not Delete"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

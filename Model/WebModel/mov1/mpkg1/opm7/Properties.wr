@@ -1,0 +1,49 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="5" gr:y="220" id="mov1#mpkg1#opm7" name="Manage Modules">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm7#icu7" gr:x="30" gr:y="60" linkOrder="mov1#mpkg1#opm7#icu7#ln98 mov1#mpkg1#opm7#icu7#ln99">
+      <OKLink id="mov1#mpkg1#opm7#icu7#oln24" name="OKFlow24" to="mov1#mpkg1#opm7#inn3">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#oln24#par61" name="oidModule_Input" source="mov1#mpkg1#opm7#icu7#icp14" target="mov1#mpkg1#opm7#inn3.isnotnull"/>
+      </OKLink>
+      <Link id="mov1#mpkg1#opm7#icu7#ln29" name="Flow29" to="mov1#mpkg1#opm7#cru3" type="transport" validate="true" gr:bendpoints="127,-63,-208,-3">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln29#par62" name="ModuleObject_Module Object" source="mov1#mpkg1#opm7#icu7#icp17" target="mov1#mpkg1#opm7#cru3.entityBeans"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln29#par63" name="oidModule_oid" source="mov1#mpkg1#opm7#icu7#icp14" target="mov1#mpkg1#opm7#cru3.moduleOID"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm7#icu7#ln30" name="Flow30" to="mov1#mpkg1#opm7#mfu3" type="transport" validate="true" gr:bendpoints="128,81,-207,-9">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln30#par64" name="ModuleObject_Module Object" source="mov1#mpkg1#opm7#icu7#icp17" target="mov1#mpkg1#opm7#mfu3.entityBeans"/>
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln30#par65" name="oidModule_moduleName" source="mov1#mpkg1#opm7#icu7#icp14" target="mov1#mpkg1#opm7#mfu3.moduleName"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp16" name="moduleName"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp14" name="oidModule"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm7#icu7#icp17" name="ModuleObject"/>
+      <Link id="mov1#mpkg1#opm7#icu7#ln98" name="Flow98" to="mov1#mpkg1#opm7#okcu6" type="transport" validate="true" gr:bendpoints="332,-138,-223,-63">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln98#par185" name="moduleName_moduleName" source="mov1#mpkg1#opm7#icu7#icp16" target="mov1#mpkg1#opm7#okcu6#ocp49"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm7#icu7#ln99" name="Flow99" to="mov1#mpkg1#opm7#kocu8" type="transport" validate="true" gr:bendpoints="338,153,-217,58">
+        <LinkParameter id="mov1#mpkg1#opm7#icu7#ln99#par184" name="moduleName_moduleName" source="mov1#mpkg1#opm7#icu7#icp16" target="mov1#mpkg1#opm7#kocu8#ocp51"/>
+      </Link>
+    </InputCollectorUnit>
+    <IsNotNullUnit gr:x="285" gr:y="70" id="mov1#mpkg1#opm7#inn3" name="Is Not Null?">
+      <OKLink id="mov1#mpkg1#opm7#inn3#oln23" name="OKFlow23" to="mov1#mpkg1#opm7#mfu3" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm7#inn3#kln19" name="KOFlow19" to="mov1#mpkg1#opm7#cru3" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="425" gr:y="0" id="mov1#mpkg1#opm7#cru3" name="Create Module" entity="Module">
+      <OKLink id="mov1#mpkg1#opm7#cru3#oln25" name="OKFlow25" to="mov1#mpkg1#opm7#okcu6" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm7#cru3#kln21" name="KOFlow21" to="mov1#mpkg1#opm7#kocu8" automaticCoupling="true"/>
+    </CreateUnit>
+    <ModifyUnit gr:x="420" gr:y="140" id="mov1#mpkg1#opm7#mfu3" name="Update Module" entity="Module">
+      <Selector id="mov1#mpkg1#opm7#mfu3#su10" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm7#mfu3#su10#kcond10" name="KeyCondition10" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm7#mfu3#oln26" name="OKFlow26" to="mov1#mpkg1#opm7#okcu6" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm7#mfu3#kln20" name="KOFlow20" to="mov1#mpkg1#opm7#kocu8" automaticCoupling="true"/>
+    </ModifyUnit>
+    <OKCollectorUnit gr:x="585" gr:y="0" id="mov1#mpkg1#opm7#okcu6" name="Successful">
+      <OutputCollectorParameter id="mov1#mpkg1#opm7#okcu6#ocp49" name="moduleName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm7#okcu6#ocp50" name="Message" value="Module $$moduleName$$ Saved"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="585" gr:y="170" id="mov1#mpkg1#opm7#kocu8" name="Failure">
+      <OutputCollectorParameter id="mov1#mpkg1#opm7#kocu8#ocp51" name="moduleName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm7#kocu8#ocp52" name="Message" value="Module $$moduleName$$ Not Saved"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

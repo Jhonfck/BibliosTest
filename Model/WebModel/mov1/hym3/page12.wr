@@ -1,0 +1,40 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym3#page12" name="User Details" gr:x="485" gr:y="135">
+  <ContentUnits>
+    <DataUnit id="mov1#hym3#page12#dau15" name="User" gr:x="0" gr:y="0" entity="User" displayAttributes="User#att37 userName User#att9 User#att10 User#att38 User#att35" linkOrder="mov1#hym3#page12#dau15#ln167">
+      <Selector id="mov1#hym3#page12#dau15#su44" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym3#page12#dau15#su44#kcond33" name="KeyCondition39" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#hym3#page12#dau15#ln167" name="Loan List" to="mov1#hym3#okcu26" type="normal" validate="true">
+        <LinkParameter id="mov1#hym3#page12#dau15#ln167#par351" name="oid_oid User" source="data.userOID" target="mov1#hym3#okcu26#ocp78"/>
+      </Link>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym3#page12#dau15">
+          <layout:Link link="mov1#hym3#page12#dau15#ln167">
+            <layout:LayoutParameter name="link-style" value="button" type="link"/>
+          </layout:Link>
+          <layout:Attribute attribute="User#att37"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="User#att9"/>
+          <layout:Attribute attribute="User#att10"/>
+          <layout:Attribute attribute="User#att38"/>
+          <layout:Attribute attribute="User#att35"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

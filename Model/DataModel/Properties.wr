@@ -1,0 +1,227 @@
+<DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
+  <Entity id="User" name="User" duration="persistent" gr:x="0" gr:y="60" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att9 User#att10 User#att11 User#att12 User#att13 User#att37 User#att38 User#att35" db:database="db2" db:table="USER">
+    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="OID"/>
+    <Attribute name="UserName" id="userName" type="string" db:column="USERNAME" key="false"/>
+    <Attribute name="password" id="password" type="password" db:column="PASSWORD" key="false"/>
+    <Attribute name="email" id="email" type="string" db:column="EMAIL" key="false"/>
+    <Attribute id="User#att13" name="DateOfBirth" type="date" db:column="DATEOFBIRTH"/>
+    <Attribute id="User#att12" name="AddressUser" type="string" db:column="ADDRESSUSER"/>
+    <Attribute id="User#att11" name="CellPhone" type="string" db:column="CELLPHONE"/>
+    <Attribute id="User#att10" name="LastName" type="string" db:column="LASTNAME"/>
+    <Attribute id="User#att9" name="FirstName" type="string" db:column="FIRSTNAME"/>
+    <Attribute id="User#att37" name="Code" type="integer" db:column="CODE"/>
+    <Attribute id="User#att38" name="Group" type="string" derivationQuery="simpleImported::Self.User2DefaultGroup.groupName"/>
+    <Attribute id="User#att35" name="# Loads" type="integer" storageType="file" derivationQuery="calculated::count(Self.rel9#role17(as Var1))" db:table="USER_LOADS_VIEW" db:column="DER_ATTR">
+      <db:JoinColumn attribute="userOID" name="OID"/>
+    </Attribute>
+  </Entity>
+  <Entity id="Group" name="Group" duration="persistent" gr:x="250" gr:y="65" gr:hideAttributes="false" attributeOrder="groupOID groupName Group#att1 Group#att23" db:database="db2" db:table="GROUP">
+    <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="OID"/>
+    <Attribute name="groupName" id="groupName" type="string" db:column="GROUPNAME"/>
+    <Attribute id="Group#att1" name="modulo" type="string" derivationQuery="simpleImported::Self.Group2DefaultModule.moduleName"/>
+    <Attribute id="Group#att23" name="NumberBooksLend" type="integer" db:column="NUMBERBOOKSLEND"/>
+  </Entity>
+  <Entity id="Module" name="Module" duration="persistent" gr:x="535" gr:y="65" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db2" db:table="MODULE">
+    <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="OID"/>
+    <Attribute name="moduleID" id="moduleID" type="string" db:column="MODULEID"/>
+    <Attribute name="moduleName" id="moduleName" type="string" db:column="MODULENAME"/>
+  </Entity>
+  <Relationship id="User2Group_Group2User" name="User_Group" sourceEntity="User" targetEntity="Group" db:database="db2" db:table="USER_GROUP">
+    <RelationshipRole1 id="User2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Group2User" name="users" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="113,42,-112,44" db:database="db2" db:table="USER">
+    <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultGroup2User" name="defaultUsers" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Group2DefaultModule_DefaultModule2Group" name="Group_DefaultModule" sourceEntity="Group" targetEntity="Module" db:database="db2" db:table="GROUP">
+    <RelationshipRole1 id="Group2DefaultModule" name="defaultModule" maxCard="1">
+      <db:JoinColumn attribute="groupOID" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultModule2Group" name="defaultGroups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="MODULE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="110,41,-115,41" db:database="db2" db:table="GROUP_MODULE">
+    <RelationshipRole1 id="Group2Module" name="modules" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Module2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="MODULE_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="100" gr:y="775" id="ent1" name="StatusBiblioMaterial" duration="persistent" attributeOrder="ent1#att2 ent1#att3" db:database="db2" db:table="STATUSBIBLIOMATERIAL">
+    <Attribute id="ent1#att2" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent1#att3" name="statusName" type="string" db:column="STATUSNAME"/>
+  </Entity>
+  <Entity gr:x="-200" gr:y="720" id="ent2" name="TypeBiblioMaterial" duration="persistent" attributeOrder="ent2#att4 ent2#att5" db:database="db2" db:table="TYPEBIBLIOMATERIAL">
+    <Attribute id="ent2#att4" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent2#att5" name="TypeName" type="string" db:column="TYPENAME"/>
+  </Entity>
+  <Entity gr:x="10" gr:y="535" id="ent3" name="BiblioMaterial" duration="persistent" attributeOrder="ent3#att6 ent3#att7 ent3#att8 ent3#att14 ent3#att15 ent3#att16 ent3#att19 ent3#att32" db:database="db2" db:table="BIBLIOMATERIAL">
+    <Attribute id="ent3#att6" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent3#att7" name="ISBN" type="string" key="false" db:column="ISBN"/>
+    <Attribute id="ent3#att8" name="BiblioMaterialName" type="string" db:column="BIBLIOMATERIALNAME"/>
+    <Attribute id="ent3#att14" name="TypeBiblioMaterial" type="string" derivationQuery="simpleImported::Self.rel2#role3.ent2#att5"/>
+    <Attribute id="ent3#att15" name="StatusBiblioMaterial" type="string" derivationQuery="simpleImported::Self.rel1#role1.ent1#att3"/>
+    <Attribute id="ent3#att16" name="DescriptionMaterial" type="text" db:column="DESCRIPTIONMATERIAL" db:clob="true"/>
+    <Attribute id="ent3#att19" name="CollectionBiblioMaterial" type="string" derivationQuery="simpleImported::Self.rel3#role5.ent4#att18"/>
+    <Attribute id="ent3#att32" name="# Copies" type="integer" derivationQuery="calculated::count(Self.rel5#role9(as Var1))" db:table="BIBLIOMATERIAL_COPIES_VIEW" db:column="DER_ATTR" storageType="file">
+      <db:JoinColumn attribute="ent3#att6" name="OID"/>
+    </Attribute>
+  </Entity>
+  <Relationship id="rel1" name="BiblioMaterial_StatusBiblioMaterial" sourceEntity="ent3" targetEntity="ent1" db:database="db2" db:table="BIBLIOMATERIAL">
+    <RelationshipRole1 id="rel1#role1" name="BiblioMaterialToStatusBiblioMaterial" maxCard="1">
+      <db:JoinColumn attribute="ent3#att6" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel1#role2" name="StatusBiblioMaterialToBiblioMaterial" maxCard="N">
+      <db:JoinColumn attribute="ent1#att2" name="STATUSBIBLIOMATERIAL_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel2" name="BiblioMaterial_TypeBiblioMaterial" sourceEntity="ent3" targetEntity="ent2" db:database="db2" db:table="BIBLIOMATERIAL">
+    <RelationshipRole1 id="rel2#role3" name="BiblioMaterialToTypeBiblioMaterial" maxCard="1">
+      <db:JoinColumn attribute="ent3#att6" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel2#role4" name="TypeBiblioMaterialToBiblioMaterial" maxCard="N">
+      <db:JoinColumn attribute="ent2#att4" name="TYPEBIBLIOMATERIAL_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="-240" gr:y="530" id="ent4" name="CollectionBiblioMaterial" duration="persistent" attributeOrder="ent4#att17 ent4#att18" db:database="db2" db:table="COLLECTIONBIBLIOMATERIAL">
+    <Attribute id="ent4#att17" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent4#att18" name="CollectionName" type="string" db:column="COLLECTIONNAME"/>
+  </Entity>
+  <Relationship id="rel3" name="BiblioMaterial_CollectionBiblioMaterial" sourceEntity="ent3" targetEntity="ent4" db:database="db2" db:table="BIBLIOMATERIAL">
+    <RelationshipRole1 id="rel3#role5" name="BiblioMaterialToCollectionBiblioMaterial" maxCard="1">
+      <db:JoinColumn attribute="ent3#att6" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel3#role6" name="CollectionBiblioMaterialToBiblioMaterial" maxCard="N">
+      <db:JoinColumn attribute="ent4#att17" name="COLLECTIONBIBLIOMATERIAL_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="10" gr:y="355" id="ent5" name="Rules" duration="persistent" attributeOrder="ent5#att20 ent5#att21 ent5#att22 ent5#att25 ent5#att26 ent5#att27" db:database="db2" db:table="RULES">
+    <Attribute id="ent5#att20" key="true" name="oidRules" type="integer" db:column="OIDRULES"/>
+    <Attribute id="ent5#att21" name="ReturnDays" type="integer" db:column="RETURNDAYS"/>
+    <Attribute id="ent5#att22" name="PenaltyDays" type="integer" db:column="PENALTYDAYS"/>
+    <Attribute id="ent5#att25" name="CollectionBiblioMaterial" type="string" derivationQuery="simpleImported::Self.rel7#role13.ent4#att18"/>
+    <Attribute id="ent5#att26" name="UserGroup" type="string" derivationQuery="simpleImported::Self.rel4#role7.groupName"/>
+    <Attribute id="ent5#att27" name="RulesName" type="string" db:column="RULESNAME"/>
+  </Entity>
+  <Relationship id="rel4" name="Rules_Group" sourceEntity="ent5" targetEntity="Group" db:database="db2" db:table="RULES">
+    <RelationshipRole1 id="rel4#role7" name="RulesToGroup" maxCard="1">
+      <db:JoinColumn attribute="ent5#att20" name="OIDRULES"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel4#role8" name="GroupToRules" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="GROUP_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel7" name="Rules_CollectionBiblioMaterial" sourceEntity="ent5" targetEntity="ent4" db:database="db2" db:table="RULES">
+    <RelationshipRole1 id="rel7#role13" name="RulesToCollectionBiblioMaterial" maxCard="1">
+      <db:JoinColumn attribute="ent5#att20" name="OIDRULES"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel7#role14" name="CollectionBiblioMaterialToRules" maxCard="N">
+      <db:JoinColumn attribute="ent4#att17" name="COLLECTIONBIBLIOMATERIAL_OID_2"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="330" gr:y="630" id="ent6" name="Copies" duration="persistent" attributeOrder="ent6#att24 ent6#att28 ent6#att29 ent6#att30 ent6#att31" db:database="db2" db:table="COPIES">
+    <Attribute id="ent6#att24" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent6#att28" name="CopiesID" type="string" key="false" db:column="COPIESID"/>
+    <Attribute id="ent6#att29" name="TypeCopies" type="string" db:column="TYPECOPIES"/>
+    <Attribute id="ent6#att30" name="CopiesName" type="string" derivationQuery="simpleImported::Self.rel5#role10.ent3#att8"/>
+    <Attribute id="ent6#att31" name="StatusCopies" type="string" derivationQuery="simpleImported::Self.rel6#role11.ent1#att3"/>
+  </Entity>
+  <Relationship id="rel5" name="BiblioMaterial_BiblioMaterial" sourceEntity="ent3" targetEntity="ent6" db:database="db2" db:table="COPIES">
+    <RelationshipRole1 id="rel5#role9" name="BiblioMaterialToBiblioMaterial1" maxCard="N">
+      <db:JoinColumn attribute="ent3#att6" name="BIBLIOMATERIAL_OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel5#role10" name="BiblioMaterialToBiblioMaterial2" maxCard="1">
+      <db:JoinColumn attribute="ent6#att24" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel6" name="Copies_StatusBiblioMaterial" sourceEntity="ent6" targetEntity="ent1" db:database="db2" db:table="COPIES">
+    <RelationshipRole1 id="rel6#role11" name="CopiesToStatusBiblioMaterial" maxCard="1">
+      <db:JoinColumn attribute="ent6#att24" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel6#role12" name="StatusBiblioMaterialToCopies" maxCard="N">
+      <db:JoinColumn attribute="ent1#att2" name="STATUSBIBLIOMATERIAL_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="325" gr:y="410" id="ent7" name="Loan" duration="persistent" attributeOrder="ent7#att33 ent7#att36 ent7#att43 ent7#att44 ent7#att46 ent7#att47 ent7#att34 ent7#att48" db:database="db2" db:table="LOAN">
+    <Attribute id="ent7#att33" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent7#att36" name="CopiesID" type="string" db:column="COPIESID"/>
+    <Attribute id="ent7#att43" name="ReturnDays" type="integer" derivationQuery="simpleImported::Self.rel12#role23.ent5#att21"/>
+    <Attribute id="ent7#att44" name="loanDate" type="date" db:column="LOANDATE_2"/>
+    <Attribute id="ent7#att46" name="returnDate" type="date" db:column="RETURNDATE_2"/>
+    <Attribute id="ent7#att47" name="userCode" type="string" db:column="USERCODE"/>
+    <Attribute id="ent7#att34" name="days" type="integer" db:column="DAYS"/>
+    <Attribute id="ent7#att48" name="Code" type="integer" derivationQuery="simpleImported::Self.rel9#role18.User#att37"/>
+  </Entity>
+  <Relationship id="rel8" name="Copies_Loan" sourceEntity="ent6" targetEntity="ent7" db:database="db2" db:table="COPIES">
+    <RelationshipRole1 id="rel8#role15" name="CopiesToLoan" maxCard="1">
+      <db:JoinColumn attribute="ent6#att24" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel8#role16" name="LoanToCopies" maxCard="N">
+      <db:JoinColumn attribute="ent7#att33" name="LOAN_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <db:Database id="db2" name="DataBase" type="Apache Derby" url="jdbc:derby://localhost:1527/DataBase;create=true" username="admin" cryptedPassword="true" password="dmFyb3Nl" schema="APP"/>
+  <Entity gr:x="-255" gr:y="335" id="ent8" name="Reserve" duration="persistent" attributeOrder="ent8#att39 ent8#att40 ent8#att41 ent8#att42" db:database="db2" db:table="RESERVE">
+    <Attribute id="ent8#att39" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent8#att40" name="userCode" type="integer" db:column="USERCODE"/>
+    <Attribute id="ent8#att41" name="biblioMaterialName" type="string" db:column="BIBLIOMATERIALNAME"/>
+    <Attribute id="ent8#att42" name="reserveDate" type="timestamp" db:column="RESERVEDATE"/>
+  </Entity>
+  <Relationship id="rel10" name="ReserveBibliomaterial" db:database="db2" db:table="RESERVE" sourceEntity="ent8" targetEntity="ent3">
+    <RelationshipRole1 id="rel10#role19" name="ReserveToBibliomaterial" maxCard="1">
+      <db:JoinColumn attribute="ent8#att39" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel10#role20" name="BibliomaterialToReserve" maxCard="N">
+      <db:JoinColumn attribute="ent3#att6" name="BIBLIOMATERIAL_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel11" name="ReserveUser" db:database="db2" db:table="RESERVE" sourceEntity="ent8" targetEntity="User">
+    <RelationshipRole1 id="rel11#role21" name="ReserveToUser" maxCard="1">
+      <db:JoinColumn attribute="ent8#att39" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel11#role22" name="UserToReserve" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="USER_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel12" name="Loan_Rules" sourceEntity="ent7" targetEntity="ent5" db:database="db2" db:table="LOAN">
+    <RelationshipRole1 id="rel12#role23" name="LoanToRules" maxCard="1">
+      <db:JoinColumn attribute="ent7#att33" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel12#role24" name="RulesToLoan" maxCard="N">
+      <db:JoinColumn attribute="ent5#att20" name="RULES_OIDRULES"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel9" name="User_Loan" sourceEntity="User" targetEntity="ent7" db:database="db2" db:table="LOAN">
+    <RelationshipRole1 id="rel9#role17" name="UserToLoan" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="USER_OID_3"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel9#role18" name="LoanToUser" maxCard="1">
+      <db:JoinColumn attribute="ent7#att33" name="OID"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="570" gr:y="340" id="ent9" name="Penalty" duration="persistent" attributeOrder="ent9#att45 ent9#att49 ent9#att50 ent9#att51" volatileStorage="database" db:database="db2" db:table="PENALTY">
+    <Attribute id="ent9#att45" key="true" name="oid" type="integer" db:column="OID"/>
+    <Attribute id="ent9#att49" name="codeUser" type="integer" db:column="CODEUSER"/>
+    <Attribute id="ent9#att50" name="penaltyDate" type="date" db:column="PENALTYDATE"/>
+    <Attribute id="ent9#att51" name="amount" type="integer" db:column="AMOUNT"/>
+  </Entity>
+  <Relationship id="rel13" name="Loan_Penalty" sourceEntity="ent7" targetEntity="ent9" db:database="db2" db:table="LOAN">
+    <RelationshipRole1 id="rel13#role25" name="LoanToPenalty" maxCard="1">
+      <db:JoinColumn attribute="ent7#att33" name="OID"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel13#role26" name="PenaltyToLoan" maxCard="N">
+      <db:JoinColumn attribute="ent9#att45" name="PENALTY_OID"/>
+    </RelationshipRole2>
+  </Relationship>
+</DataModel>

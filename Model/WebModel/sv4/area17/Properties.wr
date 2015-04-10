@@ -1,0 +1,10 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv4#area17" name="Loan" defaultPage="sv4#area17#page21" landmark="true" gr:x="15" gr:y="265">
+  <OperationUnits>
+    <ModuleInstanceUnit id="sv4#area17#miu24" gr:x="310" gr:y="365" action="false" moduleId="mov1#hym1"/>
+    <ModuleInstanceUnit id="sv4#area17#miu25" gr:x="10" gr:y="325" action="false" moduleId="mov1#hym2">
+      <OKLink id="sv4#area17#miu25#oln101" name="Copies List" to="sv4#area17#miu24" codeRef="mov1#hym2#okcu22" ajaxOpenWindow="true" ajaxWindowUseTitle="true" ajaxWindowTitle="Copies List" ajaxWindowResizable="true" ajaxWindowAutoResizing="true" ajaxWindowClosable="true" ajaxWindowModal="true">
+        <LinkParameter id="sv4#area17#miu25#oln101#par270" name="oid BiblioMaterial_oidBiblioMaterial" source="mov1#hym2#okcu22#ocp77" target="sv4#area17#miu24.mov1#hym1#icu22#icp56"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

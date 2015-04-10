@@ -1,0 +1,49 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="210" gr:y="0" id="mov1#mpkg1#opm9" name="Manage StatusBiblioMaterial">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm9#icu9" gr:x="30" gr:y="135" linkOrder="mov1#mpkg1#opm9#icu9#ln104 mov1#mpkg1#opm9#icu9#ln105">
+      <OKLink id="mov1#mpkg1#opm9#icu9#oln31" name="OKFlow31" to="mov1#mpkg1#opm9#inn4">
+        <LinkParameter id="mov1#mpkg1#opm9#icu9#oln31#par33" name="oid StatusBiblioMaterial_Input" source="mov1#mpkg1#opm9#icu9#icp18" target="mov1#mpkg1#opm9#inn4.isnotnull"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#mpkg1#opm9#icu9#icp18" name="oid StatusBiblioMaterial"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm9#icu9#icp19" name="StatusBiblioMaterial Object"/>
+      <Link id="mov1#mpkg1#opm9#icu9#ln34" name="Flow34" to="mov1#mpkg1#opm9#cru4" type="transport" validate="true" gr:bendpoints="168,-93,-197,-3">
+        <LinkParameter id="mov1#mpkg1#opm9#icu9#ln34#par34" name="oid StatusBiblioMaterial_oid" source="mov1#mpkg1#opm9#icu9#icp18" target="mov1#mpkg1#opm9#cru4.ent1#att2"/>
+        <LinkParameter id="mov1#mpkg1#opm9#icu9#ln34#par35" name="StatusBiblioMaterial Object_StatusBiblioMaterial Object" source="mov1#mpkg1#opm9#icu9#icp19" target="mov1#mpkg1#opm9#cru4.entityBeans"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm9#icu9#ln36" name="Flow36" to="mov1#mpkg1#opm9#mfu4" type="transport" validate="true" gr:bendpoints="180,92,-205,2">
+        <LinkParameter id="mov1#mpkg1#opm9#icu9#ln36#par36" name="oid StatusBiblioMaterial_KeyCondition12 [oid]" source="mov1#mpkg1#opm9#icu9#icp18" target="mov1#mpkg1#opm9#mfu4#su13#kcond12.ent1#att2"/>
+        <LinkParameter id="mov1#mpkg1#opm9#icu9#ln36#par38" name="StatusBiblioMaterial Object_StatusBiblioMaterial Object" source="mov1#mpkg1#opm9#icu9#icp19" target="mov1#mpkg1#opm9#mfu4.entityBeans"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg1#opm9#icu9#icp46" name="statusBiblioMaterialName"/>
+      <Link id="mov1#mpkg1#opm9#icu9#ln104" name="Flow104" to="mov1#mpkg1#opm9#okcu9" type="transport" validate="true" gr:bendpoints="384,-190,-336,-85">
+        <LinkParameter id="mov1#mpkg1#opm9#icu9#ln104#par199" name="statusBiblioMaterialName_statusBiblioMaterialName" source="mov1#mpkg1#opm9#icu9#icp46" target="mov1#mpkg1#opm9#okcu9#ocp61"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm9#icu9#ln105" name="Flow105" to="mov1#mpkg1#opm9#kocu10" type="transport" validate="true" gr:bendpoints="412,175,-308,115">
+        <LinkParameter id="mov1#mpkg1#opm9#icu9#ln105#par198" name="statusBiblioMaterialName_statusBiblioMaterialName" source="mov1#mpkg1#opm9#icu9#icp46" target="mov1#mpkg1#opm9#kocu10#ocp63"/>
+      </Link>
+    </InputCollectorUnit>
+    <IsNotNullUnit gr:x="370" gr:y="150" id="mov1#mpkg1#opm9#inn4" name="Is Not Null">
+      <KOLink id="mov1#mpkg1#opm9#inn4#kln24" name="KOFlow24" to="mov1#mpkg1#opm9#cru4" automaticCoupling="true"/>
+      <OKLink id="mov1#mpkg1#opm9#inn4#oln33" name="OKFlow33" to="mov1#mpkg1#opm9#mfu4" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="470" gr:y="40" id="mov1#mpkg1#opm9#cru4" name="Create StatusBiblioMaterial" entity="ent1">
+      <OKLink id="mov1#mpkg1#opm9#cru4#oln34" name="OKFlow34" to="mov1#mpkg1#opm9#okcu9" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm9#cru4#kln25" name="KOFlow25" to="mov1#mpkg1#opm9#kocu10" automaticCoupling="true"/>
+    </CreateUnit>
+    <ModifyUnit gr:x="480" gr:y="230" id="mov1#mpkg1#opm9#mfu4" name="Update StatusBiblioMaterial" entity="ent1">
+      <Selector id="mov1#mpkg1#opm9#mfu4#su13" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm9#mfu4#su13#kcond12" name="KeyCondition12" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm9#mfu4#oln35" name="OKFlow35" to="mov1#mpkg1#opm9#okcu9" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm9#mfu4#kln26" name="KOFlow26" to="mov1#mpkg1#opm9#kocu10" automaticCoupling="true"/>
+    </ModifyUnit>
+    <OKCollectorUnit gr:x="755" gr:y="45" id="mov1#mpkg1#opm9#okcu9" name="Successful">
+      <OutputCollectorParameter id="mov1#mpkg1#opm9#okcu9#ocp61" name="statusBiblioMaterialName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm9#okcu9#ocp62" name="Message" value="Status $$statusBiblioMaterialName$$ Saved"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="755" gr:y="210" id="mov1#mpkg1#opm9#kocu10" name="Failure">
+      <OutputCollectorParameter id="mov1#mpkg1#opm9#kocu10#ocp63" name="statusBiblioMaterialName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm9#kocu10#ocp64" name="Message" value="Status $$statusBiblioMaterialName$$ Not Saved"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

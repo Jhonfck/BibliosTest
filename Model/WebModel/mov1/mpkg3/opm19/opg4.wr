@@ -1,0 +1,60 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="185" gr:y="-100" id="mov1#mpkg3#opm19#opg4" name="Save Return" transaction="true">
+  <OperationUnits>
+    <CreateUnit id="mov1#mpkg3#opm19#opg4#cru14" name="PenaltyCreate" gr:x="415" gr:y="0" entity="ent9">
+      <OKLink id="mov1#mpkg3#opm19#opg4#cru14#oln153" name="OKFlow153" to="mov1#mpkg3#opm19#opg4#seu37" automaticCoupling="true"/>
+    </CreateUnit>
+    <SelectorUnit id="mov1#mpkg3#opm19#opg4#seu37" name="CopiesLoan" gr:x="560" gr:y="120" entity="ent6">
+      <Selector id="mov1#mpkg3#opm19#opg4#seu37#su73" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg3#opm19#opg4#seu37#su73#rcond23" name="Loan" predicate="in" implied="false" role="rel8#role16"/>
+      </Selector>
+      <OKLink id="mov1#mpkg3#opm19#opg4#seu37#oln145" name="OKFlow121" to="mov1#mpkg3#opm19#opg4#mfu14">
+        <LinkParameter id="mov1#mpkg3#opm19#opg4#seu37#oln145#par408" name="oid_KeyCondition40 [oid]" source="ent6#att24Array" target="mov1#mpkg3#opm19#opg4#mfu14#su74#kcond47.ent6#att24"/>
+        <LinkParameter id="mov1#mpkg3#opm19#opg4#seu37#oln145#par409" name="4_StatusBiblioMaterial.oid(CopiesToStatusBiblioMaterial)" target="mov1#mpkg3#opm19#opg4#mfu14.rel6#role11.ent1#att2" sourceValue="4"/>
+      </OKLink>
+    </SelectorUnit>
+    <ModifyUnit id="mov1#mpkg3#opm19#opg4#mfu14" name="StatusCopiesUpdate" gr:x="720" gr:y="125" entity="ent6">
+      <Selector id="mov1#mpkg3#opm19#opg4#mfu14#su74" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg3#opm19#opg4#mfu14#su74#kcond47" name="KeyCondition40" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg3#opm19#opg4#mfu14#oln146" name="OKFlow118" to="mov1#mpkg3#opm19#opg4#dlu15" automaticCoupling="true"/>
+    </ModifyUnit>
+    <SwitchUnit id="mov1#mpkg3#opm19#opg4#switch5" name="Switch" gr:x="430" gr:y="150">
+      <OKLink id="mov1#mpkg3#opm19#opg4#switch5#oln148" name="OKFlow113" to="mov1#mpkg3#opm19#opg4#cru14" automaticCoupling="true" code="error"/>
+      <OKLink id="mov1#mpkg3#opm19#opg4#switch5#oln149" name="OKFlow116" to="mov1#mpkg3#opm19#opg4#seu37" code="success" automaticCoupling="true"/>
+      <Case value="success"/>
+      <Case value="error"/>
+    </SwitchUnit>
+    <SelectorUnit id="mov1#mpkg3#opm19#opg4#seu38" name="Rules" gr:x="0" gr:y="10" entity="ent5">
+      <Selector id="mov1#mpkg3#opm19#opg4#seu38#su75" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#mpkg3#opm19#opg4#seu38#su75#rcond24" name="group" predicate="in" implied="false" role="rel4#role8"/>
+        <RelationshipRoleCondition id="mov1#mpkg3#opm19#opg4#seu38#su75#rcond25" name="colletion" predicate="in" implied="false" role="rel7#role14"/>
+      </Selector>
+      <Link id="mov1#mpkg3#opm19#opg4#seu38#ln203" name="Flow180" to="mov1#mpkg3#opm19#opg4#scu7" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg3#opm19#opg4#seu38#ln203#par412" name="PenaltyDays_penaltyDays" source="ent5#att22Array" target="mov1#mpkg3#opm19#opg4#scu7.penaltyDays"/>
+      </Link>
+      <OKLink id="mov1#mpkg3#opm19#opg4#seu38#oln154" name="OKFlow154" to="mov1#mpkg3#opm19#opg4#tmu7" automaticCoupling="true"/>
+    </SelectorUnit>
+    <DeleteUnit id="mov1#mpkg3#opm19#opg4#dlu15" name="LoanDelete" gr:x="910" gr:y="130" entity="ent7">
+      <Selector id="mov1#mpkg3#opm19#opg4#dlu15#su76" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg3#opm19#opg4#dlu15#su76#kcond48" name="KeyCondition41" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg3#opm19#opg4#dlu15#oln151" name="OKFlow120" to="mov1#mpkg3#opm19#okcu19" automaticCoupling="true"/>
+    </DeleteUnit>
+    <ScriptUnit id="mov1#mpkg3#opm19#opg4#scu7" name="Compararfecha/valorMulta" gr:x="190" gr:y="145" script="WEB-INF/descr/multaFechas.groovy">
+      <OKLink id="mov1#mpkg3#opm19#opg4#scu7#oln152" name="OKFlow108" to="mov1#mpkg3#opm19#opg4#switch5">
+        <LinkParameter id="mov1#mpkg3#opm19#opg4#scu7#oln152#par413" name="resultcode_Switch" source="result(resultcode)" target="mov1#mpkg3#opm19#opg4#switch5.switch"/>
+      </OKLink>
+      <Link id="mov1#mpkg3#opm19#opg4#scu7#ln204" name="Flow182" to="mov1#mpkg3#opm19#opg4#cru14" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg3#opm19#opg4#scu7#ln204#par414" name="amount_amount" source="result(amount)" target="mov1#mpkg3#opm19#opg4#cru14.ent9#att51"/>
+      </Link>
+    </ScriptUnit>
+    <TimeUnit gr:x="60" gr:y="140" id="mov1#mpkg3#opm19#opg4#tmu7" name="Date" linkOrder="mov1#mpkg3#opm19#opg4#tmu7#ln206">
+      <OKLink id="mov1#mpkg3#opm19#opg4#tmu7#oln155" name="OKFlow155" to="mov1#mpkg3#opm19#opg4#scu7">
+        <LinkParameter id="mov1#mpkg3#opm19#opg4#tmu7#oln155#par415" name="Current/Input Date_date" source="currentDate" target="mov1#mpkg3#opm19#opg4#scu7.date"/>
+      </OKLink>
+      <Link id="mov1#mpkg3#opm19#opg4#tmu7#ln206" name="Flow206" to="mov1#mpkg3#opm19#opg4#cru14" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg3#opm19#opg4#tmu7#ln206#par419" name="Current/Input Date_penaltyDate" source="currentDate" target="mov1#mpkg3#opm19#opg4#cru14.ent9#att50"/>
+      </Link>
+    </TimeUnit>
+  </OperationUnits>
+</OperationGroup>

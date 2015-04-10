@@ -1,0 +1,49 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="0" id="mov1#mpkg1#opm1" name="Manage User">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm1#icu1" gr:x="30" gr:y="60" linkOrder="mov1#mpkg1#opm1#icu1#ln9 mov1#mpkg1#opm1#icu1#ln10">
+      <InputCollectorParameter id="mov1#mpkg1#opm1#icu1#icp2" name="ClientKey"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm1#icu1#icp3" name="ClientObject"/>
+      <OKLink id="mov1#mpkg1#opm1#icu1#oln5" name="OKFlow5" to="mov1#mpkg1#opm1#inn1">
+        <LinkParameter id="mov1#mpkg1#opm1#icu1#oln5#par5" name="ClientKey_Input" source="mov1#mpkg1#opm1#icu1#icp2" target="mov1#mpkg1#opm1#inn1.isnotnull"/>
+      </OKLink>
+      <Link id="mov1#mpkg1#opm1#icu1#ln4" name="Flow4" to="mov1#mpkg1#opm1#cru1" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm1#icu1#ln4#par1" name="ClientObject_Client Object" source="mov1#mpkg1#opm1#icu1#icp3" target="mov1#mpkg1#opm1#cru1.entityBeans"/>
+        <LinkParameter id="mov1#mpkg1#opm1#icu1#ln4#par12" name="ClientKey_oid" source="mov1#mpkg1#opm1#icu1#icp2" target="mov1#mpkg1#opm1#cru1.userOID"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm1#icu1#ln5" name="Flow5" to="mov1#mpkg1#opm1#mfu1" type="transport" validate="true">
+        <LinkParameter id="mov1#mpkg1#opm1#icu1#ln5#par3" name="ClientObject_Client Object" source="mov1#mpkg1#opm1#icu1#icp3" target="mov1#mpkg1#opm1#mfu1.entityBeans"/>
+        <LinkParameter id="mov1#mpkg1#opm1#icu1#ln5#par10" name="ClientKey_KeyCondition2 [oid]" source="mov1#mpkg1#opm1#icu1#icp2" target="mov1#mpkg1#opm1#mfu1#su2#kcond2.userOID"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg1#opm1#icu1#icp4" name="ClientName"/>
+      <Link id="mov1#mpkg1#opm1#icu1#ln9" name="Flow9" to="mov1#mpkg1#opm1#okcu2" type="transport" validate="true" gr:bendpoints="283,-195,-287,-140">
+        <LinkParameter id="mov1#mpkg1#opm1#icu1#ln9#par20" name="ClientName_ClientName" source="mov1#mpkg1#opm1#icu1#icp4" target="mov1#mpkg1#opm1#okcu2#ocp5"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm1#icu1#ln10" name="Flow10" to="mov1#mpkg1#opm1#kocu2" type="transport" validate="true" gr:bendpoints="258,178,-312,68">
+        <LinkParameter id="mov1#mpkg1#opm1#icu1#ln10#par21" name="ClientName_ClientName" source="mov1#mpkg1#opm1#icu1#icp4" target="mov1#mpkg1#opm1#kocu2#ocp6"/>
+      </Link>
+    </InputCollectorUnit>
+    <IsNotNullUnit gr:x="290" gr:y="70" id="mov1#mpkg1#opm1#inn1" name="Is Not Null">
+      <OKLink id="mov1#mpkg1#opm1#inn1#oln6" name="OKFlow6" to="mov1#mpkg1#opm1#mfu1" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm1#inn1#kln4" name="KOFlow4" to="mov1#mpkg1#opm1#cru1" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <CreateUnit gr:x="415" gr:y="-15" id="mov1#mpkg1#opm1#cru1" name="Create Client" entity="User">
+      <OKLink id="mov1#mpkg1#opm1#cru1#oln7" name="OKFlow7" to="mov1#mpkg1#opm1#okcu2" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm1#cru1#kln5" name="KOFlow5" to="mov1#mpkg1#opm1#kocu2" automaticCoupling="true"/>
+    </CreateUnit>
+    <ModifyUnit gr:x="410" gr:y="130" id="mov1#mpkg1#opm1#mfu1" name="Update Client " entity="User">
+      <Selector id="mov1#mpkg1#opm1#mfu1#su2" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm1#mfu1#su2#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm1#mfu1#oln8" name="OKFlow8" to="mov1#mpkg1#opm1#okcu2" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm1#mfu1#kln6" name="KOFlow6" to="mov1#mpkg1#opm1#kocu2" automaticCoupling="true"/>
+    </ModifyUnit>
+    <OKCollectorUnit gr:x="600" gr:y="20" id="mov1#mpkg1#opm1#okcu2" name="Sucessful">
+      <OutputCollectorParameter id="mov1#mpkg1#opm1#okcu2#ocp1" name="Message" value="Client $$ClientName$$ Saved"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm1#okcu2#ocp5" name="ClientName"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="600" gr:y="185" id="mov1#mpkg1#opm1#kocu2" name="Failure">
+      <OutputCollectorParameter id="mov1#mpkg1#opm1#kocu2#ocp2" name="Message" value="Client $$ClientName$$ not saved"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm1#kocu2#ocp6" name="ClientName"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -1,0 +1,57 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="110" id="mov1#mpkg1#opm5" name="Manage Group">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm5#icu5" gr:x="30" gr:y="60">
+      <OKLink id="mov1#mpkg1#opm5#icu5#oln2" name="OKFlow2" to="mov1#mpkg1#opm5#inn2">
+        <LinkParameter id="mov1#mpkg1#opm5#icu5#oln2#par4" name="oidGroup_Input" source="mov1#mpkg1#opm5#icu5#icp11" target="mov1#mpkg1#opm5#inn2.isnotnull"/>
+      </OKLink>
+      <Link id="mov1#mpkg1#opm5#icu5#ln14" name="Flow14" to="mov1#mpkg1#opm5#cru2" type="transport" validate="true" gr:bendpoints="138,-56,-177,4">
+        <LinkParameter id="mov1#mpkg1#opm5#icu5#ln14#par45" name="groupName_groupName" source="mov1#mpkg1#opm5#icu5#icp7" target="mov1#mpkg1#opm5#cru2.groupName"/>
+        <LinkParameter id="mov1#mpkg1#opm5#icu5#ln14#par46" name="defaultModule_Module.oid(defaultModule)" source="mov1#mpkg1#opm5#icu5#icp6" target="mov1#mpkg1#opm5#cru2.Group2DefaultModule.moduleOID"/>
+        <LinkParameter id="mov1#mpkg1#opm5#icu5#ln14#par47" name="modules_Module.oid(modules)" source="mov1#mpkg1#opm5#icu5#icp8" target="mov1#mpkg1#opm5#cru2.Group2Module.moduleOID"/>
+        <LinkParameter id="mov1#mpkg1#opm5#icu5#ln14#par48" name="oidGroup_oid" source="mov1#mpkg1#opm5#icu5#icp11" target="mov1#mpkg1#opm5#cru2.groupOID"/>
+        <LinkParameter id="mov1#mpkg1#opm5#icu5#ln14#par355" name="numberBooksLend_NumberBooksLend" source="mov1#mpkg1#opm5#icu5#icp49" target="mov1#mpkg1#opm5#cru2.Group#att23"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm5#icu5#ln15" name="Flow15" to="mov1#mpkg1#opm5#mfu2" type="transport" validate="true" gr:bendpoints="132,78,-183,-22">
+        <LinkParameter id="mov1#mpkg1#opm5#icu5#ln15#par49" name="groupName_groupName" source="mov1#mpkg1#opm5#icu5#icp7" target="mov1#mpkg1#opm5#mfu2.groupName"/>
+        <LinkParameter id="mov1#mpkg1#opm5#icu5#ln15#par50" name="oidGroup_KeyCondition5 [oid]" source="mov1#mpkg1#opm5#icu5#icp11" target="mov1#mpkg1#opm5#mfu2#su5#kcond5.groupOID"/>
+        <LinkParameter id="mov1#mpkg1#opm5#icu5#ln15#par51" name="defaultModule_Module.oid(defaultModule)" source="mov1#mpkg1#opm5#icu5#icp6" target="mov1#mpkg1#opm5#mfu2.Group2DefaultModule.moduleOID"/>
+        <LinkParameter id="mov1#mpkg1#opm5#icu5#ln15#par52" name="modules_Module.oid(modules)" source="mov1#mpkg1#opm5#icu5#icp8" target="mov1#mpkg1#opm5#mfu2.Group2Module.moduleOID"/>
+        <LinkParameter id="mov1#mpkg1#opm5#icu5#ln15#par356" name="numberBooksLend_NumberBooksLend" source="mov1#mpkg1#opm5#icu5#icp49" target="mov1#mpkg1#opm5#mfu2.Group#att23"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg1#opm5#icu5#icp6" name="defaultModule"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm5#icu5#icp7" name="groupName"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm5#icu5#icp8" name="modules"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm5#icu5#icp11" name="oidGroup"/>
+      <Link id="mov1#mpkg1#opm5#icu5#ln88" name="Flow88" to="mov1#mpkg1#opm5#okcu3" type="transport" validate="true" gr:bendpoints="318,-142,-227,-62">
+        <LinkParameter id="mov1#mpkg1#opm5#icu5#ln88#par84" name="groupName_groupName" source="mov1#mpkg1#opm5#icu5#icp7" target="mov1#mpkg1#opm5#okcu3#ocp41"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm5#icu5#ln89" name="Flow89" to="mov1#mpkg1#opm5#kocu5" type="transport" validate="true" gr:bendpoints="314,167,-231,77">
+        <LinkParameter id="mov1#mpkg1#opm5#icu5#ln89#par127" name="groupName_groupName" source="mov1#mpkg1#opm5#icu5#icp7" target="mov1#mpkg1#opm5#kocu5#ocp43"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg1#opm5#icu5#icp49" name="numberBooksLend"/>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="410" gr:y="0" id="mov1#mpkg1#opm5#cru2" name="Create Group" entity="Group">
+      <OKLink id="mov1#mpkg1#opm5#cru2#oln13" name="OKFlow13" to="mov1#mpkg1#opm5#okcu3" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm5#cru2#kln12" name="KOFlow12" to="mov1#mpkg1#opm5#kocu5" automaticCoupling="true"/>
+    </CreateUnit>
+    <ModifyUnit gr:x="405" gr:y="150" id="mov1#mpkg1#opm5#mfu2" name="Modify Group" entity="Group">
+      <Selector id="mov1#mpkg1#opm5#mfu2#su5" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm5#mfu2#su5#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm5#mfu2#oln14" name="OKFlow14" to="mov1#mpkg1#opm5#okcu3" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm5#mfu2#kln11" name="KOFlow11" to="mov1#mpkg1#opm5#kocu5" automaticCoupling="true"/>
+    </ModifyUnit>
+    <IsNotNullUnit gr:x="290" gr:y="80" id="mov1#mpkg1#opm5#inn2" name="New Group?">
+      <KOLink id="mov1#mpkg1#opm5#inn2#kln10" name="KOFlow10" to="mov1#mpkg1#opm5#cru2" automaticCoupling="true"/>
+      <OKLink id="mov1#mpkg1#opm5#inn2#oln12" name="OKFlow12" to="mov1#mpkg1#opm5#mfu2" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <OKCollectorUnit gr:x="575" gr:y="-5" id="mov1#mpkg1#opm5#okcu3" name="Succeful">
+      <OutputCollectorParameter id="mov1#mpkg1#opm5#okcu3#ocp41" name="groupName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm5#okcu3#ocp42" name="Message" value="Group $$groupName$$ Saved"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="575" gr:y="165" id="mov1#mpkg1#opm5#kocu5" name="Failure">
+      <OutputCollectorParameter id="mov1#mpkg1#opm5#kocu5#ocp43" name="groupName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm5#kocu5#ocp44" name="Message" value="Group $$groupName$$ not saved"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

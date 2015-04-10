@@ -1,0 +1,81 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area5#page13" name="TypeBiblioMaterial Management">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#area5#page13#enu6" name="TypeBiblioMaterial Info" linkOrder="sv1#area5#page13#enu6#ln38 sv1#area5#page13#enu6#ln39" entity="ent2" fieldOrder="sv1#area5#page13#enu6#fld7">
+      <Link id="sv1#area5#page13#enu6#ln38" name="Save" to="sv1#area5#miu12" type="normal" validate="true">
+        <LinkParameter id="sv1#area5#page13#enu6#ln38#par74" name="Key [oid]_oidTypeBiblioMaterial" source="key.ent2#att4" target="sv1#area5#miu12.mov1#mpkg1#opm11#icu11#icp21"/>
+        <LinkParameter id="sv1#area5#page13#enu6#ln38#par75" name="TypeBiblioMaterial Object_TypeBiblioMaterial Object" source="entityBean" target="sv1#area5#miu12.mov1#mpkg1#opm11#icu11#icp22"/>
+        <LinkParameter id="sv1#area5#page13#enu6#ln38#par222" name="TypeName_biblioMaterialTypeName" source="sv1#area5#page13#enu6#fld7" target="sv1#area5#miu12.mov1#mpkg1#opm11#icu11#icp47"/>
+      </Link>
+      <Link id="sv1#area5#page13#enu6#ln39" name="Cancel" to="sv1#area5#page13" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="81,-126,41,-176"/>
+      <Field id="sv1#area5#page13#enu6#fld7" name="TypeName" type="string" modifiable="true" attribute="ent2#att5"/>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="0" gr:y="120" id="sv1#area5#page13#pwu5" name="TypeBiblioMaterial List" sortable="true" checkable="false" useCountQuery="false" linkOrder="sv1#area5#page13#pwu5#ln40 sv1#area5#page13#pwu5#ln41" entity="ent2" displayAttributes="ent2#att5 ent2#att4">
+      <Link id="sv1#area5#page13#pwu5#ln40" name="Delete" to="sv1#area5#miu13" type="normal" validate="true">
+        <LinkParameter id="sv1#area5#page13#pwu5#ln40#par73" name="oid_oidTypeBiblioMaterial" source="data[].ent2#att4" target="sv1#area5#miu13.mov1#mpkg1#opm12#icu12#icp20"/>
+      </Link>
+      <Link id="sv1#area5#page13#pwu5#ln41" name="Edit" to="sv1#area5#page13#enu6" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+    <MultiMessageUnit id="sv1#area5#page13#mssu19" name="Notification" gr:x="195" gr:y="110">
+      <Placeholder id="sv1#area5#page13#mssu19#ph8" name="biblioMaterialTypeName"/>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area5#page13#enu6">
+          <layout:Link link="sv1#area5#page13#enu6#ln38"/>
+          <layout:Link link="sv1#area5#page13#enu6#ln39"/>
+          <layout:Field field="sv1#area5#page13#enu6#fld7"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area5#page13#pwu5">
+          <layout:Link link="sv1#area5#page13#pwu5#ln40"/>
+          <layout:Link link="sv1#area5#page13#pwu5#ln41"/>
+          <layout:Attribute attribute="ent2#att5"/>
+          <layout:Attribute attribute="ent2#att4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area5#page13#mssu19"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

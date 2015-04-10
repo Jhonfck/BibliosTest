@@ -1,0 +1,176 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area6#page15" name="BiblioMaterial Management">
+  <ContentUnits>
+    <EntryUnit gr:x="285" gr:y="145" id="sv1#area6#page15#enu7" name="BiblioMaterial Info" entity="ent3" linkOrder="sv1#area6#page15#enu7#ln53" fieldOrder="sv1#area6#page15#enu7#fld16 sv1#area6#page15#enu7#fld17 sv1#area6#page15#enu7#sfld1 sv1#area6#page15#enu7#sfld3 sv1#area6#page15#enu7#sfld7 sv1#area6#page15#enu7#fld18">
+      <Field id="sv1#area6#page15#enu7#fld16" name="ISBN" type="string" modifiable="true" attribute="ent3#att7">
+        <VRules>
+          <MandatoryValidationRule id="sv1#area6#page15#enu7#fld16#mnd9" name="Mandatory Field"/>
+          <CollectionValidationRule id="sv1#area6#page15#enu7#fld16#clc3" name="Not in collection" predicate="notIn" entity="ent3" attribute="ent3#att7"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#area6#page15#enu7#fld17" name="BiblioMaterialName" type="string" modifiable="true" attribute="ent3#att8">
+        <VRules>
+          <MandatoryValidationRule id="sv1#area6#page15#enu7#fld17#mnd10" name="Mandatory Field"/>
+        </VRules>
+      </Field>
+      <SelectionField id="sv1#area6#page15#enu7#sfld1" name="BiblioMaterialType" type="string" role="rel2#role3">
+        <VRules>
+          <MandatoryValidationRule id="sv1#area6#page15#enu7#sfld1#mnd13" name="Mandatory Field"/>
+        </VRules>
+      </SelectionField>
+      <SelectionField id="sv1#area6#page15#enu7#sfld3" name="BiblioMaterialStatus" type="string" role="rel1#role1">
+        <VRules>
+          <MandatoryValidationRule id="sv1#area6#page15#enu7#sfld3#mnd12" name="Mandatory Field"/>
+        </VRules>
+      </SelectionField>
+      <Field id="sv1#area6#page15#enu7#fld18" name="DescriptionMaterial" type="text" modifiable="true" attribute="ent3#att16"/>
+      <Link id="sv1#area6#page15#enu7#ln53" name="Save" to="sv1#area6#miu14" type="normal" validate="true" gr:bendpoints="218,2,3,-198">
+        <LinkParameter id="sv1#area6#page15#enu7#ln53#par96" name="BiblioMaterial Object_BiblioMaterial Object" source="entityBean" target="sv1#area6#miu14.mov1#mpkg1#opm14#icu14#icp26"/>
+        <LinkParameter id="sv1#area6#page15#enu7#ln53#par97" name="BiblioMaterialName_BiblioMaterialName" source="sv1#area6#page15#enu7#fld17" target="sv1#area6#miu14.mov1#mpkg1#opm14#icu14#icp27"/>
+        <LinkParameter id="sv1#area6#page15#enu7#ln53#par98" name="Key [oid]_oidBiblioMaterial" source="key.ent3#att6" target="sv1#area6#miu14.mov1#mpkg1#opm14#icu14#icp25"/>
+      </Link>
+      <SelectionField id="sv1#area6#page15#enu7#sfld7" name="BiblioMaterialColletion" type="string" role="rel3#role5">
+        <VRules>
+          <MandatoryValidationRule id="sv1#area6#page15#enu7#sfld7#mnd11" name="Mandatory Field"/>
+        </VRules>
+      </SelectionField>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="80" gr:y="200" id="sv1#area6#page15#pwu6" name="Bibliography Material " sortable="true" checkable="false" useCountQuery="false" entity="ent3" linkOrder="sv1#area6#page15#pwu6#ln44 sv1#area6#page15#pwu6#ln45 sv1#area6#page15#pwu6#ln48" displayAttributes="ent3#att7 ent3#att8">
+      <Link id="sv1#area6#page15#pwu6#ln44" name="Edit" to="sv1#area6#page15#enu7" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv1#area6#page15#pwu6#ln45" name="Details" to="sv1#area6#page15#dau3" type="normal" validate="true">
+        <LinkParameter id="sv1#area6#page15#pwu6#ln45#par85" name="oid_KeyCondition11 [oid]" source="data[].ent3#att6" target="sv1#area6#page15#dau3#su12#kcond11.ent3#att6"/>
+      </Link>
+      <Link id="sv1#area6#page15#pwu6#ln48" name="Delete" to="sv1#area6#miu15" type="normal" validate="true">
+        <LinkParameter id="sv1#area6#page15#pwu6#ln48#par79" name="BiblioMaterialName_BiblioMaterialName" source="data[].ent3#att8" target="sv1#area6#miu15.mov1#mpkg1#opm13#icu13#icp24"/>
+        <LinkParameter id="sv1#area6#page15#pwu6#ln48#par80" name="oid_oidBiblioMaterial" source="data[].ent3#att6" target="sv1#area6#miu15.mov1#mpkg1#opm13#icu13#icp23"/>
+      </Link>
+    </PowerIndexUnit>
+    <DataUnit gr:x="0" gr:y="5" id="sv1#area6#page15#dau3" name="Bibliography Material Details" entity="ent3" displayAttributes="ent3#att7 ent3#att8 ent3#att14 ent3#att15 ent3#att16 ent3#att19 ent3#att32">
+      <Selector id="sv1#area6#page15#dau3#su12" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area6#page15#dau3#su12#kcond11" name="KeyCondition11" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <MultiMessageUnit gr:x="355" gr:y="255" id="sv1#area6#page15#mssu11" name="Notification">
+      <Placeholder id="sv1#area6#page15#mssu11#ph4" name="BiblioMaterialName"/>
+    </MultiMessageUnit>
+    <SelectorUnit gr:x="215" gr:y="0" id="sv1#area6#page15#seu4" name="BiblioMaterialStatus" entity="ent1">
+      <Link id="sv1#area6#page15#seu4#ln54" name="Flow54" to="sv1#area6#page15#enu7" type="transport" validate="true">
+        <LinkParameter id="sv1#area6#page15#seu4#ln54#par78" name="statusName_BiblioMaterialStatus [label]" source="ent1#att3Array" target="sv1#area6#page15#enu7#sfld3_label"/>
+        <LinkParameter id="sv1#area6#page15#seu4#ln54#par81" name="oid_BiblioMaterialStatus [output]" source="ent1#att2Array" target="sv1#area6#page15#enu7#sfld3_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="395" gr:y="0" id="sv1#area6#page15#seu5" name="BiblioMaterialType" entity="ent2">
+      <Link id="sv1#area6#page15#seu5#ln55" name="Flow55" to="sv1#area6#page15#enu7" type="transport" validate="true">
+        <LinkParameter id="sv1#area6#page15#seu5#ln55#par82" name="TypeName_BiblioMaterialType [label]" source="ent2#att5Array" target="sv1#area6#page15#enu7#sfld1_label"/>
+        <LinkParameter id="sv1#area6#page15#seu5#ln55#par86" name="oid_BiblioMaterialType [output]" source="ent2#att4Array" target="sv1#area6#page15#enu7#sfld1_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="555" gr:y="0" id="sv1#area6#page15#seu10" name="BiblioMaterialColletion" entity="ent4">
+      <Link id="sv1#area6#page15#seu10#ln111" name="Flow111" to="sv1#area6#page15#enu7" type="transport" validate="true">
+        <LinkParameter id="sv1#area6#page15#seu10#ln111#par233" name="CollectionName_BiblioMaterialColletion [label]" source="ent4#att18Array" target="sv1#area6#page15#enu7#sfld7_label"/>
+        <LinkParameter id="sv1#area6#page15#seu10#ln111#par234" name="oid_BiblioMaterialColletion [output]" source="ent4#att17Array" target="sv1#area6#page15#enu7#sfld7_output"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area6#page15#enu7">
+          <layout:Link link="sv1#area6#page15#enu7#ln53"/>
+          <layout:Field field="sv1#area6#page15#enu7#fld16"/>
+          <layout:Field field="sv1#area6#page15#enu7#fld17"/>
+          <layout:Field field="sv1#area6#page15#enu7#sfld1"/>
+          <layout:Field field="sv1#area6#page15#enu7#sfld3"/>
+          <layout:Field field="sv1#area6#page15#enu7#sfld7"/>
+          <layout:Field field="sv1#area6#page15#enu7#fld18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area6#page15#pwu6">
+          <layout:Attribute attribute="ent3#att7"/>
+          <layout:Attribute attribute="ent3#att8"/>
+          <layout:Link link="sv1#area6#page15#pwu6#ln44"/>
+          <layout:Link link="sv1#area6#page15#pwu6#ln45"/>
+          <layout:Link link="sv1#area6#page15#pwu6#ln48"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area6#page15#dau3">
+          <layout:Attribute attribute="ent3#att7"/>
+          <layout:Attribute attribute="ent3#att8"/>
+          <layout:Attribute attribute="ent3#att14"/>
+          <layout:Attribute attribute="ent3#att15"/>
+          <layout:Attribute attribute="ent3#att16"/>
+          <layout:Attribute attribute="ent3#att19"/>
+          <layout:Attribute attribute="ent3#att32"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area6#page15#mssu11"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

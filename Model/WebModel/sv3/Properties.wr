@@ -1,0 +1,17 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3" name="LibrarySiteView" protected="true" linkVisibilityPolicy="hide" homePage="sv3#page9" layout:style="WebRatio" landmarks="sv3#area10">
+  <OperationUnits>
+    <LogoutUnit id="sv3#lou4" name="Logout" gr:x="350" gr:y="55" siteView="sv2"/>
+    <NoOpOperationUnit id="sv3#opu1" name="Reset Search" gr:x="220" gr:y="215">
+      <OKLink id="sv3#opu1#oln70" name="OKLink13" to="sv3#area10#page23" automaticCoupling="true" gr:bendpoints="-103,0,-68,-210"/>
+    </NoOpOperationUnit>
+    <ModuleInstanceUnit gr:x="705" gr:y="435" id="sv3#miu32" action="true" moduleId="mov1#mpkg3#opm4">
+      <OKLink id="sv3#miu32#oln90" name="OKFlow90" to="sv3#page24" automaticCoupling="true" ajaxOpenWindow="true" ajaxReplaceWindow="true" ajaxWindowResizable="true" ajaxWindowAutoResizing="true" ajaxWindowClosable="true" ajaxWindowModal="true"/>
+    </ModuleInstanceUnit>
+    <DeleteUnit gr:x="1095" gr:y="275" id="sv3#dlu9" name="ReserveDelete" entity="ent8">
+      <Selector id="sv3#dlu9#su40" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dlu9#su40#kcond36" name="KeyCondition36" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#dlu9#oln91" name="OKFlow91" to="sv3#page24" automaticCoupling="true" gr:bendpoints="-143,-20,-73,-175"/>
+    </DeleteUnit>
+  </OperationUnits>
+</SiteView>

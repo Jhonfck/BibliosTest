@@ -1,0 +1,24 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="945" gr:y="540" id="sv1#area9" name="Copies" landmark="true" defaultPage="sv1#area9#page20">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="85" gr:y="340" id="sv1#area9#miu2" action="true" moduleId="mov1#mpkg1#opm20">
+      <OKLink id="sv1#area9#miu2#oln11" name="OKFlow11" to="sv1#area9#page20#mssu14">
+        <LinkParameter id="sv1#area9#miu2#oln11#par160" name="copiesName_CopiesName" source="mov1#mpkg1#opm20#okcu20#ocp34" target="sv1#area9#page20#mssu14.sv1#area9#page20#mssu14#ph2"/>
+        <LinkParameter id="sv1#area9#miu2#oln11#par161" name="Message_Shown Messages" source="mov1#mpkg1#opm20#okcu20#ocp33" target="sv1#area9#page20#mssu14.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv1#area9#miu2#kln9" name="KOFlow9" to="sv1#area9#page20#mssu14" gr:bendpoints="245,-4,0,96">
+        <LinkParameter id="sv1#area9#miu2#kln9#par162" name="copiesName_CopiesName" source="mov1#mpkg1#opm20#kocu19#ocp35" target="sv1#area9#page20#mssu14.sv1#area9#page20#mssu14#ph2"/>
+        <LinkParameter id="sv1#area9#miu2#kln9#par163" name="Message_Shown Messages" source="mov1#mpkg1#opm20#kocu19#ocp36" target="sv1#area9#page20#mssu14.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="570" gr:y="130" id="sv1#area9#miu16" action="true" moduleId="mov1#mpkg1#opm21">
+      <OKLink id="sv1#area9#miu16#oln65" name="OKFlow65" to="sv1#area9#page20#mssu14">
+        <LinkParameter id="sv1#area9#miu16#oln65#par164" name="CopiesName_copiesName" source="mov1#mpkg1#opm21#okcu21#ocp38" target="sv1#area9#page20#mssu14.sv1#area9#page20#mssu14#ph2"/>
+        <LinkParameter id="sv1#area9#miu16#oln65#par165" name="CopiesName_Shown Messages" source="mov1#mpkg1#opm21#okcu21#ocp37" target="sv1#area9#page20#mssu14.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv1#area9#miu16#kln52" name="KOFlow52" to="sv1#area9#page20#mssu14" gr:bendpoints="-3,105,237,-5">
+        <LinkParameter id="sv1#area9#miu16#kln52#par166" name="CopiesName_CopiesName" source="mov1#mpkg1#opm21#kocu20#ocp40" target="sv1#area9#page20#mssu14.sv1#area9#page20#mssu14#ph2"/>
+        <LinkParameter id="sv1#area9#miu16#kln52#par167" name="CopiesName_Shown Messages" source="mov1#mpkg1#opm21#kocu20#ocp39" target="sv1#area9#page20#mssu14.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

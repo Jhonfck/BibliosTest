@@ -1,0 +1,75 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#hym1#page29" name="Loan Info" gr:x="1110" gr:y="-5">
+  <ContentUnits>
+    <PowerIndexUnit id="mov1#hym1#page29#pwu20" name="Loan List" gr:x="140" gr:y="0" sortable="true" checkable="false" useCountQuery="false" entity="ent7" displayAttributes="ent7#att47 ent7#att36 ent7#att44 ent7#att34 ent7#att46" linkOrder="mov1#hym1#page29#pwu20#ln186">
+      <Link id="mov1#hym1#page29#pwu20#ln186" name="Delete" to="mov1#hym1#miu22" type="normal" validate="true">
+        <LinkParameter id="mov1#hym1#page29#pwu20#ln186#par362" name="oid_oidLoan" source="data[].ent7#att33" target="mov1#hym1#miu22.mov1#opm22#icu27#icp65"/>
+      </Link>
+    </PowerIndexUnit>
+    <DataUnit id="mov1#hym1#page29#dau19" name="LoanDetails" gr:x="0" gr:y="0" entity="ent7" displayAttributes="ent7#att36 ent7#att43 ent7#att44 ent7#att46">
+      <Selector id="mov1#hym1#page29#dau19#su49" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym1#page29#dau19#su49#kcond42" name="KeyCondition41" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="mov1#hym1#page29#dau19#ln169" name="Flow166" to="mov1#hym1#page29#pwu20" type="transport" automaticCoupling="true" validate="true"/>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym1#page29#pwu20">
+          <layout:Link link="mov1#hym1#page29#pwu20#ln186"/>
+          <layout:Attribute attribute="ent7#att47"/>
+          <layout:Attribute attribute="ent7#att36"/>
+          <layout:Attribute attribute="ent7#att44"/>
+          <layout:Attribute attribute="ent7#att34"/>
+          <layout:Attribute attribute="ent7#att46"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym1#page29#dau19">
+          <layout:Attribute attribute="ent7#att36"/>
+          <layout:Attribute attribute="ent7#att43"/>
+          <layout:Attribute attribute="ent7#att44"/>
+          <layout:Attribute attribute="ent7#att46"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

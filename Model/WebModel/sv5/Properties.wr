@@ -1,0 +1,8 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv5" name="ProccessesTechnicalStaffSiteView" protected="true" homePage="sv5#page10" layout:style="WebRatio" landmarks="sv5#area14 sv5#area15 sv5#area16 sv5#area18">
+  <OperationUnits>
+    <LogoutUnit id="sv5#lou5" name="Logout" gr:x="490" gr:y="20" siteView="sv2"/>
+    <NoOpOperationUnit id="sv5#opu4" name="Reset Search" gr:x="1422" gr:y="164">
+      <OKLink id="sv5#opu4#oln111" name="OKFlow89" to="sv5#area18#page31" automaticCoupling="true"/>
+    </NoOpOperationUnit>
+  </OperationUnits>
+</SiteView>

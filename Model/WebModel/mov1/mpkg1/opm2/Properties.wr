@@ -1,0 +1,32 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="55" id="mov1#mpkg1#opm2" name="Delete User">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm2#icu2" gr:x="30" gr:y="85">
+      <OKLink id="mov1#mpkg1#opm2#icu2#oln3" name="OKFlow3" to="mov1#mpkg1#opm2#dlu1">
+        <LinkParameter id="mov1#mpkg1#opm2#icu2#oln3#par9" name="ClientKey_KeyCondition1 [oid]" source="mov1#mpkg1#opm2#icu2#icp1" target="mov1#mpkg1#opm2#dlu1#su1#kcond1.userOID"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#mpkg1#opm2#icu2#icp1" name="ClientKey"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm2#icu2#icp5" name="ClientName"/>
+      <Link id="mov1#mpkg1#opm2#icu2#ln11" name="Flow11" to="mov1#mpkg1#opm2#okcu1" type="transport" validate="true" gr:bendpoints="187,-95,-283,-50">
+        <LinkParameter id="mov1#mpkg1#opm2#icu2#ln11#par24" name="ClientUsername_ClientUsername" source="mov1#mpkg1#opm2#icu2#icp5" target="mov1#mpkg1#opm2#okcu1#ocp7"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm2#icu2#ln12" name="Flow12" to="mov1#mpkg1#opm2#kocu1" type="transport" validate="true" gr:bendpoints="181,81,-289,51">
+        <LinkParameter id="mov1#mpkg1#opm2#icu2#ln12#par25" name="ClientUsername_ClientUsername" source="mov1#mpkg1#opm2#icu2#icp5" target="mov1#mpkg1#opm2#kocu1#ocp8"/>
+      </Link>
+    </InputCollectorUnit>
+    <DeleteUnit gr:x="305" gr:y="70" id="mov1#mpkg1#opm2#dlu1" name="Delete Client" entity="User">
+      <Selector id="mov1#mpkg1#opm2#dlu1#su1" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm2#dlu1#su1#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm2#dlu1#oln4" name="OKFlow4" to="mov1#mpkg1#opm2#okcu1" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm2#dlu1#kln3" name="KOFlow3" to="mov1#mpkg1#opm2#kocu1" automaticCoupling="true"/>
+    </DeleteUnit>
+    <OKCollectorUnit gr:x="500" gr:y="40" id="mov1#mpkg1#opm2#okcu1" name="Success">
+      <OutputCollectorParameter id="mov1#mpkg1#opm2#okcu1#ocp3" name="Message" value="Client $$ClientName$$ Successfully Deleted"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm2#okcu1#ocp7" name="ClientName"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="500" gr:y="115" id="mov1#mpkg1#opm2#kocu1" name="Failure">
+      <OutputCollectorParameter id="mov1#mpkg1#opm2#kocu1#ocp4" name="Message" value="Client $$ClientName$$ not deleted"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm2#kocu1#ocp8" name="ClientName"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

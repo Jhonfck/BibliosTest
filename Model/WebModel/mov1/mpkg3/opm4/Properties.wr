@@ -1,0 +1,14 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="0" id="mov1#mpkg3#opm4" name="Manage Reserve">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg3#opm4#icu4" gr:x="0" gr:y="165">
+      <OKLink id="mov1#mpkg3#opm4#icu4#oln97" name="OKFlow97" to="mov1#mpkg3#opm4#opg1#seu25" automaticCoupling="true"/>
+      <Link id="mov1#mpkg3#opm4#icu4#ln165" name="Flow165" to="mov1#mpkg3#opm4#opg1#cru12" type="transport" validate="true" gr:bendpoints="334,-167,-306,-162">
+        <LinkParameter id="mov1#mpkg3#opm4#icu4#ln165#par238" name="BiblioMaterial_biblioMaterialName" source="mov1#mpkg3#opm4#icu4#icp50" target="mov1#mpkg3#opm4#opg1#cru12.ent8#att41"/>
+        <LinkParameter id="mov1#mpkg3#opm4#icu4#ln165#par239" name="UserCode_userCode" source="mov1#mpkg3#opm4#icu4#icp51" target="mov1#mpkg3#opm4#opg1#cru12.ent8#att40"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg3#opm4#icu4#icp50" name="BiblioMaterial"/>
+      <InputCollectorParameter id="mov1#mpkg3#opm4#icu4#icp51" name="UserCode"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov1#mpkg3#opm4#okcu18" name="Success" gr:x="860" gr:y="155"/>
+  </OperationUnits>
+</OperationModule>

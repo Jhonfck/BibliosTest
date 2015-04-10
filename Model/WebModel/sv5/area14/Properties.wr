@@ -1,0 +1,24 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv5#area14" name="Client" defaultPage="sv5#area14#page14" landmark="true" gr:x="10" gr:y="140">
+  <OperationUnits>
+    <ModuleInstanceUnit id="sv5#area14#miu26" gr:x="365" gr:y="150" action="true" moduleId="mov1#mpkg1#opm1">
+      <KOLink id="sv5#area14#miu26#kln28" name="KOFlow8" to="sv5#area14#page14#mssu10" gr:bendpoints="-107,81,108,-49">
+        <LinkParameter id="sv5#area14#miu26#kln28#par293" name="Message_Shown Messages" source="mov1#mpkg1#opm1#kocu2#ocp2" target="sv5#area14#page14#mssu10.shownMessages"/>
+        <LinkParameter id="sv5#area14#miu26#kln28#par294" name="ClientName_ClientName" source="mov1#mpkg1#opm1#kocu2#ocp6" target="sv5#area14#page14#mssu10.sv5#area14#page14#mssu10#ph13"/>
+      </KOLink>
+      <OKLink id="sv5#area14#miu26#oln82" name="OKFlow10" to="sv5#area14#page14#mssu10">
+        <LinkParameter id="sv5#area14#miu26#oln82#par295" name="Message_Shown Messages" source="mov1#mpkg1#opm1#okcu2#ocp1" target="sv5#area14#page14#mssu10.shownMessages"/>
+        <LinkParameter id="sv5#area14#miu26#oln82#par296" name="ClientName_ClientName" source="mov1#mpkg1#opm1#okcu2#ocp5" target="sv5#area14#page14#mssu10.sv5#area14#page14#mssu10#ph13"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="sv5#area14#miu27" gr:x="35" gr:y="415" action="true" moduleId="mov1#mpkg1#opm2">
+      <KOLink id="sv5#area14#miu27#kln29" name="KOFlow7" to="sv5#area14#page14#mssu10" gr:bendpoints="49,-64,-21,71">
+        <LinkParameter id="sv5#area14#miu27#kln29#par297" name="Message_Shown Messages" source="mov1#mpkg1#opm2#kocu1#ocp4" target="sv5#area14#page14#mssu10.shownMessages"/>
+        <LinkParameter id="sv5#area14#miu27#kln29#par298" name="ClientUsername_ClientName" source="mov1#mpkg1#opm2#kocu1#ocp8" target="sv5#area14#page14#mssu10.sv5#area14#page14#mssu10#ph13"/>
+      </KOLink>
+      <OKLink id="sv5#area14#miu27#oln83" name="OKFlow9" to="sv5#area14#page14#mssu10">
+        <LinkParameter id="sv5#area14#miu27#oln83#par299" name="Message_Shown Messages" source="mov1#mpkg1#opm2#okcu1#ocp3" target="sv5#area14#page14#mssu10.shownMessages"/>
+        <LinkParameter id="sv5#area14#miu27#oln83#par300" name="ClientUsername_ClientName" source="mov1#mpkg1#opm2#okcu1#ocp7" target="sv5#area14#page14#mssu10.sv5#area14#page14#mssu10#ph13"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

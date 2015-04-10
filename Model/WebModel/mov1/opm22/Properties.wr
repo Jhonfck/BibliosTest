@@ -1,0 +1,37 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="820" gr:y="600" id="mov1#opm22" name="Loan Delete">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm22#icu27" gr:x="-30" gr:y="40">
+      <InputCollectorParameter id="mov1#opm22#icu27#icp65" name="oidLoan"/>
+      <InputCollectorParameter id="mov1#opm22#icu27#icp67" name="oidCopies"/>
+      <InputCollectorParameter id="mov1#opm22#icu27#icp69" name="StatusCopies"/>
+      <Link id="mov1#opm22#icu27#ln179" name="Flow179" to="mov1#opm22#dlu12" type="transport" validate="true" gr:bendpoints="264,122,-176,127">
+        <LinkParameter id="mov1#opm22#icu27#ln179#par367" name="oidLoan_KeyCondition43 [oid]" source="mov1#opm22#icu27#icp65" target="mov1#opm22#dlu12#su54#kcond43.ent7#att33"/>
+      </Link>
+      <OKLink id="mov1#opm22#icu27#oln130" name="OKFlow130" to="mov1#opm22#seu16">
+        <LinkParameter id="mov1#opm22#icu27#oln130#par392" name="oidLoan_Loan [oid]" source="mov1#opm22#icu27#icp65" target="mov1#opm22#seu16#su58#rcond8.ent7#att33"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <DeleteUnit gr:x="610" gr:y="40" id="mov1#opm22#dlu12" name="Loan Delete" entity="ent7">
+      <Selector id="mov1#opm22#dlu12#su54" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm22#dlu12#su54#kcond43" name="KeyCondition43" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm22#dlu12#oln129" name="OKFlow129" to="mov1#opm22#okcu27" automaticCoupling="true"/>
+    </DeleteUnit>
+    <OKCollectorUnit gr:x="745" gr:y="60" id="mov1#opm22#okcu27" name="success"/>
+    <ModifyUnit id="mov1#opm22#mfu16" name="StatusCopies Update" gr:x="400" gr:y="35" entity="ent6">
+      <Selector id="mov1#opm22#mfu16#su57" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm22#mfu16#su57#kcond46" name="KeyCondition41" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm22#mfu16#oln126" name="OKFlow125" to="mov1#opm22#dlu12" automaticCoupling="true"/>
+    </ModifyUnit>
+    <SelectorUnit gr:x="240" gr:y="10" id="mov1#opm22#seu16" entity="ent6" name="CopiesLoan">
+      <Selector id="mov1#opm22#seu16#su58" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#opm22#seu16#su58#rcond8" name="Loan" predicate="in" implied="false" role="rel8#role16"/>
+      </Selector>
+      <OKLink id="mov1#opm22#seu16#oln131" name="OKFlow131" to="mov1#opm22#mfu16">
+        <LinkParameter id="mov1#opm22#seu16#oln131#par393" name="oid_KeyCondition41 [oid]" source="ent6#att24Array" target="mov1#opm22#mfu16#su57#kcond46.ent6#att24"/>
+        <LinkParameter id="mov1#opm22#seu16#oln131#par394" name="4_StatusBiblioMaterial.oid(CopiesToStatusBiblioMaterial)" sourceValue="4" target="mov1#opm22#mfu16.rel6#role11.ent1#att2"/>
+      </OKLink>
+    </SelectorUnit>
+  </OperationUnits>
+</OperationModule>

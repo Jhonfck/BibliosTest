@@ -1,0 +1,5 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1" name="AdministratorSiteView " landmarks="sv1#area1 sv1#area2 sv1#area3 sv1#area4 sv1#area5 sv1#area6 sv1#area7 sv1#area8 sv1#area9" protected="true" layout:style="WebRatio" homePage="sv1#page11">
+  <OperationUnits>
+    <LogoutUnit gr:x="1035" gr:y="180" id="sv1#lou3" name="Logout" siteView="sv2"/>
+  </OperationUnits>
+</SiteView>

@@ -1,0 +1,32 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="270" gr:y="555" id="mov1#mpkg1#opm20" name="Delete copies">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm20#icu20" gr:x="35" gr:y="135">
+      <OKLink id="mov1#mpkg1#opm20#icu20#oln75" name="OKFlow75" to="mov1#mpkg1#opm20#dlu10">
+        <LinkParameter id="mov1#mpkg1#opm20#icu20#oln75#par137" name="copiesOid_KeyCondition26 [oid]" source="mov1#mpkg1#opm20#icu20#icp41" target="mov1#mpkg1#opm20#dlu10#su27#kcond26.ent6#att24"/>
+      </OKLink>
+      <Link id="mov1#mpkg1#opm20#icu20#ln90" name="Flow90" to="mov1#mpkg1#opm20#okcu20" type="transport" validate="true" gr:bendpoints="266,-143,-269,-88">
+        <LinkParameter id="mov1#mpkg1#opm20#icu20#ln90#par138" name="copiesName_CopiesName" source="mov1#mpkg1#opm20#icu20#icp42" target="mov1#mpkg1#opm20#okcu20#ocp34"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm20#icu20#ln91" name="Flow91" to="mov1#mpkg1#opm20#kocu19" type="transport" validate="true" gr:bendpoints="284,135,-251,80">
+        <LinkParameter id="mov1#mpkg1#opm20#icu20#ln91#par140" name="copiesName_CopiesName" source="mov1#mpkg1#opm20#icu20#icp42" target="mov1#mpkg1#opm20#kocu19#ocp35"/>
+      </Link>
+      <InputCollectorParameter id="mov1#mpkg1#opm20#icu20#icp41" name="copiesOid"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm20#icu20#icp42" name="copiesName"/>
+    </InputCollectorUnit>
+    <DeleteUnit gr:x="375" gr:y="130" id="mov1#mpkg1#opm20#dlu10" name="Copies Delete" entity="ent6">
+      <Selector id="mov1#mpkg1#opm20#dlu10#su27" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm20#dlu10#su27#kcond26" name="KeyCondition26" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov1#mpkg1#opm20#dlu10#kln57" name="KOFlow57" to="mov1#mpkg1#opm20#kocu19" automaticCoupling="true"/>
+      <OKLink id="mov1#mpkg1#opm20#dlu10#oln76" name="OKFlow76" to="mov1#mpkg1#opm20#okcu20" automaticCoupling="true"/>
+    </DeleteUnit>
+    <OKCollectorUnit gr:x="570" gr:y="80" id="mov1#mpkg1#opm20#okcu20" name="success">
+      <OutputCollectorParameter id="mov1#mpkg1#opm20#okcu20#ocp33" name="Message" value="Copies $$copiesName$$ Successfully Deleted"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm20#okcu20#ocp34" name="copiesName"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="570" gr:y="190" id="mov1#mpkg1#opm20#kocu19" name="Failure">
+      <OutputCollectorParameter id="mov1#mpkg1#opm20#kocu19#ocp35" name="copiesName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm20#kocu19#ocp36" name="Message" value="Copies $$copiesName$$ Not Deleted"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

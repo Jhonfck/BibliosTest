@@ -1,0 +1,24 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="1320" gr:y="-25" id="sv1#area8" name="Regulation" landmark="true" defaultPage="sv1#area8#page18">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="60" gr:y="400" id="sv1#area8#miu18" action="true" moduleId="mov1#mpkg1#opm18">
+      <OKLink id="sv1#area8#miu18#oln60" name="OKFlow60" to="sv1#area8#page18#mssu16" gr:bendpoints="177,-31,87,109">
+        <LinkParameter id="sv1#area8#miu18#oln60#par178" name="RulesName_RulesName" source="mov1#mpkg1#opm18#okcu17#ocp29" target="sv1#area8#page18#mssu16.sv1#area8#page18#mssu16#ph5"/>
+        <LinkParameter id="sv1#area8#miu18#oln60#par179" name="Message_Shown Messages" source="mov1#mpkg1#opm18#okcu17#ocp30" target="sv1#area8#page18#mssu16.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv1#area8#miu18#kln56" name="KOFlow46" to="sv1#area8#page18#mssu16">
+        <LinkParameter id="sv1#area8#miu18#kln56#par176" name="RulesName_RulesName" source="mov1#mpkg1#opm18#kocu18#ocp31" target="sv1#area8#page18#mssu16.sv1#area8#page18#mssu16#ph5"/>
+        <LinkParameter id="sv1#area8#miu18#kln56#par177" name="Message_Shown Messages" source="mov1#mpkg1#opm18#kocu18#ocp32" target="sv1#area8#page18#mssu16.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="340" gr:y="210" id="sv1#area8#miu19" action="true" moduleId="mov1#mpkg1#opm17">
+      <OKLink id="sv1#area8#miu19#oln61" name="OKFlow61" to="sv1#area8#page18#mssu16" gr:bendpoints="28,80,223,30">
+        <LinkParameter id="sv1#area8#miu19#oln61#par180" name="RulesName_RulesName" source="mov1#mpkg1#opm17#okcu16#ocp25" target="sv1#area8#page18#mssu16.sv1#area8#page18#mssu16#ph5"/>
+        <LinkParameter id="sv1#area8#miu19#oln61#par181" name="Message_Shown Messages" source="mov1#mpkg1#opm17#okcu16#ocp26" target="sv1#area8#page18#mssu16.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv1#area8#miu19#kln55" name="KOFlow47" to="sv1#area8#page18#mssu16">
+        <LinkParameter id="sv1#area8#miu19#kln55#par182" name="RulesName_RulesName" source="mov1#mpkg1#opm17#kocu17#ocp27" target="sv1#area8#page18#mssu16.sv1#area8#page18#mssu16#ph5"/>
+        <LinkParameter id="sv1#area8#miu19#kln55#par183" name="Message_Shown Messages" source="mov1#mpkg1#opm17#kocu17#ocp28" target="sv1#area8#page18#mssu16.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

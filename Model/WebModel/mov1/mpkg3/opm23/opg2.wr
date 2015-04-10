@@ -1,0 +1,38 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#mpkg3#opm23#opg2" name="Save Loan" transaction="true" gr:x="295" gr:y="45">
+  <OperationUnits>
+    <TimeUnit id="mov1#mpkg3#opm23#opg2#tmu4" name="Time" gr:x="360" gr:y="20">
+      <Link id="mov1#mpkg3#opm23#opg2#tmu4#ln188" name="Flow188" to="mov1#mpkg3#opm23#opg2#cru13" type="transport" validate="true" gr:bendpoints="140,119,-160,124">
+        <LinkParameter id="mov1#mpkg3#opm23#opg2#tmu4#ln188#par374" name="Current/Input Date_loanDate" source="currentDate" target="mov1#mpkg3#opm23#opg2#cru13.ent7#att44"/>
+      </Link>
+      <OKLink id="mov1#mpkg3#opm23#opg2#tmu4#oln103" name="OKFlow103" to="mov1#mpkg3#opm23#opg2#scu5">
+        <LinkParameter id="mov1#mpkg3#opm23#opg2#tmu4#oln103#par284" name="Current/Input Date_date" source="currentDate" target="mov1#mpkg3#opm23#opg2#scu5.date"/>
+      </OKLink>
+    </TimeUnit>
+    <SelectorUnit id="mov1#mpkg3#opm23#opg2#seu28" name="Select Loan" gr:x="225" gr:y="0" entity="ent7">
+      <Selector id="mov1#mpkg3#opm23#opg2#seu28#su56" defaultPolicy="fill" booleanOperator="and"/>
+      <OKLink id="mov1#mpkg3#opm23#opg2#seu28#oln100" name="OKFlow100" to="mov1#mpkg3#opm23#opg2#seu11" automaticCoupling="true"/>
+    </SelectorUnit>
+    <CreateUnit id="mov1#mpkg3#opm23#opg2#cru13" name="Create Loan" gr:x="735" gr:y="5" deleteAllBefore="true" entity="ent7" linkOrder="mov1#mpkg3#opm23#opg2#cru13#ln192">
+      <OKLink id="mov1#mpkg3#opm23#opg2#cru13#oln114" name="OKLink41" to="mov1#mpkg3#opm23#opg2#mfu12">
+        <LinkParameter id="mov1#mpkg3#opm23#opg2#cru13#oln114#par274" name="oid_Loan.oid(CopiesToLoan)" source="ent7#att33Array" target="mov1#mpkg3#opm23#opg2#mfu12.rel8#role15.ent7#att33"/>
+      </OKLink>
+      <Link id="mov1#mpkg3#opm23#opg2#cru13#ln192" name="Flow192" to="mov1#mpkg3#opm23#opg2#rcnu2" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="169,-96,-221,-111"/>
+    </CreateUnit>
+    <ScriptUnit id="mov1#mpkg3#opm23#opg2#scu5" name="calcula fecha devolucion" gr:x="500" gr:y="15">
+      <ScriptUnitText xml:space="preserve">#input  int returnday, date, numberLend, numLoans
+#output fechadevolucion, noPrestar
+
+
+
+Calendar calendar = Calendar.getInstance();
+	
+      calendar.setTime(date); // Configuramos la fecha que se recibe
+	
+      calendar.add(Calendar.DAY_OF_YEAR, returnday);  // numero de d&#237;as a a&#241;adir, o restar en caso de d&#237;as&lt;0
+println "a imprimir fecha "+calendar.getTime()
+return ["fechadevolucion":calendar.getTime()] // Devuelve el objeto Date con los nuevos d&#237;as a&#241;adidos+
+
+
+
+
+</ScriptUnitText>      <OKLink id="mov1#mpkg3#opm23#opg2#scu5#oln104" name="OKFlow104" to="mov1#mpkg3#opm23#opg2#cru13">        <LinkParameter id="mov1#mpkg3#opm23#opg2#scu5#oln104#par286" name="fechadevolucion_returnDate" source="result(fechadevolucion)" target="mov1#mpkg3#opm23#opg2#cru13.ent7#att46"/>      </OKLink>    </ScriptUnit>    <SelectorUnit gr:x="145" gr:y="150" id="mov1#mpkg3#opm23#opg2#seu11" name="Rules" entity="ent5">      <Selector id="mov1#mpkg3#opm23#opg2#seu11#su36" defaultPolicy="fill" booleanOperator="and">        <RelationshipRoleCondition id="mov1#mpkg3#opm23#opg2#seu11#su36#rcond2" name="Collection" predicate="in" implied="false" role="rel7#role14"/>        <RelationshipRoleCondition id="mov1#mpkg3#opm23#opg2#seu11#su36#rcond4" name="group" predicate="in" implied="false" role="rel4#role8"/>      </Selector>      <Link id="mov1#mpkg3#opm23#opg2#seu11#ln159" name="Flow129" to="mov1#mpkg3#opm23#opg2#scu5" type="transport" validate="true">        <LinkParameter id="mov1#mpkg3#opm23#opg2#seu11#ln159#par262" name="ReturnDays_returnday" source="ent5#att21Array" target="mov1#mpkg3#opm23#opg2#scu5.returnday"/>      </Link>      <OKLink id="mov1#mpkg3#opm23#opg2#seu11#oln105" name="OKFlow102" to="mov1#mpkg3#opm23#opg2#tmu4" automaticCoupling="true"/>      <Link id="mov1#mpkg3#opm23#opg2#seu11#ln162" name="Flow162" to="mov1#mpkg3#opm23#opg2#cru13" type="transport" validate="true" gr:bendpoints="389,57,-176,212">        <LinkParameter id="mov1#mpkg3#opm23#opg2#seu11#ln162#par272" name="ReturnDays_days" source="ent5#att21Array" target="mov1#mpkg3#opm23#opg2#cru13.ent7#att34"/>      </Link>    </SelectorUnit>    <ModifyUnit gr:x="885" gr:y="10" id="mov1#mpkg3#opm23#opg2#mfu12" name="StatusCopie Update" entity="ent6">      <Selector id="mov1#mpkg3#opm23#opg2#mfu12#su38" defaultPolicy="fill" booleanOperator="and">        <KeyCondition id="mov1#mpkg3#opm23#opg2#mfu12#su38#kcond32" name="KeyCondition32" predicate="in" implied="false"/>      </Selector>      <OKLink id="mov1#mpkg3#opm23#opg2#mfu12#oln102" name="OKFlow102" to="mov1#mpkg3#opm23#opg2#rcnu2" automaticCoupling="true"/>    </ModifyUnit>    <ReconnectUnit gr:x="1095" gr:y="10" id="mov1#mpkg3#opm23#opg2#rcnu2" name="Loan Reconnect User" relationship="rel9#role18">      <SourceSelector id="mov1#mpkg3#opm23#opg2#rcnu2#su61" defaultPolicy="fill" booleanOperator="and">        <KeyCondition id="mov1#mpkg3#opm23#opg2#rcnu2#su61#kcond49" name="KeyCondition49" predicate="in" implied="false"/>      </SourceSelector>      <TargetSelector id="mov1#mpkg3#opm23#opg2#rcnu2#su62" defaultPolicy="fill" booleanOperator="and">        <KeyCondition id="mov1#mpkg3#opm23#opg2#rcnu2#su62#kcond50" name="KeyCondition50" predicate="in" implied="false"/>      </TargetSelector>      <OKLink id="mov1#mpkg3#opm23#opg2#rcnu2#oln132" name="OKFlow132" to="mov1#mpkg3#opm23#okcu25" automaticCoupling="true"/>    </ReconnectUnit>    <SelectorUnit gr:x="0" gr:y="20" id="mov1#mpkg3#opm23#opg2#seu17" name="Group" entity="Group">      <OKLink id="mov1#mpkg3#opm23#opg2#seu17#oln133" name="OKFlow133" to="mov1#mpkg3#opm23#opg2#seu28" automaticCoupling="true"/>      <Selector id="mov1#mpkg3#opm23#opg2#seu17#su63" defaultPolicy="fill" booleanOperator="and">        <KeyCondition id="mov1#mpkg3#opm23#opg2#seu17#su63#kcond51" name="KeyCondition51" predicate="in" implied="false"/>      </Selector>    </SelectorUnit>  </OperationUnits></OperationGroup>

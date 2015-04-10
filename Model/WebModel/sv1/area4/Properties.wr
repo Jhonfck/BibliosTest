@@ -1,0 +1,24 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-25" gr:y="-560" id="sv1#area4" name="StatusBiblioMaterial" landmark="true" defaultPage="sv1#area4#page2">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="15" gr:y="300" id="sv1#area4#miu1" action="true" moduleId="mov1#mpkg1#opm10">
+      <OKLink id="sv1#area4#miu1#oln30" name="OKFlow30" to="sv1#area4#page2#mssu18" gr:bendpoints="57,-47,52,153;216,-14,96,131">
+        <LinkParameter id="sv1#area4#miu1#oln30#par202" name="Message_Shown Messages" source="mov1#mpkg1#opm10#okcu8#ocp58" target="sv1#area4#page2#mssu18.shownMessages"/>
+        <LinkParameter id="sv1#area4#miu1#oln30#par203" name="statusBiblioMaterialName_statusBiblioMaterialName" source="mov1#mpkg1#opm10#okcu8#ocp57" target="sv1#area4#page2#mssu18.sv1#area4#page2#mssu18#ph7"/>
+      </OKLink>
+      <KOLink id="sv1#area4#miu1#kln64" name="KOFlow23" to="sv1#area4#page2#mssu18">
+        <LinkParameter id="sv1#area4#miu1#kln64#par200" name="Message_Shown Messages" source="mov1#mpkg1#opm10#kocu9#ocp60" target="sv1#area4#page2#mssu18.shownMessages"/>
+        <LinkParameter id="sv1#area4#miu1#kln64#par201" name="statusBiblioMaterialName_statusBiblioMaterialName" source="mov1#mpkg1#opm10#kocu9#ocp59" target="sv1#area4#page2#mssu18.sv1#area4#page2#mssu18#ph7"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="365" gr:y="45" id="sv1#area4#miu11" action="true" moduleId="mov1#mpkg1#opm9">
+      <OKLink id="sv1#area4#miu11#oln36" name="OKFlow36" to="sv1#area4#page2#mssu18" gr:bendpoints="-4,110,221,0">
+        <LinkParameter id="sv1#area4#miu11#oln36#par206" name="Message_Shown Messages" source="mov1#mpkg1#opm9#okcu9#ocp62" target="sv1#area4#page2#mssu18.shownMessages"/>
+        <LinkParameter id="sv1#area4#miu11#oln36#par207" name="statusBiblioMaterialName_statusBiblioMaterialName" source="mov1#mpkg1#opm9#okcu9#ocp61" target="sv1#area4#page2#mssu18.sv1#area4#page2#mssu18#ph7"/>
+      </OKLink>
+      <KOLink id="sv1#area4#miu11#kln63" name="KOFlow27" to="sv1#area4#page2#mssu18">
+        <LinkParameter id="sv1#area4#miu11#kln63#par204" name="Message_Shown Messages" source="mov1#mpkg1#opm9#kocu10#ocp64" target="sv1#area4#page2#mssu18.shownMessages"/>
+        <LinkParameter id="sv1#area4#miu11#kln63#par205" name="statusBiblioMaterialName_statusBiblioMaterialName" source="mov1#mpkg1#opm9#kocu10#ocp63" target="sv1#area4#page2#mssu18.sv1#area4#page2#mssu18#ph7"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

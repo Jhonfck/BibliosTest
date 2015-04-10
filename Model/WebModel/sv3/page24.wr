@@ -1,0 +1,57 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="975" gr:y="405" id="sv3#page24" name="Reserve" landmark="false">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="0" id="sv3#page24#dau17" name="Reserve Details" entity="ent8" displayAttributes="ent8#att41 ent8#att42">
+      <Selector id="sv3#page24#dau17#su39" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#page24#dau17#su39#kcond35" name="KeyCondition35" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv3#page24#dau17#ln163" name="Flow163" to="sv3#page24#pwu19" automaticCoupling="true" type="transport" validate="true"/>
+    </DataUnit>
+    <PowerIndexUnit gr:x="180" gr:y="0" id="sv3#page24#pwu19" name="Reserve List" sortable="true" checkable="false" useCountQuery="false" linkOrder="sv3#page24#pwu19#ln164" entity="ent8" displayAttributes="ent8#att40 ent8#att41 ent8#att42">
+      <Link id="sv3#page24#pwu19#ln164" name="Delete" to="sv3#dlu9" type="normal" validate="true">
+        <LinkParameter id="sv3#page24#pwu19#ln164#par240" name="oid_KeyCondition36 [oid]" source="data[].ent8#att39" target="sv3#dlu9#su40#kcond36.ent8#att39"/>
+      </Link>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page24#dau17">
+          <layout:Attribute attribute="ent8#att41"/>
+          <layout:Attribute attribute="ent8#att42"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page24#pwu19">
+          <layout:Link link="sv3#page24#pwu19#ln164"/>
+          <layout:Attribute attribute="ent8#att40"/>
+          <layout:Attribute attribute="ent8#att41"/>
+          <layout:Attribute attribute="ent8#att42"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,14 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="795" gr:y="660" id="mov1#hym2" name="BiblioMaterial Details">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="45" gr:y="160" id="mov1#hym2#icu23">
+      <InputCollectorParameter id="mov1#hym2#icu23#icp57" name="oid BiblioMaterial"/>
+      <OKLink id="mov1#hym2#icu23#oln99" name="OKFlow99" to="mov1#hym2#page26#dau14">
+        <LinkParameter id="mov1#hym2#icu23#oln99#par257" name="oid BiblioMaterial_KeyCondition39 [oid]" source="mov1#hym2#icu23#icp57" target="mov1#hym2#page26#dau14#su46#kcond39.ent3#att6"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="590" gr:y="150" id="mov1#hym2#okcu22" name="Copies List">
+      <OutputCollectorParameter id="mov1#hym2#okcu22#ocp77" name="oid BiblioMaterial"/>
+    </OKCollectorUnit>
+    <OKCollectorUnit gr:x="625" gr:y="260" id="mov1#hym2#okcu23" name="success"/>
+  </OperationUnits>
+</HybridModule>

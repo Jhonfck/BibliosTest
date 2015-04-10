@@ -1,0 +1,49 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#mpkg1#opm21" name="Manage Copies" gr:x="260" gr:y="495">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm21#icu21" gr:x="0" gr:y="110">
+      <OKLink id="mov1#mpkg1#opm21#icu21#oln77" name="OKFlow48" to="mov1#mpkg1#opm21#inn10">
+        <LinkParameter id="mov1#mpkg1#opm21#icu21#oln77#par141" name="oidBiblioMaterial_Input" source="mov1#mpkg1#opm21#icu21#icp43" target="mov1#mpkg1#opm21#inn10.isnotnull"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#mpkg1#opm21#icu21#icp43" name="CopiesOid"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm21#icu21#icp44" name="Copies Object"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm21#icu21#icp45" name="CopiesName"/>
+      <Link id="mov1#mpkg1#opm21#icu21#ln92" name="Flow49" to="mov1#mpkg1#opm21#cru10" type="transport" validate="true" gr:bendpoints="195,-86,-175,4">
+        <LinkParameter id="mov1#mpkg1#opm21#icu21#ln92#par142" name="BiblioMaterial Object_BiblioMaterial Object" source="mov1#mpkg1#opm21#icu21#icp44" target="mov1#mpkg1#opm21#cru10.entityBeans"/>
+        <LinkParameter id="mov1#mpkg1#opm21#icu21#ln92#par149" name="CopiesOid_oid" source="mov1#mpkg1#opm21#icu21#icp43" target="mov1#mpkg1#opm21#cru10.ent6#att24"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm21#icu21#ln93" name="Flow50" to="mov1#mpkg1#opm21#mfu10" type="transport" validate="true" gr:bendpoints="194,88,-186,-7">
+        <LinkParameter id="mov1#mpkg1#opm21#icu21#ln93#par144" name="BiblioMaterial Object_BiblioMaterial Object" source="mov1#mpkg1#opm21#icu21#icp44" target="mov1#mpkg1#opm21#mfu10.entityBeans"/>
+        <LinkParameter id="mov1#mpkg1#opm21#icu21#ln93#par148" name="CopiesOid_KeyCondition16 [oid]" source="mov1#mpkg1#opm21#icu21#icp43" target="mov1#mpkg1#opm21#mfu10#su28#kcond27.ent6#att24"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm21#icu21#ln94" name="Flow51" to="mov1#mpkg1#opm21#okcu21" type="transport" validate="true" gr:bendpoints="346,-165,-334,-90">
+        <LinkParameter id="mov1#mpkg1#opm21#icu21#ln94#par146" name="BiblioMaterialName_BiblioMaterialName" source="mov1#mpkg1#opm21#icu21#icp45" target="mov1#mpkg1#opm21#okcu21#ocp38"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm21#icu21#ln95" name="Flow52" to="mov1#mpkg1#opm21#kocu20" type="transport" validate="true" gr:bendpoints="352,184,-328,89">
+        <LinkParameter id="mov1#mpkg1#opm21#icu21#ln95#par147" name="BiblioMaterialName_BiblioMaterialName" source="mov1#mpkg1#opm21#icu21#icp45" target="mov1#mpkg1#opm21#kocu20#ocp40"/>
+      </Link>
+    </InputCollectorUnit>
+    <IsNotNullUnit id="mov1#mpkg1#opm21#inn10" name="Is Not Null" gr:x="305" gr:y="130">
+      <KOLink id="mov1#mpkg1#opm21#inn10#kln58" name="KOFlow37" to="mov1#mpkg1#opm21#cru10" automaticCoupling="true"/>
+      <OKLink id="mov1#mpkg1#opm21#inn10#oln78" name="OKFlow49" to="mov1#mpkg1#opm21#mfu10" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <CreateUnit id="mov1#mpkg1#opm21#cru10" name="Copies Create" gr:x="420" gr:y="35" entity="ent6">
+      <OKLink id="mov1#mpkg1#opm21#cru10#oln79" name="OKFlow50" to="mov1#mpkg1#opm21#okcu21" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm21#cru10#kln59" name="KOFlow38" to="mov1#mpkg1#opm21#kocu20" automaticCoupling="true" gr:bendpoints="131,21,-164,6"/>
+    </CreateUnit>
+    <ModifyUnit id="mov1#mpkg1#opm21#mfu10" name="Copies Update" gr:x="430" gr:y="215" entity="ent6">
+      <Selector id="mov1#mpkg1#opm21#mfu10#su28" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm21#mfu10#su28#kcond27" name="KeyCondition16" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm21#mfu10#oln80" name="OKFlow51" to="mov1#mpkg1#opm21#okcu21" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm21#mfu10#kln60" name="KOFlow39" to="mov1#mpkg1#opm21#kocu20" automaticCoupling="true"/>
+    </ModifyUnit>
+    <OKCollectorUnit id="mov1#mpkg1#opm21#okcu21" name="Successful" gr:x="685" gr:y="50">
+      <OutputCollectorParameter id="mov1#mpkg1#opm21#okcu21#ocp37" name="Message" value="Copies $$CopiesName$$ Saved"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm21#okcu21#ocp38" name="CopiesName"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit id="mov1#mpkg1#opm21#kocu20" name="Failure" gr:x="685" gr:y="220">
+      <OutputCollectorParameter id="mov1#mpkg1#opm21#kocu20#ocp39" name="Message" value="Copies $$CopiesName$$ Not Saved"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm21#kocu20#ocp40" name="CopiesName"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

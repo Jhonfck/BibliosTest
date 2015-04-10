@@ -1,0 +1,32 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="225" gr:y="250" id="mov1#mpkg1#opm13" name="Delete BiblioMaterial">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm13#icu13" gr:x="35" gr:y="105" linkOrder="mov1#mpkg1#opm13#icu13#ln46 mov1#mpkg1#opm13#icu13#ln47">
+      <OKLink id="mov1#mpkg1#opm13#icu13#oln32" name="OKFlow32" to="mov1#mpkg1#opm13#dlu5">
+        <LinkParameter id="mov1#mpkg1#opm13#icu13#oln32#par76" name="oidBiblioMaterial_KeyCondition13 [oid]" source="mov1#mpkg1#opm13#icu13#icp23" target="mov1#mpkg1#opm13#dlu5#su14#kcond13.ent3#att6"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#mpkg1#opm13#icu13#icp23" name="oidBiblioMaterial"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm13#icu13#icp24" name="BiblioMaterialName"/>
+      <Link id="mov1#mpkg1#opm13#icu13#ln46" name="Flow46" to="mov1#mpkg1#opm13#okcu12" type="transport" validate="true" gr:bendpoints="274,-140,-286,-95">
+        <LinkParameter id="mov1#mpkg1#opm13#icu13#ln46#par77" name="BiblioMaterialName_BiblioMaterialName" source="mov1#mpkg1#opm13#icu13#icp24" target="mov1#mpkg1#opm13#okcu12#ocp9"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm13#icu13#ln47" name="Flow47" to="mov1#mpkg1#opm13#kocu13" type="transport" validate="true" gr:bendpoints="279,154,-281,89">
+        <LinkParameter id="mov1#mpkg1#opm13#icu13#ln47#par83" name="BiblioMaterialName_BiblioMaterialName" source="mov1#mpkg1#opm13#icu13#icp24" target="mov1#mpkg1#opm13#kocu13#ocp11"/>
+      </Link>
+    </InputCollectorUnit>
+    <DeleteUnit gr:x="360" gr:y="105" id="mov1#mpkg1#opm13#dlu5" name="BiblioMaterial Delete " entity="ent3">
+      <Selector id="mov1#mpkg1#opm13#dlu5#su14" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm13#dlu5#su14#kcond13" name="KeyCondition13" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#mpkg1#opm13#dlu5#oln39" name="OKFlow39" to="mov1#mpkg1#opm13#okcu12" automaticCoupling="true"/>
+      <KOLink id="mov1#mpkg1#opm13#dlu5#kln34" name="KOFlow34" to="mov1#mpkg1#opm13#kocu13" automaticCoupling="true"/>
+    </DeleteUnit>
+    <OKCollectorUnit gr:x="610" gr:y="60" id="mov1#mpkg1#opm13#okcu12" name="Successful">
+      <OutputCollectorParameter id="mov1#mpkg1#opm13#okcu12#ocp9" name="BiblioMaterialName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm13#okcu12#ocp10" name="Message" value="BiblioMaterial $$BiblioMaterialName$$ Successfully Delete"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="610" gr:y="170" id="mov1#mpkg1#opm13#kocu13" name="Failure">
+      <OutputCollectorParameter id="mov1#mpkg1#opm13#kocu13#ocp11" name="BiblioMaterialName"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm13#kocu13#ocp12" name="Message" value="BiblioMaterial $$BiblioMaterialName$$ not deleted"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

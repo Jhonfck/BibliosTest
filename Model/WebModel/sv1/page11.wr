@@ -1,0 +1,18 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="765" gr:y="10" id="sv1#page11" name="Welcome">
+  <ContentUnits>
+    <MultiMessageUnit gr:x="0" gr:y="0" id="sv1#page11#mssu2" name="Home">
+      <Message xml:space="preserve">Welcome of the BIBLIOS App
+You are Adminstrator of site
+You can do the following operations.
+
+Create, Read, Update and Delete.
+- Users.
+- Bibliography Material.
+- Bibliography Material Status
+- Bibliography Material Type
+- Bibliography Material Collection
+- Copies.
+- Groups.
+- Modules.
+- Regulation
+</Message>    </MultiMessageUnit>  </ContentUnits>  <layout:Grid containerType="grid">    <layout:Row>      <layout:Cell colspan="12">        <layout:Unit unitId="sv1#page11#mssu2"/>      </layout:Cell>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>    </layout:Row>  </layout:Grid></Page>

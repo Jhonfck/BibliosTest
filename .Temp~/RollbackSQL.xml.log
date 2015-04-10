@@ -1,0 +1,44 @@
+[24 mar 2015 22:50:44] DEBUG Executing SQL script
+[24 mar 2015 22:50:44] INFO ================================================================================
+[24 mar 2015 22:50:44] INFO outputPath= '/Users/JRios/Documents/Desarrollo/CRM/BibliosTest/.Temp~/RollbackSQL.xml'
+[24 mar 2015 22:50:44] INFO onError= 'stop'
+[24 mar 2015 22:50:44] INFO statementSeparator= ';'
+[24 mar 2015 22:50:44] INFO derby.system.home= '/Users/JRios/Documents/Desarrollo/CRM/.metadata/.plugins/com.webratio.commons.db/derby'
+[24 mar 2015 22:50:44] INFO password= 'varose'
+[24 mar 2015 22:50:44] INFO url= 'jdbc:derby://localhost:1527/DataBase;create=true'
+[24 mar 2015 22:50:44] INFO username= 'admin'
+[24 mar 2015 22:50:44] INFO autoCommit= 'false'
+[24 mar 2015 22:50:44] INFO outputLogPath= '/Users/JRios/Documents/Desarrollo/CRM/BibliosTest/.Temp~/RollbackSQL.xml.log'
+[24 mar 2015 22:50:44] INFO driverClass= 'org.apache.derby.jdbc.ClientDriver'
+[24 mar 2015 22:50:44] INFO encoding= ''
+[24 mar 2015 22:50:44] INFO eventSocketPort= '53005'
+[24 mar 2015 22:50:44] INFO sqlScript= '/Users/JRios/Documents/Desarrollo/CRM/BibliosTest/.Temp~/RollbackSQL.sql'
+[24 mar 2015 22:50:44] INFO ================================================================================
+[24 mar 2015 22:50:44] INFO Connecting to the Database...
+[24 mar 2015 22:50:44] INFO Database connection estabilished
+[24 mar 2015 22:50:44] INFO transaction isolation: 2
+[24 mar 2015 22:50:44] DEBUG ================================================================================
+[24 mar 2015 22:50:44] DEBUG Executing SQL script file: /Users/JRios/Documents/Desarrollo/CRM/BibliosTest/.Temp~/RollbackSQL.sql
+[24 mar 2015 22:50:44] DEBUG Executing statement:  alter table "APP"."RESERVE"   drop column  "BIBLIOMATERIALNAME"
+[24 mar 2015 22:50:44] ERROR Could not execute statement:  alter table "APP"."RESERVE"   drop column  "BIBLIOMATERIALNAME"
+java.sql.SQLSyntaxErrorException: 'BIBLIOMATERIALNAME' is not a column in table or VTI 'RESERVE'.
+	at org.apache.derby.client.am.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.SqlException.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.Statement.execute(Unknown Source)
+	at com.webratio.commons.db.utils.DBUtils.execute(DBUtils.java:523)
+	at com.webratio.commons.db.utils.DBUtils.executeScriptFiles(DBUtils.java:442)
+	at com.webratio.commons.db.utils.DBUtils.main(DBUtils.java:257)
+Caused by: org.apache.derby.client.am.SqlException: 'BIBLIOMATERIALNAME' is not a column in table or VTI 'RESERVE'.
+	at org.apache.derby.client.am.Statement.completeSqlca(Unknown Source)
+	at org.apache.derby.client.am.Statement.completeExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.net.NetStatementReply.parseEXCSQLIMMreply(Unknown Source)
+	at org.apache.derby.client.net.NetStatementReply.readExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.net.StatementReply.readExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.net.NetStatement.readExecuteImmediate_(Unknown Source)
+	at org.apache.derby.client.am.Statement.readExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.am.Statement.flowExecute(Unknown Source)
+	at org.apache.derby.client.am.Statement.executeX(Unknown Source)
+	... 4 more
+[24 mar 2015 22:50:44] ERROR SQL SCRIPT EXECUTION FAILED
+[24 mar 2015 22:50:44] INFO Database connection closed
+[24 mar 2015 22:50:44] DEBUG Total time: 1273 milliseconds

@@ -1,0 +1,47 @@
+[12 oct 2014 15:40:09] DEBUG Executing SQL script
+[12 oct 2014 15:40:09] INFO ================================================================================
+[12 oct 2014 15:40:09] INFO onError= 'abort'
+[12 oct 2014 15:40:09] INFO autoCommit= 'false'
+[12 oct 2014 15:40:09] INFO username= 'webratio'
+[12 oct 2014 15:40:09] INFO outputPath= 'C:\Users\JRios\Documents\workspace\CRM\BibliosTest\.Temp~\SQL.xml'
+[12 oct 2014 15:40:09] INFO outputLogPath= 'C:\Users\JRios\Documents\workspace\CRM\BibliosTest\.Temp~\SQL.xml.log'
+[12 oct 2014 15:40:09] INFO encoding= 'Cp1252'
+[12 oct 2014 15:40:09] INFO driverClass= 'org.apache.derby.jdbc.ClientDriver'
+[12 oct 2014 15:40:09] INFO sqlScript= 'C:\Users\JRios\Documents\workspace\CRM\BibliosTest\DBScripts\module.sql'
+[12 oct 2014 15:40:09] INFO eventSocketPort= '51178'
+[12 oct 2014 15:40:09] INFO statementSeparator= ';'
+[12 oct 2014 15:40:09] INFO derby.system.home= 'C:\Users\JRios\Documents\workspace\CRM\.metadata\.plugins\com.webratio.commons.db\derby'
+[12 oct 2014 15:40:09] INFO password= '1234'
+[12 oct 2014 15:40:09] INFO url= 'jdbc:derby://localhost:1527/Biblio;create=true'
+[12 oct 2014 15:40:09] INFO ================================================================================
+[12 oct 2014 15:40:09] INFO Connecting to the Database...
+[12 oct 2014 15:40:10] INFO Database connection estabilished
+[12 oct 2014 15:40:10] INFO transaction isolation: 2
+[12 oct 2014 15:40:10] DEBUG ================================================================================
+[12 oct 2014 15:40:10] DEBUG Executing SQL script file: C:\Users\JRios\Documents\workspace\CRM\BibliosTest\DBScripts\module.sql
+[12 oct 2014 15:40:10] DEBUG Executing statement:  INSERT INTO "APP"."MODULE" ("OID", "MODULE_ID", "MODULE_NAME") VALUES (6, 'sv6', 'Administrator')
+[12 oct 2014 15:40:10] ERROR Could not execute statement:  INSERT INTO "APP"."MODULE" ("OID", "MODULE_ID", "MODULE_NAME") VALUES (6, 'sv6', 'Administrator')
+java.sql.SQLSyntaxErrorException: 'MODULE_ID' is not a column in table or VTI 'APP.MODULE'.
+	at org.apache.derby.client.am.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.SqlException.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.Statement.execute(Unknown Source)
+	at com.webratio.commons.db.utils.DBUtils.execute(DBUtils.java:523)
+	at com.webratio.commons.db.utils.DBUtils.executeScriptFiles(DBUtils.java:442)
+	at com.webratio.commons.db.utils.DBUtils.main(DBUtils.java:257)
+Caused by: org.apache.derby.client.am.SqlException: 'MODULE_ID' is not a column in table or VTI 'APP.MODULE'.
+	at org.apache.derby.client.am.Statement.completeSqlca(Unknown Source)
+	at org.apache.derby.client.am.Statement.completeExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.net.NetStatementReply.parseEXCSQLIMMreply(Unknown Source)
+	at org.apache.derby.client.net.NetStatementReply.readExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.net.StatementReply.readExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.net.NetStatement.readExecuteImmediate_(Unknown Source)
+	at org.apache.derby.client.am.Statement.readExecuteImmediate(Unknown Source)
+	at org.apache.derby.client.am.Statement.flowExecute(Unknown Source)
+	at org.apache.derby.client.am.Statement.executeX(Unknown Source)
+	... 4 more
+[12 oct 2014 15:40:10] DEBUG Performing roolback...
+[12 oct 2014 15:40:10] WARN NOTE: The rollback affects the DDL instructions only if supported by the current database
+[12 oct 2014 15:40:10] DEBUG Rollback successfully executed
+[12 oct 2014 15:40:10] ERROR SQL SCRIPT EXECUTION FAILED
+[12 oct 2014 15:40:10] INFO Database connection closed
+[12 oct 2014 15:40:10] DEBUG Total time: 2739 milliseconds

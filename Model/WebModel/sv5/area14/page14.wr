@@ -1,0 +1,180 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv5#area14#page14" name="Client Management" gr:x="0" gr:y="0">
+  <ContentUnits>
+    <PowerIndexUnit id="sv5#area14#page14#pwu14" name="Clients" linkOrder="sv5#area14#page14#pwu14#ln134 sv5#area14#page14#pwu14#ln135 sv5#area14#page14#pwu14#ln136" gr:x="0" gr:y="145" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="userName">
+      <Link id="sv5#area14#page14#pwu14#ln134" name="Edit" to="sv5#area14#page14#enu15" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv5#area14#page14#pwu14#ln135" name="Delete" to="sv5#area14#miu27" type="normal" validate="true">
+        <LinkParameter id="sv5#area14#page14#pwu14#ln135#par301" name="oid_ClientKey" source="data[].userOID" target="sv5#area14#miu27.mov1#mpkg1#opm2#icu2#icp1"/>
+        <LinkParameter id="sv5#area14#page14#pwu14#ln135#par302" name="UserName_ClientUsername" source="data[].userName" target="sv5#area14#miu27.mov1#mpkg1#opm2#icu2#icp5"/>
+      </Link>
+      <Link id="sv5#area14#page14#pwu14#ln136" name="Details" to="sv5#area14#page14#dau11" type="normal" validate="true">
+        <LinkParameter id="sv5#area14#page14#pwu14#ln136#par303" name="oid_KeyCondition3 [oid]" source="data[].userOID" target="sv5#area14#page14#dau11#su31#kcond29.userOID"/>
+      </Link>
+      <SortAttribute attribute="userName" order="ascending"/>
+    </PowerIndexUnit>
+    <EntryUnit id="sv5#area14#page14#enu15" name="Client Info" linkOrder="sv5#area14#page14#enu15#ln137" gr:x="115" gr:y="155" entity="User" fieldOrder="sv5#area14#page14#enu15#fld61 sv5#area14#page14#enu15#fld41 sv5#area14#page14#enu15#fld42 sv5#area14#page14#enu15#fld49 sv5#area14#page14#enu15#fld43 sv5#area14#page14#enu15#fld44 sv5#area14#page14#enu15#fld45 sv5#area14#page14#enu15#fld46 sv5#area14#page14#enu15#fld47 sv5#area14#page14#enu15#fld48 sv5#area14#page14#enu15#sfld17">
+      <Field id="sv5#area14#page14#enu15#fld41" name="UserName" type="string" modifiable="true" attribute="userName">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area14#page14#enu15#fld41#mnd18" name="MandatoryUsername"/>
+          <CollectionValidationRule id="sv5#area14#page14#enu15#fld41#clc5" name="Not in collection" predicate="notIn" entity="User" attribute="userName"/>
+        </VRules>
+      </Field>
+      <Field id="sv5#area14#page14#enu15#fld42" name="password" type="password" modifiable="true" attribute="password">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area14#page14#enu15#fld42#mnd19" name="MandatoryPassword"/>
+        </VRules>
+      </Field>
+      <Field id="sv5#area14#page14#enu15#fld43" name="email" type="string" modifiable="true" attribute="email">
+        <VRules>
+          <EMailValidationRule id="sv5#area14#page14#enu15#fld43#email2" name="EMail Field"/>
+          <CollectionValidationRule id="sv5#area14#page14#enu15#fld43#clc6" name="Not in collection" predicate="notIn" entity="User" attribute="email"/>
+          <MandatoryValidationRule id="sv5#area14#page14#enu15#fld43#mnd20" name="Mandatory Field"/>
+        </VRules>
+      </Field>
+      <Field id="sv5#area14#page14#enu15#fld44" name="FirstName" type="string" modifiable="true" attribute="User#att9"/>
+      <Field id="sv5#area14#page14#enu15#fld45" name="LastName" type="string" modifiable="true" attribute="User#att10"/>
+      <Field id="sv5#area14#page14#enu15#fld46" name="CellPhone" type="string" modifiable="true" attribute="User#att11">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area14#page14#enu15#fld46#mnd21" name="Mandatory Field"/>
+        </VRules>
+      </Field>
+      <Field id="sv5#area14#page14#enu15#fld47" name="AddressUser" type="string" modifiable="true" attribute="User#att12">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area14#page14#enu15#fld47#mnd22" name="Mandatory Field"/>
+        </VRules>
+      </Field>
+      <Field id="sv5#area14#page14#enu15#fld48" name="DateOfBirth" type="date" modifiable="true" attribute="User#att13"/>
+      <Link id="sv5#area14#page14#enu15#ln137" name="Save" to="sv5#area14#miu26" type="normal" validate="true">
+        <LinkParameter id="sv5#area14#page14#enu15#ln137#par304" name="Key [oid]_ClientKey" source="key.userOID" target="sv5#area14#miu26.mov1#mpkg1#opm1#icu1#icp2"/>
+        <LinkParameter id="sv5#area14#page14#enu15#ln137#par305" name="UserName_ClientName" source="sv5#area14#page14#enu15#fld41" target="sv5#area14#miu26.mov1#mpkg1#opm1#icu1#icp4"/>
+        <LinkParameter id="sv5#area14#page14#enu15#ln137#par306" name="User Object_ClientObject" source="entityBean" target="sv5#area14#miu26.mov1#mpkg1#opm1#icu1#icp3"/>
+      </Link>
+      <SelectionField id="sv5#area14#page14#enu15#sfld17" name="Selection Group" type="string" role="User2DefaultGroup"/>
+      <Field id="sv5#area14#page14#enu15#fld49" name="Password Confirm" type="password" modifiable="true">
+        <VRules>
+          <CompareValidationRule id="sv5#area14#page14#enu15#fld49#cmp2" name="Compare Field" predicate="eq" valueField="sv5#area14#page14#enu15#fld42"/>
+          <MandatoryValidationRule id="sv5#area14#page14#enu15#fld49#mnd23" name="Mandatory Field"/>
+        </VRules>
+      </Field>
+      <Field id="sv5#area14#page14#enu15#fld61" name="Code" type="integer" modifiable="true" attribute="User#att37">
+        <VRules>
+          <MandatoryValidationRule id="sv5#area14#page14#enu15#fld61#mnd34" name="Mandatory Field"/>
+          <CollectionValidationRule id="sv5#area14#page14#enu15#fld61#clc10" name="Not in collection" predicate="notIn" entity="User" attribute="User#att37"/>
+        </VRules>
+      </Field>
+    </EntryUnit>
+    <DataUnit id="sv5#area14#page14#dau11" name="Details Client" gr:x="0" gr:y="0" entity="User" displayAttributes="userName password email User#att9 User#att10 User#att11 User#att12 User#att13 User#att37">
+      <Selector id="sv5#area14#page14#dau11#su31" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv5#area14#page14#dau11#su31#kcond29" name="KeyCondition3" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <MultiMessageUnit id="sv5#area14#page14#mssu10" name="Notification" gr:x="225" gr:y="280">
+      <Placeholder id="sv5#area14#page14#mssu10#ph13" name="ClientName"/>
+    </MultiMessageUnit>
+    <SelectorUnit id="sv5#area14#page14#seu18" name="Selection Group" gr:x="280" gr:y="20" entity="Group">
+      <Link id="sv5#area14#page14#seu18#ln138" name="Flow23" to="sv5#area14#page14#enu15" type="transport" validate="true">
+        <LinkParameter id="sv5#area14#page14#seu18#ln138#par307" name="groupName_Selection Group [label]" source="groupNameArray" target="sv5#area14#page14#enu15#sfld17_label"/>
+        <LinkParameter id="sv5#area14#page14#seu18#ln138#par308" name="oid_Selection Group [output]" source="groupOIDArray" target="sv5#area14#page14#enu15#sfld17_output"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit id="sv5#area14#page14#gtu7" name="Get Group" gr:x="145" gr:y="15" contextParameters="GroupCtxParam">
+      <Link id="sv5#area14#page14#gtu7#ln139" name="Flow110" to="sv5#area14#page14#dau11" type="transport" automaticCoupling="true" validate="true"/>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv5#area14#page14#pwu14">
+          <layout:Attribute attribute="userName"/>
+          <layout:Link link="sv5#area14#page14#pwu14#ln134"/>
+          <layout:Link link="sv5#area14#page14#pwu14#ln135"/>
+          <layout:Link link="sv5#area14#page14#pwu14#ln136"/>
+          <layout:Link link="sv5#area14#page14#pwu14userName"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv5#area14#page14#dau11">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="password"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User#att9"/>
+          <layout:Attribute attribute="User#att10"/>
+          <layout:Attribute attribute="User#att11"/>
+          <layout:Attribute attribute="User#att12"/>
+          <layout:Attribute attribute="User#att13"/>
+          <layout:Attribute attribute="User#att37"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv5#area14#page14#enu15">
+          <layout:LayoutParameter name="mandatory-fields" value="true" type="unit"/>
+          <layout:Link link="sv5#area14#page14#enu15#ln137"/>
+          <layout:Field field="sv5#area14#page14#enu15#fld61"/>
+          <layout:Field field="sv5#area14#page14#enu15#fld41"/>
+          <layout:Field field="sv5#area14#page14#enu15#fld42"/>
+          <layout:Field field="sv5#area14#page14#enu15#fld49"/>
+          <layout:Field field="sv5#area14#page14#enu15#fld43"/>
+          <layout:Field field="sv5#area14#page14#enu15#fld44"/>
+          <layout:Field field="sv5#area14#page14#enu15#fld45"/>
+          <layout:Field field="sv5#area14#page14#enu15#fld46"/>
+          <layout:Field field="sv5#area14#page14#enu15#fld47"/>
+          <layout:Field field="sv5#area14#page14#enu15#fld48"/>
+          <layout:Field field="sv5#area14#page14#enu15#sfld17"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv5#area14#page14#mssu10"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:LayoutParameter name="mandatory-fields" value="true" type="field"/>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

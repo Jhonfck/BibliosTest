@@ -1,0 +1,81 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area7#page16" name="ColletionBiblioMaterial Management">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#area7#page16#enu8" name="ColletionBiblioMaterial Info" linkOrder="sv1#area7#page16#enu8#ln59 sv1#area7#page16#enu8#ln60" entity="ent4">
+      <Link id="sv1#area7#page16#enu8#ln59" name="Cancel" to="sv1#area7#page16" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="52,-154,12,-204"/>
+      <Link id="sv1#area7#page16#enu8#ln60" name="Save" to="sv1#area7#miu17" type="normal" validate="true">
+        <LinkParameter id="sv1#area7#page16#enu8#ln60#par109" name="Key [oid]_ColecctionBiblioMaterialOid" source="key.ent4#att17" target="sv1#area7#miu17.mov1#mpkg1#opm15#icu15#icp30"/>
+        <LinkParameter id="sv1#area7#page16#enu8#ln60#par110" name="CollectionName_CollectionBiblioMaterialName" source="sv1#area7#page16#enu8#fld20" target="sv1#area7#miu17.mov1#mpkg1#opm15#icu15#icp29"/>
+        <LinkParameter id="sv1#area7#page16#enu8#ln60#par111" name="CollectionBiblioMaterial Object_ColletionBiblioMaterial Objetc" source="entityBean" target="sv1#area7#miu17.mov1#mpkg1#opm15#icu15#icp28"/>
+      </Link>
+      <Field id="sv1#area7#page16#enu8#fld20" name="CollectionName" type="string" modifiable="true" attribute="ent4#att18"/>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="5" gr:y="130" id="sv1#area7#page16#pwu7" name="ColletionBiblioMaterial List" sortable="true" checkable="false" useCountQuery="false" linkOrder="sv1#area7#page16#pwu7#ln25 sv1#area7#page16#pwu7#ln35" entity="ent4" displayAttributes="ent4#att18">
+      <Link id="sv1#area7#page16#pwu7#ln25" name="Delete" to="sv1#area7#miu7" type="normal" validate="true">
+        <LinkParameter id="sv1#area7#page16#pwu7#ln25#par107" name="oid_CollectionBibliomaterialOid" source="data[].ent4#att17" target="sv1#area7#miu7.mov1#mpkg1#opm16#icu16#icp32"/>
+        <LinkParameter id="sv1#area7#page16#pwu7#ln25#par108" name="CollectionName_CollectionBiblioMatertialName" source="data[].ent4#att18" target="sv1#area7#miu7.mov1#mpkg1#opm16#icu16#icp31"/>
+      </Link>
+      <Link id="sv1#area7#page16#pwu7#ln35" name="Edit" to="sv1#area7#page16#enu8" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+    <MultiMessageUnit id="sv1#area7#page16#mssu20" name="Notification" gr:x="205" gr:y="120">
+      <Placeholder id="sv1#area7#page16#mssu20#ph9" name="ColletionBiblioMaterialName"/>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area7#page16#enu8">
+          <layout:Link link="sv1#area7#page16#enu8#ln59"/>
+          <layout:Link link="sv1#area7#page16#enu8#ln60"/>
+          <layout:Field field="sv1#area7#page16#enu8#fld20"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area7#page16#pwu7">
+          <layout:Link link="sv1#area7#page16#pwu7#ln25"/>
+          <layout:Link link="sv1#area7#page16#pwu7#ln35"/>
+          <layout:Attribute attribute="ent4#att18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area7#page16#mssu20"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

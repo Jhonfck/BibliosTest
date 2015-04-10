@@ -1,0 +1,32 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="165" id="mov1#mpkg1#opm6" name="Delete Group">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#mpkg1#opm6#icu6" gr:x="30" gr:y="60" linkOrder="mov1#mpkg1#opm6#icu6#ln96 mov1#mpkg1#opm6#icu6#ln97">
+      <OKLink id="mov1#mpkg1#opm6#icu6#oln16" name="OKFlow16" to="mov1#mpkg1#opm6#dlu2">
+        <LinkParameter id="mov1#mpkg1#opm6#icu6#oln16#par13" name="oidGroup_KeyCondition6 [oid]" source="mov1#mpkg1#opm6#icu6#icp12" target="mov1#mpkg1#opm6#dlu2#su6#kcond6.groupOID"/>
+      </OKLink>
+      <InputCollectorParameter id="mov1#mpkg1#opm6#icu6#icp12" name="oidGroup"/>
+      <InputCollectorParameter id="mov1#mpkg1#opm6#icu6#icp38" name="groupName"/>
+      <Link id="mov1#mpkg1#opm6#icu6#ln96" name="Flow96" to="mov1#mpkg1#opm6#okcu4" type="transport" validate="true" gr:bendpoints="216,-94,-194,-59">
+        <LinkParameter id="mov1#mpkg1#opm6#icu6#ln96#par136" name="groupName_groupName" source="mov1#mpkg1#opm6#icu6#icp38" target="mov1#mpkg1#opm6#okcu4#ocp46"/>
+      </Link>
+      <Link id="mov1#mpkg1#opm6#icu6#ln97" name="Flow97" to="mov1#mpkg1#opm6#kocu6" type="transport" validate="true" gr:bendpoints="213,99,-197,39">
+        <LinkParameter id="mov1#mpkg1#opm6#icu6#ln97#par139" name="groupName_groupName" source="mov1#mpkg1#opm6#icu6#icp38" target="mov1#mpkg1#opm6#kocu6#ocp48"/>
+      </Link>
+    </InputCollectorUnit>
+    <DeleteUnit gr:x="300" gr:y="50" id="mov1#mpkg1#opm6#dlu2" name="Delete Group" entity="Group">
+      <Selector id="mov1#mpkg1#opm6#dlu2#su6" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#mpkg1#opm6#dlu2#su6#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov1#mpkg1#opm6#dlu2#kln13" name="KOFlow13" to="mov1#mpkg1#opm6#kocu6" automaticCoupling="true"/>
+      <OKLink id="mov1#mpkg1#opm6#dlu2#oln15" name="OKFlow15" to="mov1#mpkg1#opm6#okcu4" automaticCoupling="true"/>
+    </DeleteUnit>
+    <OKCollectorUnit gr:x="440" gr:y="25" id="mov1#mpkg1#opm6#okcu4" name="Successful">
+      <OutputCollectorParameter id="mov1#mpkg1#opm6#okcu4#ocp45" name="Message" value="Group $$groupName$$ Deleted"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm6#okcu4#ocp46" name="groupName"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="440" gr:y="120" id="mov1#mpkg1#opm6#kocu6" name="Failure">
+      <OutputCollectorParameter id="mov1#mpkg1#opm6#kocu6#ocp47" name="Message" value="Group $$groupName%% Not Deleted"/>
+      <OutputCollectorParameter id="mov1#mpkg1#opm6#kocu6#ocp48" name="groupName"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

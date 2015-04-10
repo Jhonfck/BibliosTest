@@ -1,0 +1,81 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv1#area4#page2" name="StatusBiblioMaterial Management">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#area4#page2#enu2" name="StatusBiblioMaterial Info" entity="ent1" linkOrder="sv1#area4#page2#enu2#ln2 sv1#area4#page2#enu2#ln37">
+      <Field id="sv1#area4#page2#enu2#fld6" name="statusName" type="string" modifiable="true" attribute="ent1#att3"/>
+      <Link id="sv1#area4#page2#enu2#ln2" name="Cancel" to="sv1#area4#page2" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="68,-139,28,-199"/>
+      <Link id="sv1#area4#page2#enu2#ln37" name="Save" to="sv1#area4#miu11" type="normal" validate="true">
+        <LinkParameter id="sv1#area4#page2#enu2#ln37#par41" name="Key [oid]_oid StatusBiblioMaterial" source="key.ent1#att2" target="sv1#area4#miu11.mov1#mpkg1#opm9#icu9#icp18"/>
+        <LinkParameter id="sv1#area4#page2#enu2#ln37#par43" name="StatusBiblioMaterial Object_StatusBiblioMaterial Object" source="entityBean" target="sv1#area4#miu11.mov1#mpkg1#opm9#icu9#icp19"/>
+        <LinkParameter id="sv1#area4#page2#enu2#ln37#par208" name="statusName_statusBiblioMaterialName" source="sv1#area4#page2#enu2#fld6" target="sv1#area4#miu11.mov1#mpkg1#opm9#icu9#icp46"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit gr:x="0" gr:y="135" id="sv1#area4#page2#pwu3" name="StatusBiblioMaterial List " sortable="true" checkable="false" useCountQuery="false" linkOrder="sv1#area4#page2#pwu3#ln24 sv1#area4#page2#pwu3#ln33" entity="ent1" displayAttributes="ent1#att3 ent1#att2">
+      <Link id="sv1#area4#page2#pwu3#ln24" name="Edit" to="sv1#area4#page2#enu2" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv1#area4#page2#pwu3#ln33" name="Delete" to="sv1#area4#miu1" type="normal" validate="true">
+        <LinkParameter id="sv1#area4#page2#pwu3#ln33#par31" name="oid_oid SatusBiblioMaterial" source="data[].ent1#att2" target="sv1#area4#miu1.mov1#mpkg1#opm10#icu10#icp15"/>
+      </Link>
+    </PowerIndexUnit>
+    <MultiMessageUnit id="sv1#area4#page2#mssu18" name="Notification" gr:x="205" gr:y="125">
+      <Placeholder id="sv1#area4#page2#mssu18#ph7" name="statusBiblioMaterialName"/>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area4#page2#enu2">
+          <layout:Field field="sv1#area4#page2#enu2#fld6"/>
+          <layout:Link link="sv1#area4#page2#enu2#ln2"/>
+          <layout:Link link="sv1#area4#page2#enu2#ln37"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area4#page2#pwu3">
+          <layout:Link link="sv1#area4#page2#pwu3#ln24"/>
+          <layout:Link link="sv1#area4#page2#pwu3#ln33"/>
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Attribute attribute="ent1#att2"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area4#page2#mssu18"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
